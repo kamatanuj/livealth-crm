@@ -964,21 +964,71 @@
             const name = lead.name || 'Customer';
             const topic = lead.title || 'our pharmaceutical products';
             
-            // Generate transcript using the same function as the transcript view
+            // Generate transcript
             const transcript = generateTranscript(lead);
             
-            // Generate SHORT email reply (4-5 lines max) based on transcript
-            const emailReply = `Dear ${name},
+            // Create personalized email based on the specific inquiry
+            let emailReply = '';
+            
+            if (topic === 'Bengali Language Support') {
+                emailReply = `Dear ${name},
 
-Thank you for contacting Livealth BioPharma regarding ${topic}.
+Thank you for contacting Livealth BioPharma regarding Bengali language support.
 
-We appreciate your interest and have attached our product catalog for your review.
+We have noted your need for product information in Bengali. Our complete pharmaceutical catalog covering generic medicines, contrast media, and specialty drugs is attached.
 
-Our sales team will contact you within 24 hours with detailed pricing.
+Our team speaks Bengali and will call you within 24 hours to discuss your specific requirements and pricing for the Mumbai region.
+
+We look forward to supporting your pharmaceutical distribution needs.
+
+Best regards,
+Sales Team
+Livealth BioPharma
+📧 sales@livealthbiopharma.com`;
+            } else if (topic === 'Language Support Inquiry') {
+                emailReply = `Dear ${name},
+
+Thank you for inquiring about our language support options for pharmaceutical exports.
+
+We confirm that we provide full support in Hindi, English, and multiple regional languages for all communication including orders, documentation, and support.
+
+Our product catalog for cardiovascular medicines (Amlodipine, Atenolol, Metoprolol, etc.) is attached. Our sales team will contact you within 24 hours in your preferred language.
+
+Let us know your preferred language for future communications.
+
+Best regards,
+Sales Team
+Livealth BioPharma`;            
+            } else if (topic === 'Biopharma Products Services') {
+                emailReply = `Dear ${name},
+
+Thank you for your interest in Livealth BioPharma's product range and therapeutic offerings.
+
+As discussed, we specialize in generic medicines across cardiovascular, anti-infectives, CNS, gastroenterology, and specialty pharmaceuticals including contrast media for imaging.
+
+Our complete product catalog with detailed specifications, MOQ ($10,000 USD), and worldwide shipping details is attached. We will call you within 24 hours to discuss your specific therapeutic area requirements.
+
+Which therapeutic categories interest you the most? We're here to support your pharmaceutical needs.
 
 Best regards,
 Sales Team
 Livealth BioPharma`;
+            } else {
+                // Generic but still personalized
+                emailReply = `Dear ${name},
+
+Thank you for contacting Livealth BioPharma regarding ${topic}.
+
+Based on our conversation, I've attached our complete product catalog relevant to your inquiry. Our minimum order is $10,000 USD with worldwide shipping.
+
+Our sales team will contact you within 24 hours to discuss your specific requirements and provide detailed pricing.
+
+We appreciate your interest and look forward to serving your pharmaceutical needs.
+
+Best regards,
+Sales Team
+Livealth BioPharma`;
+            }
             
             const subject = `Follow-up: ${topic} - Livealth BioPharma`;
             const body = encodeURIComponent(emailReply);
@@ -987,7 +1037,7 @@ Livealth BioPharma`;
             if (recipient) {
                 window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${body}`;
             } else {
-                alert(`Email Reply for ${name}\n\nSubject: ${subject}\n\nNo email found for this lead. Please obtain their email during the call.\n\n---\n\n${emailReply}`);
+                alert(`Email Reply for ${name}\n\nSubject: ${subject}\n\nNo email found for this lead.\n\n---\n\n${emailReply}`);
             }
         }
 
