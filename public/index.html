@@ -421,6 +421,29 @@
             word-break: break-word;
         }
         
+        .transcript-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .email-btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            background: rgba(59, 130, 246, 0.3);
+            color: #3b82f6;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+            min-height: 44px;
+        }
+        
+        .email-btn:hover {
+            background: rgba(59, 130, 246, 0.5);
+        }
+        
         .back-btn { 
             display: none; 
             padding: 10px 16px; 
@@ -930,6 +953,56 @@
             }, 100);
         }
 
+        function generateEmailFromTranscript(leadId) {
+            const lead = allData.find(r => (r.date + r.phone + r.title) === leadId);
+            const conv = CONV_DATA[leadId];
+            
+            if (!lead || !conv || !conv.transcript) {
+                alert('No transcript available for this lead!');
+                return;
+            }
+            
+            const name = lead.name || 'Customer';
+            const topic = lead.title || 'our pharmaceutical products';
+            
+            // Generate email reply based on transcript
+            const emailReply = `Dear ${name},
+
+Thank you for contacting Livealth BioPharma regarding ${topic}.
+
+Based on our conversation, I understand your interest in our pharmaceutical products and services. We appreciate your inquiry and would like to provide you with the following information:
+
+${conv.summary || 'Our team will review your requirements and get back to you with detailed information.'}
+
+Please find our product catalog attached. Our minimum order quantity is $10,000 USD, and we ship worldwide with proper documentation.
+
+If you have any further questions, please don't hesitate to contact us.
+
+Best regards,
+Sales Team
+Livealth BioPharma
+📧 sales@livealthbiopharma.com
+📞 +91-XXX-XXX-XXXX
+
+---
+
+Original Conversation Summary:
+${conv.transcript.substring(0, 500)}...`;
+            
+            // Show email in a new section or prompt
+            const subject = `Follow-up: ${topic} - Livealth BioPharma`;
+            const body = encodeURIComponent(emailReply);
+            const recipient = lead.email || '';
+            
+            if (recipient) {
+                // Open mailto link
+                window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${body}`;
+            } else {
+                // Show in alert with option to copy
+                alert(`Email Reply Generated for ${name}\n\nSubject: ${subject}\n\nTo: ${recipient || 'No email provided'}\n\n${emailReply.substring(0, 500)}...\n\nNote: No email address found for this lead. Please obtain their email during the call.`);
+            }
+        }
+
         function renderTable() {
             const filtered = getFiltered();
             const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
@@ -992,7 +1065,10 @@
                                     <div class="section-header">📝 Conversation Transcript</div>
                                     <div class="section-content">${transcript}</div>
                                 </div>
-                                <button class="back-btn show" onclick="goBack()">← Back to Leads List</button>
+                                <div class="transcript-actions">
+                                    <button class="back-btn show" onclick="goBack()">← Back to Leads List</button>
+                                    <button class="email-btn" onclick="generateEmailFromTranscript('${leadId}')">📧 Generate Email Reply</button>
+                                </div>
                             </div>
                         `;
                     }
