@@ -963,12 +963,21 @@
             
             const name = lead.name || 'Customer';
             const topic = lead.title || 'our pharmaceutical products';
+            const phone = lead.phone || '';
             
             // Generate transcript
             const transcript = generateTranscript(lead);
             
             // Create personalized email based on the specific inquiry
             let emailReply = '';
+            let phoneVerification = '';
+            
+            // Phone verification line
+            if (phone) {
+                phoneVerification = `\nWe have your contact number as ${phone}. Please confirm if we can reach you on this number, or provide an alternative contact number.`;
+            } else {
+                phoneVerification = `\nWe don't have your contact number on file. Please provide your phone number and email address for follow-up.`;
+            }
             
             if (topic === 'Bengali Language Support') {
                 emailReply = `Dear ${name},
@@ -977,7 +986,7 @@ Thank you for contacting Livealth BioPharma regarding Bengali language support.
 
 We have noted your need for product information in Bengali. Our complete pharmaceutical catalog covering generic medicines, contrast media, and specialty drugs is attached.
 
-Our team speaks Bengali and will call you within 24 hours to discuss your specific requirements and pricing for the Mumbai region.
+Our team speaks Bengali and will call you within 24 hours to discuss your specific requirements and pricing for the Mumbai region.${phoneVerification}
 
 We look forward to supporting your pharmaceutical distribution needs.
 
@@ -992,7 +1001,7 @@ Thank you for inquiring about our language support options for pharmaceutical ex
 
 We confirm that we provide full support in Hindi, English, and multiple regional languages for all communication including orders, documentation, and support.
 
-Our product catalog for cardiovascular medicines (Amlodipine, Atenolol, Metoprolol, etc.) is attached. Our sales team will contact you within 24 hours in your preferred language.
+Our product catalog for cardiovascular medicines (Amlodipine, Atenolol, Metoprolol, etc.) is attached. Our sales team will contact you within 24 hours in your preferred language.${phoneVerification}
 
 Let us know your preferred language for future communications.
 
@@ -1006,7 +1015,7 @@ Thank you for your interest in Livealth BioPharma's product range and therapeuti
 
 As discussed, we specialize in generic medicines across cardiovascular, anti-infectives, CNS, gastroenterology, and specialty pharmaceuticals including contrast media for imaging.
 
-Our complete product catalog with detailed specifications, MOQ ($10,000 USD), and worldwide shipping details is attached. We will call you within 24 hours to discuss your specific therapeutic area requirements.
+Our complete product catalog with detailed specifications, MOQ ($10,000 USD), and worldwide shipping details is attached. We will call you within 24 hours to discuss your specific therapeutic area requirements.${phoneVerification}
 
 Which therapeutic categories interest you the most? We're here to support your pharmaceutical needs.
 
@@ -1021,7 +1030,7 @@ Thank you for contacting Livealth BioPharma regarding ${topic}.
 
 Based on our conversation, I've attached our complete product catalog relevant to your inquiry. Our minimum order is $10,000 USD with worldwide shipping.
 
-Our sales team will contact you within 24 hours to discuss your specific requirements and provide detailed pricing.
+Our sales team will contact you within 24 hours to discuss your specific requirements and provide detailed pricing.${phoneVerification}
 
 We appreciate your interest and look forward to serving your pharmaceutical needs.
 
