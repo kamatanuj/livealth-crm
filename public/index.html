@@ -907,17 +907,6 @@
             renderTable();
         }
         
-        function getGitHubToken() {
-            let token = sessionStorage.getItem('github_token');
-            if (!token) {
-                token = prompt('Enter GitHub Personal Access Token (needs repo write access):');
-                if (token) {
-                    sessionStorage.setItem('github_token', token);
-                }
-            }
-            return token;
-        }
-        
         function deleteLead(leadId) {
             if (!currentUser || currentUser.role !== 'admin') {
                 alert('Only admin can delete leads!');
@@ -928,22 +917,16 @@
                 return;
             }
             
-            const token = getGitHubToken();
-            if (!token) {
-                alert('GitHub token required to delete leads!');
-                return;
-            }
-            
             const index = allData.findIndex(r => (r.date + r.phone + r.title) === leadId);
             if (index > -1) {
                 // Remove from local array
                 const removedLead = allData.splice(index, 1)[0];
                 
-                // Call API to update GitHub
+                // Call API to update GitHub (token is now server-side)
                 fetch('/api/update-leads', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ leads: allData, token: token })
+                    body: JSON.stringify({ leads: allData })
                 })
                 .then(response => response.json())
                 .then(data => {

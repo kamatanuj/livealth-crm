@@ -1,13 +1,16 @@
 export async function onRequestPost(context) {
-  const { request } = context;
+  const { request, env } = context;
   
   try {
     const body = await request.json();
-    const { leads, token } = body;
+    const { leads } = body;
+    
+    // Get token from environment variable (set in Cloudflare Pages settings)
+    const token = env.GITHUB_TOKEN;
     
     if (!token) {
-      return new Response(JSON.stringify({ error: 'Missing GitHub token' }), {
-        status: 400,
+      return new Response(JSON.stringify({ error: 'Server misconfigured: Missing GITHUB_TOKEN environment variable' }), {
+        status: 500,
         headers: { 'Content-Type': 'application/json' }
       });
     }
@@ -29,7 +32,7 @@ export async function onRequestPost(context) {
     );
     
     if (!getFileResponse.ok) {
-      return new Response(JSON.stringify({ error: 'Failed to get file' }), {
+      return new Response(JSON.stringify({ error: 'Failed to get file from GitHub' }), {
         status: 500,
         headers: { 'Content-Type': 'application/json' }
       });
