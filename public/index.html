@@ -931,8 +931,10 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        // Reload data from server to display the new data
-                        loadData();
+                        // Don't reload from server - GitHub might have stale cache
+                        // Local allData already has the lead removed
+                        updateStats();
+                        renderTable();
                         alert('Lead deleted and GitHub updated!');
                     } else {
                         // Revert local change
