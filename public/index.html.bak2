@@ -421,29 +421,6 @@
             word-break: break-word;
         }
         
-        .transcript-actions {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-            flex-wrap: wrap;
-        }
-        
-        .email-btn {
-            padding: 10px 20px;
-            border-radius: 8px;
-            border: none;
-            background: rgba(59, 130, 246, 0.3);
-            color: #3b82f6;
-            cursor: pointer;
-            font-size: 14px;
-            transition: all 0.2s;
-            min-height: 44px;
-        }
-        
-        .email-btn:hover {
-            background: rgba(59, 130, 246, 0.5);
-        }
-        
         .back-btn { 
             display: none; 
             padding: 10px 16px; 
@@ -661,6 +638,10 @@
             <input type="password" class="login-input" id="password" placeholder="Password" onkeypress="if(event.key==='Enter') login()">
             <button class="login-btn" onclick="login()">Login</button>
             <div class="login-error" id="loginError">Invalid credentials!</div>
+            <div style="color: #888; font-size: 0.8em; margin-top: 15px; text-align: center;">
+                <div>Admin: admin / admin123</div>
+                <div>User: user / user123</div>
+            </div>
         </div>
     </div>
     
@@ -710,6 +691,9 @@
             Last updated: April 30, 2026<br>
             <small>Source: D-Insights AI Voice Agent</small>
         </div>
+        
+        <button class="download-btn" id="downloadBtn" onclick="downloadJSON()">📥 Download Updated JSON</button>
+    </div>
 
     <script>
         const PAGE_SIZE = 16;
@@ -754,6 +738,7 @@
             // Show/hide delete buttons based on role
             if (currentUser.role === 'admin') {
                 document.querySelectorAll('.btn-delete').forEach(btn => btn.classList.add('show'));
+                document.getElementById('downloadBtn').classList.add('show');
             }
             
             loadData();
@@ -900,17 +885,6 @@
             renderTable();
         }
         
-        function getGitHubToken() {
-            let token = sessionStorage.getItem('github_token');
-            if (!token) {
-                token = prompt('Enter GitHub Personal Access Token (needs repo write access):');
-                if (token) {
-                    sessionStorage.setItem('github_token', token);
-                }
-            }
-            return token;
-        }
-        
         function deleteLead(leadId) {
             if (!currentUser || currentUser.role !== 'admin') {
                 alert('Only admin can delete leads!');
@@ -921,43 +895,26 @@
                 return;
             }
             
-            const token = getGitHubToken();
-            if (!token) {
-                alert('GitHub token required to delete leads!');
-                return;
-            }
-            
             const index = allData.findIndex(r => (r.date + r.phone + r.title) === leadId);
             if (index > -1) {
-                // Remove from local array
-                const removedLead = allData.splice(index, 1)[0];
-                
-                // Call API to update GitHub
-                fetch('/api/update-leads', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ leads: allData, token: token })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        updateStats();
-                        renderTable();
-                        alert('Lead deleted and GitHub updated!');
-                    } else {
-                        // Revert local change
-                        allData.splice(index, 0, removedLead);
-                        alert('Failed to update GitHub: ' + (data.error || 'Unknown error'));
-                    }
-                })
-                .catch(error => {
-                    // Revert local change
-                    allData.splice(index, 0, removedLead);
-                    alert('Error updating GitHub: ' + error.message);
-                });
+                allData.splice(index, 1);
+                updateStats();
+                renderTable();
+                alert('Lead deleted! Use "Download Updated JSON" to save changes.');
             }
         }
         
+        function downloadJSON() {
+            const data = { leads: allData, lastUpdated: new Date().toISOString() };
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'dashboard_data_updated.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
         function goBack() {
             const leadId = savedLeadId;
             expandedLead = null;
@@ -971,103 +928,6 @@
                     window.scrollTo({ top: savedScrollPosition, behavior: 'smooth' });
                 }
             }, 100);
-        }
-
-        function generateEmailFromTranscript(leadId) {
-            const lead = allData.find(r => (r.date + r.phone + r.title) === leadId);
-            
-            if (!lead) {
-                alert('Lead not found!');
-                return;
-            }
-            
-            const name = lead.name || 'Customer';
-            const topic = lead.title || 'our pharmaceutical products';
-            const phone = lead.phone || '';
-            
-            // Generate transcript
-            const transcript = generateTranscript(lead);
-            
-            // Create personalized email based on the specific inquiry
-            let emailReply = '';
-            let phoneVerification = '';
-            
-            // Phone verification line
-            if (phone) {
-                phoneVerification = `\nWe have your contact number as ${phone}. Please confirm if we can reach you on this number, or provide an alternative contact number.`;
-            } else {
-                phoneVerification = `\nWe don't have your contact number on file. Please provide your phone number and email address for follow-up.`;
-            }
-            
-            if (topic === 'Bengali Language Support') {
-                emailReply = `Dear ${name},
-
-Thank you for contacting Livealth BioPharma regarding Bengali language support.
-
-We have noted your need for product information in Bengali. Our complete pharmaceutical catalog covering generic medicines, contrast media, and specialty drugs is attached.
-
-Our team speaks Bengali and will call you within 24 hours to discuss your specific requirements and pricing for the Mumbai region.${phoneVerification}
-
-We look forward to supporting your pharmaceutical distribution needs.
-
-Best regards,
-Sales Team
-Livealth BioPharma
-📧 sales@livealthbiopharma.com`;
-            } else if (topic === 'Language Support Inquiry') {
-                emailReply = `Dear ${name},
-
-Thank you for inquiring about our language support options for pharmaceutical exports.
-
-We confirm that we provide full support in Hindi, English, and multiple regional languages for all communication including orders, documentation, and support.
-
-Our product catalog for cardiovascular medicines (Amlodipine, Atenolol, Metoprolol, etc.) is attached. Our sales team will contact you within 24 hours in your preferred language.${phoneVerification}
-
-Let us know your preferred language for future communications.
-
-Best regards,
-Sales Team
-Livealth BioPharma`;            
-            } else if (topic === 'Biopharma Products Services') {
-                emailReply = `Dear ${name},
-
-Thank you for your interest in Livealth BioPharma's product range and therapeutic offerings.
-
-As discussed, we specialize in generic medicines across cardiovascular, anti-infectives, CNS, gastroenterology, and specialty pharmaceuticals including contrast media for imaging.
-
-Our complete product catalog with detailed specifications, MOQ ($10,000 USD), and worldwide shipping details is attached. We will call you within 24 hours to discuss your specific therapeutic area requirements.${phoneVerification}
-
-Which therapeutic categories interest you the most? We're here to support your pharmaceutical needs.
-
-Best regards,
-Sales Team
-Livealth BioPharma`;
-            } else {
-                // Generic but still personalized
-                emailReply = `Dear ${name},
-
-Thank you for contacting Livealth BioPharma regarding ${topic}.
-
-Based on our conversation, I've attached our complete product catalog relevant to your inquiry. Our minimum order is $10,000 USD with worldwide shipping.
-
-Our sales team will contact you within 24 hours to discuss your specific requirements and provide detailed pricing.${phoneVerification}
-
-We appreciate your interest and look forward to serving your pharmaceutical needs.
-
-Best regards,
-Sales Team
-Livealth BioPharma`;
-            }
-            
-            const subject = `Follow-up: ${topic} - Livealth BioPharma`;
-            const body = encodeURIComponent(emailReply);
-            const recipient = lead.email || '';
-            
-            if (recipient) {
-                window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${body}`;
-            } else {
-                alert(`Email Reply for ${name}\n\nSubject: ${subject}\n\nNo email found for this lead.\n\n---\n\n${emailReply}`);
-            }
         }
 
         function renderTable() {
@@ -1132,10 +992,7 @@ Livealth BioPharma`;
                                     <div class="section-header">📝 Conversation Transcript</div>
                                     <div class="section-content">${transcript}</div>
                                 </div>
-                                <div class="transcript-actions">
-                                    <button class="back-btn show" onclick="goBack()">← Back to Leads List</button>
-                                    <button class="email-btn" onclick="generateEmailFromTranscript('${leadId}')">📧 Generate Email Reply</button>
-                                </div>
+                                <button class="back-btn show" onclick="goBack()">← Back to Leads List</button>
                             </div>
                         `;
                     }
