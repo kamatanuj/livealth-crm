@@ -710,9 +710,6 @@
             Last updated: April 30, 2026<br>
             <small>Source: D-Insights AI Voice Agent</small>
         </div>
-        
-        <button class="download-btn" id="downloadBtn" onclick="downloadJSON()">📥 Download Updated JSON</button>
-    </div>
 
     <script>
         const PAGE_SIZE = 16;
@@ -757,7 +754,6 @@
             // Show/hide delete buttons based on role
             if (currentUser.role === 'admin') {
                 document.querySelectorAll('.btn-delete').forEach(btn => btn.classList.add('show'));
-                document.getElementById('downloadBtn').classList.add('show');
             }
             
             loadData();
@@ -919,21 +915,10 @@
                 allData.splice(index, 1);
                 updateStats();
                 renderTable();
-                alert('Lead deleted! Use "Download Updated JSON" to save changes.');
+                alert('Lead deleted!');
             }
         }
         
-        function downloadJSON() {
-            const data = { leads: allData, lastUpdated: new Date().toISOString() };
-            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'dashboard_data_updated.json';
-            a.click();
-            URL.revokeObjectURL(url);
-        }
-
         function goBack() {
             const leadId = savedLeadId;
             expandedLead = null;
