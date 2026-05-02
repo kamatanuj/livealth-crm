@@ -784,7 +784,7 @@
 
         async function loadData() {
             try {
-                const resp = await fetch('dashboard_data.json');
+                const resp = await fetch('dashboard_data.json?v=' + new Date().getTime());
                 const data = await resp.json();
                 allData = data.leads;
                 updateStats();
@@ -941,18 +941,22 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        updateStats();
-                        renderTable();
+                        // Reload data from server to display the new data
+                        loadData();
                         alert('Lead deleted and GitHub updated!');
                     } else {
                         // Revert local change
                         allData.splice(index, 0, removedLead);
+                        updateStats();
+                        renderTable();
                         alert('Failed to update GitHub: ' + (data.error || 'Unknown error'));
                     }
                 })
                 .catch(error => {
                     // Revert local change
                     allData.splice(index, 0, removedLead);
+                    updateStats();
+                    renderTable();
                     alert('Error updating GitHub: ' + error.message);
                 });
             }
