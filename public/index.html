@@ -671,9 +671,23 @@
         </div>
     </div>
     
+    <!-- Change Password Modal -->
+    <div class="login-modal" id="changePasswordModal">
+        <div class="login-box">
+            <h2>🔑 Change Password</h2>
+            <input type="password" class="login-input" id="currentPassword" placeholder="Current Password" onkeypress="if(event.key==='Enter') changePassword()">
+            <input type="password" class="login-input" id="newPassword" placeholder="New Password (min 4 chars)" onkeypress="if(event.key==='Enter') changePassword()">
+            <input type="password" class="login-input" id="confirmPassword" placeholder="Confirm New Password" onkeypress="if(event.key==='Enter') changePassword()">
+            <button class="login-btn" onclick="changePassword()">Update Password</button>
+            <button class="login-btn" style="background: rgba(239, 68, 68, 0.3); margin-top: 8px;" onclick="hideChangePasswordModal()">Cancel</button>
+            <div class="login-error" id="passwordError">Invalid current password!</div>
+        </div>
+    </div>
+    
     <div class="user-info" id="userInfo">
         <span id="userRole"></span>
         <button class="logout-btn" onclick="logout()">Logout</button>
+        <button class="logout-btn" style="background: rgba(16, 185, 129, 0.3); color: #10b981;" onclick="showChangePasswordModal()">🔑 Change Password</button>
     </div>
     
     <div class="container" id="mainContainer" style="display: none;">
@@ -729,11 +743,23 @@
         let savedLeadId = null;
         let currentUser = null;
         
-        // Hardcoded credentials (MVP - client-side only)
-        const USERS = {
-            'admin': { password: 'admin123', role: 'admin' },
-            'user': { password: 'user123', role: 'user' }
-        };
+        // Load credentials from localStorage or use defaults
+        function loadCredentials() {
+            const saved = localStorage.getItem('crm_credentials');
+            if (saved) {
+                return JSON.parse(saved);
+            }
+            return {
+                'admin': { password: 'admin123', role: 'admin' },
+                'user': { password: 'user123', role: 'user' }
+            };
+        }
+        
+        function saveCredentials(creds) {
+            localStorage.setItem('crm_credentials', JSON.stringify(creds));
+        }
+        
+        let USERS = loadCredentials();
         
         // Check auth on load
         function checkAuth() {
@@ -779,6 +805,53 @@
             } else {
                 errorEl.classList.add('show');
             }
+        }
+        
+        function showChangePasswordModal() {
+            document.getElementById('changePasswordModal').classList.add('show');
+            document.getElementById('currentPassword').value = '';
+            document.getElementById('newPassword').value = '';
+            document.getElementById('confirmPassword').value = '';
+            document.getElementById('passwordError').classList.remove('show');
+        }
+        
+        function hideChangePasswordModal() {
+            document.getElementById('changePasswordModal').classList.remove('show');
+        }
+        
+        function changePassword() {
+            const current = document.getElementById('currentPassword').value;
+            const newPass = document.getElementById('newPassword').value;
+            const confirmPass = document.getElementById('confirmPassword').value;
+            const errorEl = document.getElementById('passwordError');
+            
+            // Validate current password
+            if (!USERS[currentUser.username] || USERS[currentUser.username].password !== current) {
+                errorEl.textContent = 'Invalid current password!';
+                errorEl.classList.add('show');
+                return;
+            }
+            
+            // Validate new password length
+            if (newPass.length < 4) {
+                errorEl.textContent = 'Password must be at least 4 characters!';
+                errorEl.classList.add('show');
+                return;
+            }
+            
+            // Validate passwords match
+            if (newPass !== confirmPass) {
+                errorEl.textContent = 'New passwords do not match!';
+                errorEl.classList.add('show');
+                return;
+            }
+            
+            // Update password
+            USERS[currentUser.username].password = newPass;
+            saveCredentials(USERS);
+            
+            alert('Password updated successfully!' );
+            hideChangePasswordModal();
         }
         
         function logout() {
