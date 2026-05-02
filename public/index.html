@@ -87,9 +87,6 @@
         }
         
         .user-info {
-            position: absolute;
-            top: 15px;
-            right: 15px;
             display: none;
             align-items: center;
             gap: 10px;
@@ -97,6 +94,7 @@
             padding: 8px 15px;
             border-radius: 20px;
             font-size: 0.9em;
+            margin-bottom: 15px;
         }
         
         .user-info.show {
@@ -168,7 +166,7 @@
         .container { 
             max-width: 1100px; 
             margin: 0 auto; 
-            padding: 60px 15px 15px 15px; 
+            padding: 200px 15px 15px 15px; 
         }
         
         h1 { 
@@ -525,7 +523,7 @@
             }
             
             .container {
-                padding: 60px 10px 10px 10px;
+                padding: 200px 10px 10px 10px;
             }
             
             h1 {
@@ -651,7 +649,7 @@
         /* Fix for very small screens */
         @media (max-width: 360px) {
             .container {
-                padding: 8px;
+                padding: 200px 8px 8px 8px;
             }
             
             .stats {
@@ -684,13 +682,14 @@
         </div>
     </div>
     
+
+    
+    <div class="container" id="mainContainer" style="display: none;">
     <div class="user-info" id="userInfo">
         <span id="userRole"></span>
         <button class="logout-btn" onclick="logout()">Logout</button>
         <button class="logout-btn" style="background: rgba(16, 185, 129, 0.3); color: #10b981;" onclick="showChangePasswordModal()">🔑 Change Password</button>
     </div>
-    
-    <div class="container" id="mainContainer" style="display: none;">
         <h1>🏥 Livealth CRM</h1>
         <div class="note">📅 Leads from D-Insights AI Voice Agent conversations</div>
         
