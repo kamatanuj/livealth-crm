@@ -1221,6 +1221,11 @@ Livealth BioPharma`;
             html += `<button class="page-btn" onclick="goToPage(${totalPages})" ${currentPage === totalPages ? 'disabled' : ''}>»</button>`;
             
             document.getElementById('pagination').innerHTML = html;
+            
+            // Show delete buttons for admin
+            if (currentUser && currentUser.role === 'admin') {
+                document.querySelectorAll('.btn-delete').forEach(btn => btn.classList.add('show'));
+            }
         }
 
         function goToPage(page) {
