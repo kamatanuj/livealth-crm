@@ -5,11 +5,14 @@ export async function onRequestPost(context) {
     const body = await request.json();
     const { leads } = body;
     
-    // Get token from environment variable (set in Cloudflare Pages settings)
+    // Debug: Check if token exists
     const token = env.GITHUB_TOKEN;
     
     if (!token) {
-      return new Response(JSON.stringify({ error: 'Server misconfigured: Missing GITHUB_TOKEN environment variable' }), {
+      return new Response(JSON.stringify({ 
+        error: 'Server misconfigured: Missing GITHUB_TOKEN environment variable',
+        debug: 'env.GITHUB_TOKEN is undefined or empty'
+      }), {
         status: 500,
         headers: { 'Content-Type': 'application/json' }
       });
@@ -26,13 +29,19 @@ export async function onRequestPost(context) {
       {
         headers: {
           'Authorization': `token ${token}`,
-          'Accept': 'application/vnd.github.v3+json'
+          'Accept': 'application/vnd.github.v3+json',
+          'User-Agent': 'Cloudflare-Worker'
         }
       }
     );
     
     if (!getFileResponse.ok) {
-      return new Response(JSON.stringify({ error: 'Failed to get file from GitHub' }), {
+      const errorText = await getFileResponse.text();
+      return new Response(JSON.stringify({ 
+        error: 'Failed to get file from GitHub',
+        status: getFileResponse.status,
+        details: errorText
+      }), {
         status: 500,
         headers: { 'Content-Type': 'application/json' }
       });
@@ -52,7 +61,8 @@ export async function onRequestPost(context) {
         headers: {
           'Authorization': `token ${token}`,
           'Accept': 'application/vnd.github.v3+json',
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'User-Agent': 'Cloudflare-Worker'
         },
         body: JSON.stringify({
           message: 'Delete lead - auto-update from CRM',
@@ -75,7 +85,7 @@ export async function onRequestPost(context) {
     });
     
   } catch (error) {
-    return new Response(JSON.stringify({ error: error.message }), {
+    return new Response(JSON.stringify({ error: error.message, stack: error.stack }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' }
     });
