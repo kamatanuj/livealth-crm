@@ -56,17 +56,6 @@
       "messages": 3
     },
     {
-      "name": "Anuj",
-      "email": "",
-      "phone": "9820370923",
-      "category": "HOT",
-      "date": "2026-04-28",
-      "title": "Nigeria Pharma Export",
-      "duration": 137,
-      "language": "en",
-      "messages": 13
-    },
-    {
       "name": "",
       "email": "",
       "phone": "9818118322",
@@ -727,5 +716,5 @@
       "messages": 7
     }
   ],
-  "lastUpdated": "2026-05-02T06:05:33.868Z"
+  "lastUpdated": "2026-05-04T03:07:13.687Z"
 }
