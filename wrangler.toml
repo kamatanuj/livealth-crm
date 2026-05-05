@@ -1,0 +1,5 @@
+name = "livealth-crm"
+pages_build_output_dir = "public"
+functions_dir = "functions"
+
+compatibility_date = "2024-05-01"
