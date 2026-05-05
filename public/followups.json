@@ -39,6 +39,15 @@
       "rep": "admin",
       "nextFollowUpDate": "2026-05-05",
       "status": "pending"
+    },
+    {
+      "id": "fup_1777979289688",
+      "type": "email",
+      "timestamp": "2026-05-05T11:08:09.688Z",
+      "content": "Email sent: Dear Umang,\n\nThank you for contacting Livealth BioPharma regarding Order Immune Boosters.\n\nBased on ...",
+      "rep": "admin",
+      "nextFollowUpDate": "2026-05-07",
+      "status": "pending"
     }
   ]
 }
