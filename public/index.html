@@ -395,6 +395,101 @@
             border: 1px solid rgba(139, 92, 246, 0.3); 
         }
         
+        .section.followups { 
+            background: rgba(59, 130, 246, 0.1); 
+            border: 1px solid rgba(59, 130, 246, 0.3); 
+        }
+        
+        .followup-timeline {
+            max-height: 300px;
+            overflow-y: auto;
+            margin-bottom: 15px;
+        }
+        
+        .followup-entry {
+            background: rgba(255,255,255,0.05);
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .followup-entry .badge {
+            font-size: 10px;
+            margin-right: 5px;
+        }
+        
+        .followup-entry p {
+            margin: 5px 0;
+            color: #ddd;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        
+        .followup-entry small {
+            color: #888;
+            font-size: 0.8em;
+        }
+        
+        .followup-form {
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .followup-form select,
+        .followup-form textarea,
+        .followup-form input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            font-size: 14px;
+            margin-bottom: 8px;
+            -webkit-appearance: none;
+        }
+        
+        .followup-form textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+        
+        .followup-form button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(59, 130, 246, 0.3);
+            color: #3b82f6;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+            min-height: 44px;
+        }
+        
+        .followup-form button:hover {
+            background: rgba(59, 130, 246, 0.5);
+        }
+        
+        .btn-expand.followups { 
+            background: rgba(59, 130, 246, 0.2); 
+            color: #3b82f6; 
+        }
+        
+        .btn-expand.followups:hover { 
+            background: rgba(59, 130, 246, 0.4); 
+        }
+        
+        .followup-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 10px;
+            background: rgba(59, 130, 246, 0.2);
+            color: #3b82f6;
+            margin-left: 5px;
+        }
+        
         .section-header { 
             font-weight: 600; 
             margin-bottom: 10px; 
@@ -717,6 +812,7 @@
             <button class="filter-btn" onclick="setCategory('HOT')">🔥 HOT (<span id="filter-hot">0</span>)</button>
             <button class="filter-btn" onclick="setCategory('COLD')">❄️ COLD (<span id="filter-cold">0</span>)</button>
             <button class="filter-btn" onclick="setCategory('EMAIL_ONLY')">📧 EMAIL (<span id="filter-email">0</span>)</button>
+            <button class="filter-btn" onclick="setCategory('DUE')">📅 DUE (<span id="filter-due">0</span>)</button>
         </div>
 
         <input type="text" class="search-box" placeholder="Search by name, email, phone, or topic..." oninput="handleSearch(this.value)">
@@ -741,6 +837,7 @@
         let savedScrollPosition = 0;
         let savedLeadId = null;
         let currentUser = null;
+        let followUpsCache = {}; // Cache for follow-ups data
         
         // Load credentials from localStorage or use defaults
         function loadCredentials() {
@@ -868,6 +965,11 @@
                 allData = data.leads;
                 updateStats();
                 renderTable();
+                
+                // Load follow-ups for DUE filter
+                if (currentCategory === 'DUE') {
+                    await loadAllFollowUps();
+                }
             } catch (e) {
                 console.error('Error loading data:', e);
             }
@@ -879,8 +981,17 @@
             expandedLead = null;
             document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
-            updateStats();
-            renderTable();
+            
+            // Load follow-ups if DUE filter is selected
+            if (cat === 'DUE') {
+                loadAllFollowUps().then(() => {
+                    updateStats();
+                    renderTable();
+                });
+            } else {
+                updateStats();
+                renderTable();
+            }
         }
 
         function handleSearch(query) {
@@ -896,6 +1007,21 @@
             const cold = allData.filter(r => r.category === 'COLD').length;
             const email = allData.filter(r => r.category === 'EMAIL_ONLY').length;
             
+            // Count leads with due follow-ups
+            let dueCount = 0;
+            if (Object.keys(followUpsCache).length > 0) {
+                const today = new Date().toISOString().split('T')[0];
+                dueCount = allData.filter(row => {
+                    const leadId = row.date + row.phone + row.title;
+                    const followUps = followUpsCache[leadId] || [];
+                    return followUps.some(fup => 
+                        fup.nextFollowUpDate && 
+                        fup.nextFollowUpDate <= today && 
+                        fup.status === 'pending'
+                    );
+                }).length;
+            }
+            
             document.getElementById('stat-total').textContent = total;
             document.getElementById('stat-hot').textContent = hot;
             document.getElementById('stat-cold').textContent = cold;
@@ -904,8 +1030,21 @@
             document.getElementById('filter-hot').textContent = hot;
             document.getElementById('filter-cold').textContent = cold;
             document.getElementById('filter-email').textContent = email;
+            const filterDueEl = document.getElementById('filter-due');
+            if (filterDueEl) filterDueEl.textContent = dueCount;
         }
 
+        // Load all follow-ups for filtering
+        async function loadAllFollowUps() {
+            try {
+                const response = await fetch('/api/followups');
+                followUpsCache = await response.json();
+            } catch (error) {
+                console.error('Error loading all follow-ups:', error);
+                followUpsCache = {};
+            }
+        }
+        
         function getFiltered() {
             return allData.filter(row => {
                 const matchCat = currentCategory === 'all' || row.category === currentCategory;
@@ -914,6 +1053,19 @@
                     row.email.toLowerCase().includes(searchQuery) || 
                     row.phone.includes(searchQuery) ||
                     (row.title && row.title.toLowerCase().includes(searchQuery));
+                
+                // Handle DUE filter
+                if (currentCategory === 'DUE') {
+                    const leadId = row.date + row.phone + row.title;
+                    const followUps = followUpsCache[leadId] || [];
+                    const today = new Date().toISOString().split('T')[0];
+                    return followUps.some(fup => 
+                        fup.nextFollowUpDate && 
+                        fup.nextFollowUpDate <= today && 
+                        fup.status === 'pending'
+                    );
+                }
+                
                 return matchCat && matchSearch;
             });
         }
@@ -1131,6 +1283,9 @@ Livealth BioPharma`;
             const body = encodeURIComponent(emailReply);
             const recipient = lead.email || '';
             
+            // Log this email as a follow-up
+            logEmailAsFollowUp(leadId, emailReply);
+            
             if (recipient) {
                 window.location.href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${body}`;
             } else {
@@ -1158,6 +1313,7 @@ Livealth BioPharma`;
                     const transcript = generateTranscript(lead);
                     
                     let content = '';
+                    
                     if (section === 'summary') {
                         content = `
                             <div class="lead-card" style="background: rgba(0,0,0,0.2);" data-lead-id="${leadId}">
@@ -1180,7 +1336,7 @@ Livealth BioPharma`;
                                 <button class="back-btn show" onclick="goBack()">← Back to Leads List</button>
                             </div>
                         `;
-                    } else {
+                    } else if (section === 'transcript') {
                         content = `
                             <div class="lead-card" style="background: rgba(0,0,0,0.2);" data-lead-id="${leadId}">
                                 <div class="lead-header">
@@ -1206,6 +1362,42 @@ Livealth BioPharma`;
                                 </div>
                             </div>
                         `;
+                    } else if (section === 'followups') {
+                        content = `
+                            <div class="lead-card" style="background: rgba(0,0,0,0.2);" data-lead-id="${leadId}">
+                                <div class="lead-header">
+                                    <div>
+                                        <div class="lead-name">${lead.name || 'Unknown'}</div>
+                                        <div class="lead-info">
+                                            ${lead.phone ? `<span>📱 <a href="tel:${lead.phone}">${lead.phone}</a></span>` : ''}
+                                            ${lead.email ? `<span>✉️ ${lead.email}</span>` : ''}
+                                            <span>📅 ${lead.date}</span>
+                                        </div>
+                                        <div class="convo-title">📞 ${lead.title || 'General Inquiry'}</div>
+                                    </div>
+                                    <span class="badge badge-${lead.category.toLowerCase()}">${lead.category === 'HOT' ? '🔥 HOT' : lead.category === 'COLD' ? '❄️ COLD' : '📧 EMAIL'}</span>
+                                </div>
+                                <div class="section followups show">
+                                    <div class="section-header">📅 Follow-Ups Timeline</div>
+                                    <div class="followup-timeline" id="followup-timeline-${leadId}">
+                                        <p style="color:#888;font-size:0.9em;">Loading follow-ups...</p>
+                                    </div>
+                                    <div class="followup-form">
+                                        <select id="followup-type-${leadId}">
+                                            <option value="note">📝 Note</option>
+                                            <option value="email">📧 Email</option>
+                                            <option value="call">📞 Call</option>
+                                        </select>
+                                        <textarea id="followup-content-${leadId}" placeholder="Add note or log interaction..."></textarea>
+                                        <input type="date" id="followup-date-${leadId}" placeholder="Next follow-up date">
+                                        <button onclick="addFollowUp('${leadId}')">Log Follow-Up</button>
+                                    </div>
+                                </div>
+                                <button class="back-btn show" onclick="goBack()">← Back to Leads List</button>
+                            </div>
+                        `;
+                        // Load follow-ups after rendering
+                        setTimeout(() => loadFollowUps(leadId), 100);
                     }
                     
                     container.innerHTML = content;
@@ -1239,6 +1431,9 @@ Livealth BioPharma`;
                             </button>
                             <button class="btn-expand transcript" onclick="toggleSection('${leadId}', 'transcript')">
                                 📖 View Transcript
+                            </button>
+                            <button class="btn-expand followups" onclick="toggleSection('${leadId}', 'followups')">
+                                📅 Follow-Ups
                             </button>
                             <button class="btn-delete" onclick="deleteLead('${leadId}')">🗑️ Delete</button>
                         </div>
@@ -1285,13 +1480,133 @@ Livealth BioPharma`;
             }
         }
 
+        // Follow-up functions
+        async function loadFollowUps(leadId) {
+            try {
+                const response = await fetch(`/api/followups?leadId=${leadId}`);
+                const followUps = await response.json();
+                
+                const timeline = document.getElementById(`followup-timeline-${leadId}`);
+                if (!timeline) return;
+                
+                if (followUps.length === 0) {
+                    timeline.innerHTML = '<p style="color:#888;font-size:0.9em;">No follow-ups yet. Add one below!</p>';
+                    return;
+                }
+                
+                // Sort by timestamp, newest first
+                followUps.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+                
+                timeline.innerHTML = followUps.map(fup => {
+                    const typeIcon = fup.type === 'email' ? '📧' : fup.type === 'call' ? '📞' : '📝';
+                    const date = new Date(fup.timestamp).toLocaleDateString('en-US', { 
+                        month: 'short', 
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    });
+                    const nextDate = fup.nextFollowUpDate ? ` | Next: ${fup.nextFollowUpDate}` : '';
+                    
+                    return `
+                        <div class="followup-entry">
+                            <span class="badge badge-${fup.type}">${typeIcon} ${fup.type.toUpperCase()}</span>
+                            <p>${fup.content}</p>
+                            <small>By ${fup.rep} on ${date}${nextDate}</small>
+                        </div>
+                    `;
+                }).join('');
+            } catch (error) {
+                console.error('Error loading follow-ups:', error);
+                const timeline = document.getElementById(`followup-timeline-${leadId}`);
+                if (timeline) {
+                    timeline.innerHTML = '<p style="color:#ef4444;font-size:0.9em;">Error loading follow-ups</p>';
+                }
+            }
+        }
+        
+        async function addFollowUp(leadId) {
+            if (!currentUser) {
+                alert('Please login first!');
+                return;
+            }
+            
+            const type = document.getElementById(`followup-type-${leadId}`).value;
+            const content = document.getElementById(`followup-content-${leadId}`).value;
+            const nextDate = document.getElementById(`followup-date-${leadId}`).value;
+            
+            if (!content.trim()) {
+                alert('Please enter follow-up content!');
+                return;
+            }
+            
+            try {
+                const response = await fetch('/api/followups', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        leadId: leadId,
+                        type: type,
+                        content: content,
+                        rep: currentUser.username,
+                        nextFollowUpDate: nextDate || null,
+                        status: 'pending'
+                    })
+                });
+                
+                if (response.ok) {
+                    // Clear form
+                    document.getElementById(`followup-content-${leadId}`).value = '';
+                    document.getElementById(`followup-date-${leadId}`).value = '';
+                    
+                    // Reload follow-ups
+                    loadFollowUps(leadId);
+                    
+                    // Update stats if DUE filter is active
+                    if (currentCategory === 'DUE') {
+                        updateStats();
+                        renderTable();
+                    }
+                } else {
+                    alert('Failed to add follow-up!');
+                }
+            } catch (error) {
+                console.error('Error adding follow-up:', error);
+                alert('Error adding follow-up: ' + error.message);
+            }
+        }
+        
+        // Update generateEmailFromTranscript to also log email as follow-up
+        const originalGenerateEmail = generateEmailFromTranscript;
+        
+        // Override the function to also log follow-up
+        async function logEmailAsFollowUp(leadId, emailContent) {
+            if (!currentUser) return;
+            
+            try {
+                await fetch('/api/followups', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        leadId: leadId,
+                        type: 'email',
+                        content: `Email sent: ${emailContent.substring(0, 100)}...`,
+                        rep: currentUser.username,
+                        nextFollowUpDate: new Date(Date.now() + 2*24*60*60*1000).toISOString().split('T')[0],
+                        status: 'pending'
+                    })
+                });
+            } catch (error) {
+                console.error('Error logging email follow-up:', error);
+            }
+        }
+        
         function goToPage(page) {
             currentPage = page;
             expandedLead = null;
             renderTable();
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
-
+        
         checkAuth();
     </script>
 </body>
