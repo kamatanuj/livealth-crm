@@ -78,5 +78,16 @@
       "nextFollowUpDate": "2026-05-07",
       "status": "pending"
     }
+  ],
+  "2026-04-238395049046Clonidine Cyprus Availability": [
+    {
+      "id": "fup_1777979710233",
+      "type": "email",
+      "timestamp": "2026-05-05T11:15:10.233Z",
+      "content": "Email sent: Dear Doctor,\n\nThank you for contacting Livealth BioPharma regarding Clonidine Cyprus Availability.\n\n...",
+      "rep": "admin",
+      "nextFollowUpDate": "2026-05-07",
+      "status": "pending"
+    }
   ]
 }
