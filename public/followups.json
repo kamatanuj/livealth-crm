@@ -58,5 +58,16 @@
       "nextFollowUpDate": "2026-05-07",
       "status": "pending"
     }
+  ],
+  "2026-04-299405062501Livealth Product Inquiry": [
+    {
+      "id": "fup_1777979516002",
+      "type": "email",
+      "timestamp": "2026-05-05T11:11:56.002Z",
+      "content": "Email sent: Dear Vaibhav,\n\nThank you for contacting Livealth BioPharma regarding Livealth Product Inquiry.\n\nBase...",
+      "rep": "admin",
+      "nextFollowUpDate": "2026-05-07",
+      "status": "pending"
+    }
   ]
 }
