@@ -1,1 +1,13 @@
-{}
+{
+  "test123": [
+    {
+      "id": "fup_1777973235214",
+      "type": "note",
+      "timestamp": "2026-05-05T09:27:15.214Z",
+      "content": "Test follow-up from server",
+      "rep": "admin",
+      "nextFollowUpDate": "2026-05-10",
+      "status": "pending"
+    }
+  ]
+}
