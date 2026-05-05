@@ -1034,13 +1034,13 @@
             if (filterDueEl) filterDueEl.textContent = dueCount;
         }
 
-        // Load all follow-ups for filtering
+        // Load all follow-ups for filtering (from localStorage)
         async function loadAllFollowUps() {
             try {
-                const response = await fetch('/api/followups');
-                followUpsCache = await response.json();
+                const stored = localStorage.getItem('livealth_followups');
+                followUpsCache = stored ? JSON.parse(stored) : {};
             } catch (error) {
-                console.error('Error loading all follow-ups:', error);
+                console.error('Error loading follow-ups:', error);
                 followUpsCache = {};
             }
         }
@@ -1480,24 +1480,25 @@ Livealth BioPharma`;
             }
         }
 
-        // Follow-up functions
+        // Follow-up functions (using localStorage)
         async function loadFollowUps(leadId) {
             try {
-                const response = await fetch(`/api/followups?leadId=${leadId}`);
-                const followUps = await response.json();
+                const stored = localStorage.getItem('livealth_followups');
+                const followUps = stored ? JSON.parse(stored) : {};
+                const leadFollowUps = followUps[leadId] || [];
                 
                 const timeline = document.getElementById(`followup-timeline-${leadId}`);
                 if (!timeline) return;
                 
-                if (followUps.length === 0) {
+                if (leadFollowUps.length === 0) {
                     timeline.innerHTML = '<p style="color:#888;font-size:0.9em;">No follow-ups yet. Add one below!</p>';
                     return;
                 }
                 
                 // Sort by timestamp, newest first
-                followUps.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+                leadFollowUps.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
                 
-                timeline.innerHTML = followUps.map(fup => {
+                timeline.innerHTML = leadFollowUps.map(fup => {
                     const typeIcon = fup.type === 'email' ? '📧' : fup.type === 'call' ? '📞' : '📝';
                     const date = new Date(fup.timestamp).toLocaleDateString('en-US', { 
                         month: 'short', 
@@ -1540,34 +1541,38 @@ Livealth BioPharma`;
             }
             
             try {
-                const response = await fetch('/api/followups', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        leadId: leadId,
-                        type: type,
-                        content: content,
-                        rep: currentUser.username,
-                        nextFollowUpDate: nextDate || null,
-                        status: 'pending'
-                    })
+                // Load existing follow-ups
+                const stored = localStorage.getItem('livealth_followups');
+                const followUps = stored ? JSON.parse(stored) : {};
+                
+                if (!followUps[leadId]) followUps[leadId] = [];
+                
+                // Add new follow-up
+                followUps[leadId].push({
+                    id: `fup_${Date.now()}`,
+                    type: type,
+                    timestamp: new Date().toISOString(),
+                    content: content,
+                    rep: currentUser.username,
+                    nextFollowUpDate: nextDate || null,
+                    status: 'pending'
                 });
                 
-                if (response.ok) {
-                    // Clear form
-                    document.getElementById(`followup-content-${leadId}`).value = '';
-                    document.getElementById(`followup-date-${leadId}`).value = '';
-                    
-                    // Reload follow-ups
-                    loadFollowUps(leadId);
-                    
-                    // Update stats if DUE filter is active
-                    if (currentCategory === 'DUE') {
-                        updateStats();
-                        renderTable();
-                    }
-                } else {
-                    alert('Failed to add follow-up!');
+                // Save back to localStorage
+                localStorage.setItem('livealth_followups', JSON.stringify(followUps));
+                
+                // Clear form
+                document.getElementById(`followup-content-${leadId}`).value = '';
+                document.getElementById(`followup-date-${leadId}`).value = '';
+                
+                // Reload follow-ups
+                loadFollowUps(leadId);
+                
+                // Update stats if DUE filter is active
+                if (currentCategory === 'DUE') {
+                    followUpsCache = followUps;
+                    updateStats();
+                    renderTable();
                 }
             } catch (error) {
                 console.error('Error adding follow-up:', error);
@@ -1575,26 +1580,30 @@ Livealth BioPharma`;
             }
         }
         
-        // Update generateEmailFromTranscript to also log email as follow-up
-        const originalGenerateEmail = generateEmailFromTranscript;
-        
-        // Override the function to also log follow-up
+        // Log email as follow-up (localStorage version)
         async function logEmailAsFollowUp(leadId, emailContent) {
             if (!currentUser) return;
             
             try {
-                await fetch('/api/followups', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        leadId: leadId,
-                        type: 'email',
-                        content: `Email sent: ${emailContent.substring(0, 100)}...`,
-                        rep: currentUser.username,
-                        nextFollowUpDate: new Date(Date.now() + 2*24*60*60*1000).toISOString().split('T')[0],
-                        status: 'pending'
-                    })
+                const stored = localStorage.getItem('livealth_followups');
+                const followUps = stored ? JSON.parse(stored) : {};
+                
+                if (!followUps[leadId]) followUps[leadId] = [];
+                
+                followUps[leadId].push({
+                    id: `fup_${Date.now()}`,
+                    type: 'email',
+                    timestamp: new Date().toISOString(),
+                    content: `Email sent: ${emailContent.substring(0, 100)}...`,
+                    rep: currentUser.username,
+                    nextFollowUpDate: new Date(Date.now() + 2*24*60*60*1000).toISOString().split('T')[0],
+                    status: 'pending'
                 });
+                
+                localStorage.setItem('livealth_followups', JSON.stringify(followUps));
+                
+                // Update cache
+                followUpsCache = followUps;
             } catch (error) {
                 console.error('Error logging email follow-up:', error);
             }
