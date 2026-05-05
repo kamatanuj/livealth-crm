@@ -28,6 +28,15 @@
       "rep": "admin",
       "nextFollowUpDate": "2026-05-07",
       "status": "pending"
+    },
+    {
+      "id": "fup_1777980486624",
+      "type": "email",
+      "timestamp": "2026-05-05T11:28:06.624Z",
+      "content": "Email sent: Dear Surat,\n\nThank you for inquiring about our language support options for pharmaceutical exports.\n...",
+      "rep": "user",
+      "nextFollowUpDate": "2026-05-07",
+      "status": "pending"
     }
   ],
   "2026-04-299554067071Order Immune Boosters": [
