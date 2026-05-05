@@ -19,6 +19,15 @@
       "rep": "admin",
       "nextFollowUpDate": "2026-05-05",
       "status": "pending"
+    },
+    {
+      "id": "fup_1777973446391",
+      "type": "email",
+      "timestamp": "2026-05-05T09:30:46.391Z",
+      "content": "Email sent: Dear Surat,\n\nThank you for inquiring about our language support options for pharmaceutical exports.\n...",
+      "rep": "admin",
+      "nextFollowUpDate": "2026-05-07",
+      "status": "pending"
     }
   ]
 }
