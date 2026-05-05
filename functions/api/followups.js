@@ -4,13 +4,11 @@ export async function onRequestGet(context) {
   const leadId = url.searchParams.get("leadId");
   
   try {
-    // GitHub API details
     const repoOwner = 'kamatanuj';
     const repoName = 'livealth-crm';
     const filePath = 'public/followups.json';
     
-    // Get followups file from GitHub
-    const getFileResponse = await fetch(
+    const res = await fetch(
       `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`,
       {
         headers: {
@@ -21,23 +19,18 @@ export async function onRequestGet(context) {
       }
     );
     
-    if (!getFileResponse.ok) {
-      // File doesn't exist yet, return empty object
-      if (getFileResponse.status === 404) {
+    if (!res.ok) {
+      if (res.status === 404) {
         return new Response(JSON.stringify({}), {
           headers: { 'Content-Type': 'application/json' }
         });
       }
-      return new Response(JSON.stringify({ error: 'Failed to fetch followups' }), {
-        status: 500,
-        headers: { 'Content-Type': 'application/json' }
-      });
+      throw new Error('Failed to fetch followups');
     }
     
-    const fileData = await getFileResponse.json();
-    const content = JSON.parse(decodeURIComponent(escape(atob(fileData.content))));
+    const fileData = await res.json();
+    const content = JSON.parse(atob(fileData.content));
     
-    // Return followups for specific lead or all
     if (leadId) {
       return new Response(JSON.stringify(content[leadId] || []), {
         headers: { 'Content-Type': 'application/json' }
@@ -70,13 +63,12 @@ export async function onRequestPost(context) {
       });
     }
     
-    // GitHub API details
     const repoOwner = 'kamatanuj';
     const repoName = 'livealth-crm';
     const filePath = 'public/followups.json';
     
-    // Get current followups file
-    const getFileResponse = await fetch(
+    // Get current file
+    const getRes = await fetch(
       `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`,
       {
         headers: {
@@ -90,61 +82,50 @@ export async function onRequestPost(context) {
     let followups = {};
     let sha = null;
     
-    if (getFileResponse.ok) {
-      const fileData = await getFileResponse.json();
+    if (getRes.ok) {
+      const fileData = await getRes.json();
       sha = fileData.sha;
-      followups = JSON.parse(decodeURIComponent(escape(atob(fileData.content))));
+      followups = JSON.parse(atob(fileData.content));
     }
     
-    // Initialize lead's followups array if not exists
-    if (!followups[leadId]) {
-      followups[leadId] = [];
-    }
-    
-    // Add new followup
-    const newFollowUp = {
+    // Add new follow-up
+    if (!followups[leadId]) followups[leadId] = [];
+    followups[leadId].push({
       id: `fup_${Date.now()}`,
       type,
       timestamp: new Date().toISOString(),
       content,
       rep,
       nextFollowUpDate: nextFollowUpDate || null,
-      status: status || "pending"
-    };
+      status: status || 'pending'
+    });
     
-    followups[leadId].push(newFollowUp);
-    
-    // Update file on GitHub
+    // Save back to GitHub
     const updatedContent = JSON.stringify(followups, null, 2);
     const base64Content = btoa(unescape(encodeURIComponent(updatedContent)));
     
-    const updateResponse = await fetch(
+    const saveRes = await fetch(
       `https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`,
       {
         method: 'PUT',
         headers: {
           'Authorization': `token ${env.GITHUB_TOKEN}`,
-          'Accept': 'application/vnd.github.v3+json',
           'Content-Type': 'application/json',
           'User-Agent': 'Cloudflare-Worker'
         },
         body: JSON.stringify({
-          message: `Add follow-up for lead ${leadId}`,
+          message: `Add follow-up for ${leadId}`,
           content: base64Content,
-          sha: sha || undefined
+          sha: sha
         })
       }
     );
     
-    if (!updateResponse.ok) {
-      const error = await updateResponse.json();
-      return new Response(JSON.stringify({ error: 'Failed to update followups', details: error }), {
-        status: 500,
-        headers: { 'Content-Type': 'application/json' }
-      });
+    if (!saveRes.ok) {
+      throw new Error('Failed to save followups');
     }
     
-    return new Response(JSON.stringify(newFollowUp), {
+    return new Response(JSON.stringify({ success: true }), {
       headers: { 'Content-Type': 'application/json' }
     });
     
