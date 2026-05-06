@@ -1531,7 +1531,7 @@ Livealth BioPharma`;
         }
 
         
-        // Add follow-up (save to followups.json via GitHub API)
+        // Add follow-up (calls server-side API)
         async function addFollowUp(leadId) {
             if (!currentUser) {
                 alert('Please login first!');
@@ -1548,29 +1548,8 @@ Livealth BioPharma`;
             }
             
             try {
-                // Get current followups.json from GitHub
-                const getRes = await fetch(
-                    `https://api.github.com/repos/kamatanuj/livealth-crm/contents/followups.json`,
-                    {
-                        headers: {
-                            'Authorization': `token ${env.GITHUB_TOKEN}`,
-                            'Accept': 'application/vnd.github.v3+json'
-                        }
-                    }
-                );
-                
-                let followups = {};
-                let sha = null;
-                
-                if (getRes.ok) {
-                    const fileData = await getRes.json();
-                    sha = fileData.sha;
-                    followups = JSON.parse(atob(fileData.content));
-                }
-                
-                // Add new follow-up
-                if (!followups[leadId]) followups[leadId] = [];
-                followups[leadId].push({
+                // Create follow-up object
+                const followUp = {
                     id: `fup_${Date.now()}`,
                     type,
                     timestamp: new Date().toISOString(),
@@ -1578,32 +1557,23 @@ Livealth BioPharma`;
                     rep: currentUser.username,
                     nextFollowUpDate: nextDate || null,
                     status: 'pending'
+                };
+                
+                // Call server-side API to save to GitHub
+                const response = await fetch('/api/save-followup', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ leadId, followUp })
                 });
                 
-                // Save back to GitHub
-                const updatedContent = JSON.stringify(followups, null, 2);
-                const base64Content = btoa(unescape(encodeURIComponent(updatedContent)));
-                
-                const saveRes = await fetch(
-                    `https://api.github.com/repos/kamatanuj/livealth-crm/contents/followups.json`,
-                    {
-                        method: 'PUT',
-                        headers: {
-                            'Authorization': `token ${env.GITHUB_TOKEN}`,
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            message: `Add follow-up for ${leadId}`,
-                            content: base64Content,
-                            sha: sha
-                        })
-                    }
-                );
-                
-                if (!saveRes.ok) throw new Error('Failed to save follow-up');
+                if (!response.ok) {
+                    const error = await response.json();
+                    throw new Error(error.error || 'Failed to save follow-up');
+                }
                 
                 // Update cache
-                followupsCache[leadId] = followups[leadId];
+                if (!followupsCache[leadId]) followupsCache[leadId] = [];
+                followupsCache[leadId].push(followUp);
                 
                 // Clear form
                 document.getElementById(`followup-content-${leadId}`).value = '';
@@ -1620,12 +1590,12 @@ Livealth BioPharma`;
                     });
                 }
                 
-                console.log('✅ Follow-up saved to GitHub!');
+                console.log('✅ Follow-up saved!');
                 alert('Follow-up added successfully!');
                 
             } catch (err) {
                 console.error('Error saving follow-up:', err);
-                alert('Error saving follow-up. Check console.');
+                alert('Error saving follow-up: ' + err.message);
             }
         }
         
