@@ -1531,6 +1531,7 @@ Livealth BioPharma`;
         }
 
         
+        // Add follow-up (client-side update)
         async function addFollowUp(leadId) {
             if (!currentUser) {
                 alert('Please login first!');
@@ -1539,7 +1540,7 @@ Livealth BioPharma`;
             
             const type = document.getElementById(`followup-type-${leadId}`).value;
             const content = document.getElementById(`followup-content-${leadId}`).value;
-            const nextDate = document.getElementById(`followup-date-${leadId}`).value;
+            const nextDate = document.getElementById(`followup-date-${leadId}`)?.value || '';
             
             if (!content.trim()) {
                 alert('Please enter follow-up content!');
@@ -1547,31 +1548,41 @@ Livealth BioPharma`;
             }
             
             try {
-                // Client-side only - no API call
-                console.log('📝 Saving follow-up client-side (needs GitHub API)');
-                const response = { ok: true };
+                // Get current followups from cache (loaded from embedded data)
+                if (!followUpsCache[leadId]) followUpsCache[leadId] = [];
                 
-                if (response.ok) {
-                    // Clear form
-                    document.getElementById(`followup-content-${leadId}`).value = '';
-                    document.getElementById(`followup-date-${leadId}`).value = '';
+                // Add new follow-up
+                followUpsCache[leadId].push({
+                    id: `fup_${Date.now()}`,
+                    type,
+                    timestamp: new Date().toISOString(),
+                    content,
+                    rep: currentUser.username,
+                    nextFollowUpDate: nextDate || null,
+                    status: 'pending'
+                });
+                
+                // Clear form
+                document.getElementById(`followup-content-${leadId}`).value = '';
+                document.getElementById(`followup-date-${leadId}`).value = '';
                     
-                    // Reload follow-ups
-                    loadFollowUps(leadId);
+                // Reload follow-ups for this lead
+                loadFollowUps(leadId);
                     
-                    // Update stats if DUE filter is active
-                    if (currentCategory === 'DUE') {
-                        loadAllFollowUps().then(() => {
-                            updateStats();
-                            renderTable();
-                        });
-                    }
-                } else {
-                    alert('Failed to add follow-up!');
+                // Update stats if DUE filter is active
+                if (currentCategory === 'DUE') {
+                    loadAllFollowUps().then(() => {
+                        updateStats();
+                        renderTable();
+                    });
                 }
-            } catch (error) {
-                console.error('Error adding follow-up:', error);
-                alert('Error adding follow-up: ' + error.message);
+                
+                console.log('✅ Follow-up added (cached locally)');
+                alert('Follow-up added! (Note: Persists until page refresh)');
+                
+            } catch (err) {
+                console.error('Error adding follow-up:', err);
+                alert('Error adding follow-up. Check console.');
             }
         }
         
