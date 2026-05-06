@@ -1531,7 +1531,7 @@ Livealth BioPharma`;
         }
 
         
-        // Add follow-up (client-side update)
+        // Add follow-up (save to followups.json via GitHub API)
         async function addFollowUp(leadId) {
             if (!currentUser) {
                 alert('Please login first!');
@@ -1548,11 +1548,26 @@ Livealth BioPharma`;
             }
             
             try {
-                // Get current followups from cache (loaded from embedded data)
-                if (!followUpsCache[leadId]) followUpsCache[leadId] = [];
+                // Get current followups.json from GitHub
+                const response = await fetch(`https://api.github.com/repos/kamatanuj/livealth-crm/contents/followups.json`, {
+                    headers: {
+                        'Authorization': `token ${env.GITHUB_TOKEN}`,
+                        'Accept': 'application/vnd.github.v3+json'
+                    }
+                });
+                
+                let followups = {};
+                let sha = null;
+                
+                if (response.ok) {
+                    const fileData = await response.json();
+                    sha = fileData.sha;
+                    followups = JSON.parse(atob(fileData.content));
+                }
                 
                 // Add new follow-up
-                followUpsCache[leadId].push({
+                if (!followups[leadId]) followups[leadId] = [];
+                followups[leadId].push({
                     id: `fup_${Date.now()}`,
                     type,
                     timestamp: new Date().toISOString(),
@@ -1562,13 +1577,35 @@ Livealth BioPharma`;
                     status: 'pending'
                 });
                 
+                // Save back to GitHub
+                const updatedContent = JSON.stringify(followups, null, 2);
+                const base64Content = btoa(unescape(encodeURIComponent(updatedContent)));
+                
+                const saveResponse = await fetch(`https://api.github.com/repos/kamatanuj/livealth-crm/contents/followups.json`, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `token ${env.GITHUB_TOKEN}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: `Add follow-up for ${leadId}`,
+                        content: base64Content,
+                        sha: sha
+                    })
+                });
+                
+                if (!saveResponse.ok) throw new Error('Failed to save follow-up');
+                
+                // Update cache
+                followupsCache[leadId] = followups[leadId];
+                
                 // Clear form
                 document.getElementById(`followup-content-${leadId}`).value = '';
                 document.getElementById(`followup-date-${leadId}`).value = '';
-                    
-                // Reload follow-ups for this lead
+                
+                // Reload follow-ups
                 loadFollowUps(leadId);
-                    
+                
                 // Update stats if DUE filter is active
                 if (currentCategory === 'DUE') {
                     loadAllFollowUps().then(() => {
@@ -1577,12 +1614,12 @@ Livealth BioPharma`;
                     });
                 }
                 
-                console.log('✅ Follow-up added (cached locally)');
-                alert('Follow-up added! (Note: Persists until page refresh)');
+                console.log('✅ Follow-up saved to GitHub!');
+                alert('Follow-up added successfully!');
                 
             } catch (err) {
-                console.error('Error adding follow-up:', err);
-                alert('Error adding follow-up. Check console.');
+                console.error('Error saving follow-up:', err);
+                alert('Error saving follow-up. Check console.');
             }
         }
         
