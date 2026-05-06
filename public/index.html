@@ -1015,7 +1015,7 @@
             if (Object.keys(followUpsCache).length > 0) {
                 const today = new Date().toISOString().split('T')[0];
                 dueCount = allData.filter(row => {
-                    const leadId = btoa(unescape(encodeURIComponent(row.date + (row.phone || "") + (row.title || "")));
+                    const leadId = row.date + (row.phone || '') + (row.title || '');
                     const followUps = followUpsCache[leadId] || [];
                     return followUps.some(fup => 
                         fup.nextFollowUpDate && 
@@ -1061,7 +1061,7 @@
                 
                 // Handle DUE filter
                 if (currentCategory === 'DUE') {
-                    const leadId = btoa(unescape(encodeURIComponent(row.date + (row.phone || "") + (row.title || "")));
+                    const leadId = row.date + (row.phone || '') + (row.title || '');
                     const followUps = followUpsCache[leadId] || [];
                     const today = new Date().toISOString().split('T')[0];
                     return followUps.some(fup => 
@@ -1130,7 +1130,7 @@
             } else {
                 // Save scroll position and lead ID
                 savedScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-                savedLeadId = btoa(unescape(encodeURIComponent(row.date + (row.phone || "") + (row.title || "")));
+                savedLeadId = leadId;
                 expandedLead = leadId + '_' + section;
             }
             renderTable();
@@ -1413,7 +1413,7 @@ Livealth BioPharma`;
             }
             
             container.innerHTML = pageData.map((row) => {
-                const leadId = btoa(unescape(encodeURIComponent(row.date + (row.phone || "") + (row.title || "")));
+                const leadId = row.date + (row.phone || '') + (row.title || '');
                 const shortTitle = row.title ? (row.title.length > 50 ? row.title.substring(0, 50) + '...' : row.title) : 'General Inquiry';
                 
                 return `
