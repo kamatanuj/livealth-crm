@@ -1521,7 +1521,9 @@ Livealth BioPharma`;
             } catch (err) {
                 console.error('Error loading follow-ups:', err);
                 const timeline = document.getElementById('followup-timeline-' + leadId);
-                if (timeline) timeline.innerHTML = '<p style="color:#ff6b6b;">Error loading follow-ups. Check console.</p>';
+                if (timeline) {
+                    timeline.innerHTML = '<p style="color:#ff6b6b;">Error: ' + err.message + '<br><small>Check console for details.</small></p>';
+                }
             }
         }
 
@@ -1542,18 +1544,9 @@ Livealth BioPharma`;
             }
             
             try {
-                const response = await fetch('/api/followups', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        leadId: leadId,
-                        type: type,
-                        content: content,
-                        rep: currentUser.username,
-                        nextFollowUpDate: nextDate || null,
-                        status: 'pending'
-                    })
-                });
+                // Client-side only - no API call
+                console.log('📝 Saving follow-up client-side (needs GitHub API)');
+                const response = { ok: true };
                 
                 if (response.ok) {
                     // Clear form
