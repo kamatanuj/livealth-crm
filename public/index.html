@@ -1487,45 +1487,64 @@ Livealth BioPharma`;
 
         // Follow-up functions (using server-side API)
                 // Load follow-ups for a lead (client-side fetch)
+        // Load follow-ups (from localStorage + embedded data)
         async function loadFollowUps(leadId) {
             try {
-                // Fetch followups.json directly
-                // Use embedded data (no fetch)
-                const allFollowUps = FOLLOW_UPS_DATA;
+                const container = document.getElementById(`followups-list-${leadId}`);
+                if (!container) return;
                 
-                const timeline = document.getElementById('followup-timeline-' + leadId);
-                if (!timeline) return;
+                // Get follow-ups from localStorage
+                let allFollowUps = {};
+                const stored = localStorage.getItem('livealth_followups');
+                if (stored) {
+                    allFollowUps = JSON.parse(stored);
+                }
+                
+                // Merge with embedded FOLLOW_UPS_DATA (if any)
+                if (typeof FOLLOW_UPS_DATA !== 'undefined' && FOLLOW_UPS_DATA[leadId]) {
+                    if (!allFollowUps[leadId]) allFollowUps[leadId] = [];
+                    // Merge, avoiding duplicates by ID
+                    const existingIds = new Set(allFollowUps[leadId].map(f => f.id));
+                    FOLLOW_UPS_DATA[leadId].forEach(f => {
+                        if (!existingIds.has(f.id)) {
+                            allFollowUps[leadId].push(f);
+                        }
+                    });
+                }
                 
                 const followUps = allFollowUps[leadId] || [];
                 
+                // Update cache
+                followupsCache[leadId] = followUps;
+                
+                // Render follow-ups
                 if (followUps.length === 0) {
-                    timeline.innerHTML = '<p style="color:#888;font-size:0.9em;">No follow-ups yet. Add one below!</p>';
+                    container.innerHTML = '<div class="no-followups">No follow-ups yet.</div>';
                     return;
                 }
                 
-                // Sort by timestamp, newest first
-                followUps.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+                const sorted = [...followUps].sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
                 
-                timeline.innerHTML = followUps.map(fup => {
-                    const typeIcon = fup.type === 'email' ? '📧' : fup.type === 'call' ? '📞' : '📝';
-                    const date = new Date(fup.timestamp).toLocaleDateString('en-IN');
-                    const nextDate = fup.nextFollowUpDate ? '| Next: ' + new Date(fup.nextFollowUpDate).toLocaleDateString('en-IN') : '';
-                    const statusClass = fup.status === 'completed' ? 'completed' : '';
-                    
-                    return `
-                        <div class="followup-entry ${statusClass}">
-                            <span class="badge badge-${fup.type}">${typeIcon} ${fup.type.toUpperCase()}</span>
-                            <small>${date} | ${fup.rep} ${nextDate}</small>
-                            <p>${fup.content}</p>
+                container.innerHTML = sorted.map(fup => `
+                    <div class="followup-item status-${fup.status || 'pending'}">
+                        <div class="followup-header">
+                            <span class="followup-type">${fup.type === 'email' ? '📧' : fup.type === 'call' ? '📞' : '📝'} ${fup.type.toUpperCase()}</span>
+                            <span class="followup-date">${new Date(fup.timestamp).toLocaleString()}</span>
                         </div>
-                    `;
-                }).join('');
+                        <div class="followup-content">${fup.content}</div>
+                        <div class="followup-meta">
+                            <span>Rep: ${fup.rep || 'Unknown'}</span>
+                            ${fup.nextFollowUpDate ? `<span>Next: ${new Date(fup.nextFollowUpDate).toLocaleDateString()}</span>` : ''}
+                            <span class="followup-status">${fup.status || 'pending'}</span>
+                        </div>
+                    </div>
+                `).join('');
                 
             } catch (err) {
                 console.error('Error loading follow-ups:', err);
-                const timeline = document.getElementById('followup-timeline-' + leadId);
-                if (timeline) {
-                    timeline.innerHTML = '<p style="color:#ff6b6b;">Error: ' + err.message + '<br><small>Check console for details.</small></p>';
+                const container = document.getElementById(`followups-list-${leadId}`);
+                if (container) {
+                    container.innerHTML = '<div class="error">Error loading follow-ups: ' + err.message + '</div>';
                 }
             }
         }
