@@ -1549,18 +1549,21 @@ Livealth BioPharma`;
             
             try {
                 // Get current followups.json from GitHub
-                const response = await fetch(`https://api.github.com/repos/kamatanuj/livealth-crm/contents/followups.json`, {
-                    headers: {
-                        'Authorization': `token ${env.GITHUB_TOKEN}`,
-                        'Accept': 'application/vnd.github.v3+json'
+                const getRes = await fetch(
+                    `https://api.github.com/repos/kamatanuj/livealth-crm/contents/followups.json`,
+                    {
+                        headers: {
+                            'Authorization': `token ${env.GITHUB_TOKEN}`,
+                            'Accept': 'application/vnd.github.v3+json'
+                        }
                     }
-                });
+                );
                 
                 let followups = {};
                 let sha = null;
                 
-                if (response.ok) {
-                    const fileData = await response.json();
+                if (getRes.ok) {
+                    const fileData = await getRes.json();
                     sha = fileData.sha;
                     followups = JSON.parse(atob(fileData.content));
                 }
@@ -1581,20 +1584,23 @@ Livealth BioPharma`;
                 const updatedContent = JSON.stringify(followups, null, 2);
                 const base64Content = btoa(unescape(encodeURIComponent(updatedContent)));
                 
-                const saveResponse = await fetch(`https://api.github.com/repos/kamatanuj/livealth-crm/contents/followups.json`, {
-                    method: 'PUT',
-                    headers: {
-                        'Authorization': `token ${env.GITHUB_TOKEN}`,
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        message: `Add follow-up for ${leadId}`,
-                        content: base64Content,
-                        sha: sha
-                    })
-                });
+                const saveRes = await fetch(
+                    `https://api.github.com/repos/kamatanuj/livealth-crm/contents/followups.json`,
+                    {
+                        method: 'PUT',
+                        headers: {
+                            'Authorization': `token ${env.GITHUB_TOKEN}`,
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            message: `Add follow-up for ${leadId}`,
+                            content: base64Content,
+                            sha: sha
+                        })
+                    }
+                );
                 
-                if (!saveResponse.ok) throw new Error('Failed to save follow-up');
+                if (!saveRes.ok) throw new Error('Failed to save follow-up');
                 
                 // Update cache
                 followupsCache[leadId] = followups[leadId];
