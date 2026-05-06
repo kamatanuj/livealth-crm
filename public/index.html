@@ -1015,7 +1015,7 @@
             if (Object.keys(followUpsCache).length > 0) {
                 const today = new Date().toISOString().split('T')[0];
                 dueCount = allData.filter(row => {
-                    const leadId = row.date + row.phone + row.title;
+                    const leadId = btoa(unescape(encodeURIComponent(row.date + (row.phone || "") + (row.title || "")));
                     const followUps = followUpsCache[leadId] || [];
                     return followUps.some(fup => 
                         fup.nextFollowUpDate && 
@@ -1061,7 +1061,7 @@
                 
                 // Handle DUE filter
                 if (currentCategory === 'DUE') {
-                    const leadId = row.date + row.phone + row.title;
+                    const leadId = btoa(unescape(encodeURIComponent(row.date + (row.phone || "") + (row.title || "")));
                     const followUps = followUpsCache[leadId] || [];
                     const today = new Date().toISOString().split('T')[0];
                     return followUps.some(fup => 
@@ -1130,7 +1130,7 @@
             } else {
                 // Save scroll position and lead ID
                 savedScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-                savedLeadId = leadId;
+                savedLeadId = btoa(unescape(encodeURIComponent(row.date + (row.phone || "") + (row.title || "")));
                 expandedLead = leadId + '_' + section;
             }
             renderTable();
@@ -1184,7 +1184,7 @@
         }
         
         function goBack() {
-            const leadId = savedLeadId;
+            const leadId = savedLeadId; // Already encoded
             expandedLead = null;
             renderTable();
             // Restore scroll position after render
@@ -1413,7 +1413,7 @@ Livealth BioPharma`;
             }
             
             container.innerHTML = pageData.map((row) => {
-                const leadId = row.date + row.phone + row.title;
+                const leadId = btoa(unescape(encodeURIComponent(row.date + (row.phone || "") + (row.title || "")));
                 const shortTitle = row.title ? (row.title.length > 50 ? row.title.substring(0, 50) + '...' : row.title) : 'General Inquiry';
                 
                 return `
@@ -1515,7 +1515,7 @@ Livealth BioPharma`;
                 const followUps = allFollowUps[leadId] || [];
                 
                 // Update cache
-                followupsCache[leadId] = followUps;
+                followUpsCache[leadId] = followUps;
                 
                 // Render follow-ups
                 if (followUps.length === 0) {
@@ -1610,7 +1610,7 @@ Livealth BioPharma`;
                 console.log('✅ Verified save:', verify[leadId]?.length || 0, 'follow-ups for this lead');
                 
                 // Update cache
-                followupsCache[leadId] = allFollowUps[leadId];
+                followUpsCache[leadId] = allFollowUps[leadId];
                 
                 // Clear form
                 contentEl.value = '';
