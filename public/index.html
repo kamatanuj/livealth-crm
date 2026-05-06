@@ -1037,10 +1037,12 @@
         // Load all follow-ups for filtering (from API)
         async function loadAllFollowUps() {
             try {
-                const response = await fetch('/api/followups');
+                // Fetch followups.json directly (client-side)
+                const response = await fetch('/followups.json?v=' + new Date().getTime());
                 followUpsCache = await response.json();
-            } catch (error) {
-                console.error('Error loading all follow-ups:', error);
+                console.log('📋 Loaded follow-ups for all leads:', Object.keys(followUpsCache).length);
+            } catch (err) {
+                console.error('Error loading all follow-ups:', err);
                 followUpsCache = {};
             }
         }
