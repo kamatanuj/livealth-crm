@@ -1551,27 +1551,41 @@ Livealth BioPharma`;
 
         
         // Add follow-up (uses localStorage for persistence)
+        // Add follow-up with better error handling
         async function addFollowUp(leadId) {
+            console.log('📝 addFollowUp called with leadId:', leadId);
+            
             if (!currentUser) {
                 alert('Please login first!');
                 return;
             }
             
-            const type = document.getElementById(`followup-type-${leadId}`).value;
-            const content = document.getElementById(`followup-content-${leadId}`).value;
-            const nextDate = document.getElementById(`followup-date-${leadId}`)?.value || '';
-            
-            if (!content.trim()) {
-                alert('Please enter follow-up content!');
-                return;
-            }
-            
             try {
+                const typeEl = document.getElementById(`followup-type-${leadId}`);
+                const contentEl = document.getElementById(`followup-content-${leadId}`);
+                const dateEl = document.getElementById(`followup-date-${leadId}`);
+                
+                if (!typeEl || !contentEl) {
+                    console.error('❌ Form elements not found!');
+                    alert('Error: Form elements not found. Try refreshing.');
+                    return;
+                }
+                
+                const type = typeEl.value;
+                const content = contentEl.value;
+                const nextDate = dateEl?.value || '';
+                
+                if (!content.trim()) {
+                    alert('Please enter follow-up content!');
+                    return;
+                }
+                
                 // Get follow-ups from localStorage
                 let allFollowUps = {};
                 const stored = localStorage.getItem('livealth_followups');
                 if (stored) {
                     allFollowUps = JSON.parse(stored);
+                    console.log('📂 Loaded follow-ups from localStorage');
                 }
                 
                 // Add new follow-up
@@ -1589,13 +1603,18 @@ Livealth BioPharma`;
                 
                 // Save to localStorage
                 localStorage.setItem('livealth_followups', JSON.stringify(allFollowUps));
+                console.log('✅ Saved to localStorage!', newFollowUp);
+                
+                // Verify save
+                const verify = JSON.parse(localStorage.getItem('livealth_followups'));
+                console.log('✅ Verified save:', verify[leadId]?.length || 0, 'follow-ups for this lead');
                 
                 // Update cache
                 followupsCache[leadId] = allFollowUps[leadId];
                 
                 // Clear form
-                document.getElementById(`followup-content-${leadId}`).value = '';
-                document.getElementById(`followup-date-${leadId}`).value = '';
+                contentEl.value = '';
+                if (dateEl) dateEl.value = '';
                 
                 // Reload follow-ups
                 loadFollowUps(leadId);
@@ -1608,11 +1627,10 @@ Livealth BioPharma`;
                     });
                 }
                 
-                console.log('✅ Follow-up saved to localStorage!');
-                alert('Follow-up added successfully! (Saved locally)');
+                alert('Follow-up added successfully!');
                 
             } catch (err) {
-                console.error('Error saving follow-up:', err);
+                console.error('❌ Error in addFollowUp:', err);
                 alert('Error saving follow-up: ' + err.message);
             }
         }
