@@ -1490,7 +1490,7 @@ Livealth BioPharma`;
         // Load follow-ups (from localStorage + embedded data)
         async function loadFollowUps(leadId) {
             try {
-                const container = document.getElementById(`followups-list-${leadId}`);
+                const container = document.getElementById(`followup-timeline-${leadId}`);
                 if (!container) return;
                 
                 // Get follow-ups from localStorage
@@ -1542,7 +1542,7 @@ Livealth BioPharma`;
                 
             } catch (err) {
                 console.error('Error loading follow-ups:', err);
-                const container = document.getElementById(`followups-list-${leadId}`);
+                const container = document.getElementById(`followup-timeline-${leadId}`);
                 if (container) {
                     container.innerHTML = '<div class="error">Error loading follow-ups: ' + err.message + '</div>';
                 }
