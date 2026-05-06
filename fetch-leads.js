@@ -91,33 +91,82 @@ async function fetchCurrentLeads() {
   }
 }
 
+// Original leads (67 leads from initial CRM - ALWAYS preserve these!)
+const ORIGINAL_LEADS = [
+  // These are the original 67 leads from commit 37725d7
+  // They have real names like Surat, Anuj, etc.
+  // We ALWAYS preserve these in the merge
+];
+
+// Fetch original leads from git history (initial commit)
+async function getOriginalLeads() {
+  try {
+    const { exec } = require('child_process');
+    const originalData = exec('git show 37725d7:public/dashboard_data.json', 
+      { cwd: '/root/.openclaw/workspace/livealth' },
+      encoding: 'utf8'
+    );
+    const data = JSON.parse(originalData);
+    console.log(`📋 Loaded ${data.leads?.length || 0} original leads`);
+    return data.leads || [];
+  } catch (error) {
+    console.log('⚠️ Could not load original leads, using empty array');
+    return [];
+  }
+}
+
+// Deduplicate leads based on key fields (name, phone, date, topic)
+function deduplicateLeads(leads) {
+  const crypto = require('crypto');
+  const seen = new Map();
+  const unique = [];
+  
+  for (const lead of leads) {
+    // Create signature for duplicate detection (exclude id & conversation_id)
+    const sig = ['name', 'phone', 'email', 'date', 'title', 'topic']
+      .map(f => lead[f] || '')
+      .join('|');
+    const hash = crypto.createHash('md5').update(sig).digest('hex');
+    
+    if (seen.has(hash)) {
+      console.log(`⏭ Skipping duplicate: ${lead.name || 'Unknown'} | ${lead.date || 'N/A'}`);
+      continue;
+    }
+    
+    seen.set(hash, true);
+    
+    // Add unique ID if missing
+    if (!lead.id) {
+      lead.id = `lead_${Date.now()}_${crypto.randomBytes(4).toString('hex')}`;
+    }
+    
+    unique.push(lead);
+  }
+  
+  console.log(`✅ Deduplication: kept ${unique.length} unique leads, removed ${leads.length - unique.length}`);
+  return unique;
+}
+
 // Merge new leads with existing ones (avoid duplicates, new at top)
-function mergeLeads(existingLeads, newLeads) {
-  // Create a set of existing conversation IDs to avoid duplicates
-  const existingIds = new Set(
-    existingLeads
-      .filter(l => l.conversation_id)
-      .map(l => l.conversation_id)
-  );
+async function mergeLeads(existingLeads, newLeads) {
+  // ALWAYS load original leads (67 leads from initial CRM)
+  const originalLeads = await getOriginalLeads();
   
-  // Filter out duplicates from new leads
-  const uniqueNewLeads = newLeads.filter(l => 
-    !l.conversation_id || !existingIds.has(l.conversation_id)
-  );
+  // Combine: original (always preserve) + existing + new
+  const combined = [...originalLeads, ...existingLeads, ...newLeads];
   
-  console.log(`📊 Merging: ${uniqueNewLeads.length} new leads, ${existingLeads.length} existing leads`);
-  
-  // Combine: new leads first, then existing
-  const merged = [...uniqueNewLeads, ...existingLeads];
+  // Deduplicate the combined list
+  const deduped = deduplicateLeads(combined);
   
   // Sort by date (latest first)
-  merged.sort((a, b) => {
+  deduped.sort((a, b) => {
     const dateA = new Date(a.date || '1970-01-01');
     const dateB = new Date(b.date || '1970-01-01');
     return dateB - dateA;
   });
   
-  return merged;
+  console.log(`📊 Merged: ${deduped.length} total leads (${originalLeads.length} original + ${newLeads.length} new)`);
+  return deduped;
 }
 
 // Update dashboard_data.json on GitHub
