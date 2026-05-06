@@ -1531,7 +1531,7 @@ Livealth BioPharma`;
         }
 
         
-        // Add follow-up (calls server-side API)
+        // Add follow-up (uses localStorage for persistence)
         async function addFollowUp(leadId) {
             if (!currentUser) {
                 alert('Please login first!');
@@ -1548,8 +1548,16 @@ Livealth BioPharma`;
             }
             
             try {
-                // Create follow-up object
-                const followUp = {
+                // Get follow-ups from localStorage
+                let allFollowUps = {};
+                const stored = localStorage.getItem('livealth_followups');
+                if (stored) {
+                    allFollowUps = JSON.parse(stored);
+                }
+                
+                // Add new follow-up
+                if (!allFollowUps[leadId]) allFollowUps[leadId] = [];
+                const newFollowUp = {
                     id: `fup_${Date.now()}`,
                     type,
                     timestamp: new Date().toISOString(),
@@ -1558,22 +1566,13 @@ Livealth BioPharma`;
                     nextFollowUpDate: nextDate || null,
                     status: 'pending'
                 };
+                allFollowUps[leadId].push(newFollowUp);
                 
-                // Call server-side API to save to GitHub
-                const response = await fetch('/api/save-followup', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ leadId, followUp })
-                });
-                
-                if (!response.ok) {
-                    const error = await response.json();
-                    throw new Error(error.error || 'Failed to save follow-up');
-                }
+                // Save to localStorage
+                localStorage.setItem('livealth_followups', JSON.stringify(allFollowUps));
                 
                 // Update cache
-                if (!followupsCache[leadId]) followupsCache[leadId] = [];
-                followupsCache[leadId].push(followUp);
+                followupsCache[leadId] = allFollowUps[leadId];
                 
                 // Clear form
                 document.getElementById(`followup-content-${leadId}`).value = '';
@@ -1590,8 +1589,8 @@ Livealth BioPharma`;
                     });
                 }
                 
-                console.log('✅ Follow-up saved!');
-                alert('Follow-up added successfully!');
+                console.log('✅ Follow-up saved to localStorage!');
+                alert('Follow-up added successfully! (Saved locally)');
                 
             } catch (err) {
                 console.error('Error saving follow-up:', err);
