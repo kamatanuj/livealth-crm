@@ -1145,22 +1145,25 @@
                 return;
             }
             
-            const index = allData.findIndex(r => (r.date + r.phone + r.title) === leadId);
+            const index = allData.findIndex(r => (r.date + (r.phone || '') + (r.title || '')) === leadId);
             if (index > -1) {
                 // Remove from local array
                 const removedLead = allData.splice(index, 1)[0];
                 
-                // Call API to update GitHub (token is now server-side)
+                // Try to update GitHub
                 fetch('/api/update-leads', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ leads: allData })
                 })
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Server returned ' + response.status);
+                    }
+                    return response.json();
+                })
                 .then(data => {
                     if (data.success) {
-                        // Don't reload from server - GitHub might have stale cache
-                        // Local allData already has the lead removed
                         updateStats();
                         renderTable();
                         alert('Lead deleted and GitHub updated!');
@@ -1177,7 +1180,7 @@
                     allData.splice(index, 0, removedLead);
                     updateStats();
                     renderTable();
-                    alert('Error updating GitHub: ' + error.message);
+                    alert('Error updating GitHub: ' + error.message + '\n\nPlease ensure GITHUB_TOKEN is set correctly in Pages environment.');
                 });
             }
         }
