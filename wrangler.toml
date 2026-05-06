@@ -1,0 +1,5 @@
+name = "livealth-crm"
+main = "public/index.html"
+assets = { bucket = "./public" }
+
+compatibility_date = "2026-05-06"
