@@ -42,7 +42,8 @@ export async function onRequest(context) {
       {
         headers: {
           'Authorization': `token ${token}`,
-          'Accept': 'application/vnd.github.v3+json'
+          'Accept': 'application/vnd.github.v3+json',
+          'User-Agent': 'Livealth-CRM-App'
         }
       }
     );
@@ -73,7 +74,8 @@ export async function onRequest(context) {
         headers: {
           'Authorization': `token ${token}`,
           'Accept': 'application/vnd.github.v3+json',
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'User-Agent': 'Livealth-CRM-App'
         },
         body: JSON.stringify({
           message: 'Update leads from CRM',
