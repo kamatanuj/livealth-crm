@@ -1783,7 +1783,10 @@ Livealth BioPharma`;
                 return;
             }
             
-            docsList.innerHTML = docs.map(doc => `
+            let html = '';
+            docs.forEach(doc => {
+                const filePath = doc.url.replace('https://raw.githubusercontent.com/kamatanuj/livealth-crm/main/', '');
+                html += `
                 <div style="background: #0F172A; padding: 15px; margin-bottom: 10px; border-radius: 8px; border-left: 3px solid #2563EB;">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <div>
@@ -1792,11 +1795,13 @@ Livealth BioPharma`;
                         </div>
                         <div style="display: flex; gap: 10px;">
                             <button class="btn-expand" style="padding: 5px 10px; font-size: 12px;" onclick="downloadDoc('${doc.url}', '${doc.name}')">📥 Download</button>
-                            ${currentUser.role === 'admin' ? `<button class="btn-delete" style="padding: 5px 10px; font-size: 12px;" onclick="deleteDoc('${currentDocLeadId}', '${doc.id}', '${doc.url.replace('https://raw.githubusercontent.com/kamatanuj/livealth-crm/main/', '')}', ${currentDocLeadIndex})">🗑️ Delete</button>` : ''}
+                            ${currentUser && currentUser.role === 'admin' ? `<button class="btn-delete" style="padding: 5px 10px; font-size: 12px;" onclick="deleteDoc('${currentDocLeadId}', '${doc.id}', '${filePath}', ${currentDocLeadIndex})">🗑️ Delete</button>` : ''}
                         </div>
                     </div>
                 </div>
-            `).join('');
+                `;
+            });
+            docsList.innerHTML = html;
         }
         
         async function uploadDoc() {
