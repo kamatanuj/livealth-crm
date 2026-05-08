@@ -2,10 +2,25 @@
 export async function onRequest(context) {
   const { request, env } = context;
   
+  // CORS headers helper
+  function addCORS(headers = {}) {
+    return {
+      ...headers,
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    };
+  }
+  
+  // Handle OPTIONS request (CORS preflight)
+  if (request.method === 'OPTIONS') {
+    return new Response(null, { headers: addCORS() });
+  }
+  
   if (request.method !== 'POST') {
     return new Response(JSON.stringify({ error: 'Method not allowed' }), {
       status: 405,
-      headers: { 'Content-Type': 'application/json' }
+      headers: addCORS({ 'Content-Type': 'application/json' })
     });
   }
   
@@ -14,7 +29,7 @@ export async function onRequest(context) {
     if (!token) {
       return new Response(JSON.stringify({ error: 'Server misconfigured: Missing GITHUB_TOKEN' }), {
         status: 500,
-        headers: { 'Content-Type': 'application/json' }
+        headers: addCORS({ 'Content-Type': 'application/json' })
       });
     }
     
@@ -24,7 +39,7 @@ export async function onRequest(context) {
     if (!leadId || !docId || !filePath || leadIndex === undefined) {
       return new Response(JSON.stringify({ error: 'Missing required fields' }), {
         status: 400,
-        headers: { 'Content-Type': 'application/json' }
+        headers: addCORS({ 'Content-Type': 'application/json' })
       });
     }
     
@@ -46,7 +61,7 @@ export async function onRequest(context) {
     if (!getFileResponse.ok) {
       return new Response(JSON.stringify({ error: 'File not found on GitHub' }), {
         status: 404,
-        headers: { 'Content-Type': 'application/json' }
+        headers: addCORS({ 'Content-Type': 'application/json' })
       });
     }
     
@@ -79,7 +94,7 @@ export async function onRequest(context) {
         details: error
       }), {
         status: 500,
-        headers: { 'Content-Type': 'application/json' }
+        headers: addCORS({ 'Content-Type': 'application/json' })
       });
     }
     
@@ -98,7 +113,7 @@ export async function onRequest(context) {
     if (!getLeadsResponse.ok) {
       return new Response(JSON.stringify({ error: 'Failed to get dashboard_data.json' }), {
         status: 500,
-        headers: { 'Content-Type': 'application/json' }
+        headers: addCORS({ 'Content-Type': 'application/json' })
       });
     }
     
@@ -140,12 +155,12 @@ export async function onRequest(context) {
         details: error
       }), {
         status: 500,
-        headers: { 'Content-Type': 'application/json' }
+        headers: addCORS({ 'Content-Type': 'application/json' })
       });
     }
     
     return new Response(JSON.stringify({ success: true }), {
-      headers: { 'Content-Type': 'application/json' }
+      headers: addCORS({ 'Content-Type': 'application/json' })
     });
     
   } catch (error) {
@@ -154,7 +169,7 @@ export async function onRequest(context) {
       stack: error.stack
     }), {
       status: 500,
-      headers: { 'Content-Type': 'application/json' }
+      headers: addCORS({ 'Content-Type': 'application/json' })
     });
   }
 }

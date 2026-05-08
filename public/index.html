@@ -999,24 +999,10 @@
 
         async function loadData() {
             try {
-                // Always load fresh from GitHub first
+                // Always load fresh from GitHub (source of truth)
                 const resp = await fetch('dashboard_data.json?v=' + new Date().getTime());
                 const data = await resp.json();
                 allData = data.leads;
-                
-                // Merge any local changes from localStorage
-                const localLeads = localStorage.getItem('livealth_leads_local');
-                if (localLeads) {
-                    try {
-                        const localData = JSON.parse(localLeads);
-                        // Simple merge: local changes override GitHub data
-                        // (In production, you'd want a smarter merge)
-                        allData = localData;
-                        console.log('Merged local leads from localStorage');
-                    } catch (e) {
-                        console.error('Error parsing local leads:', e);
-                    }
-                }
                 
                 updateStats();
                 renderTable();
@@ -1027,13 +1013,7 @@
                 }
             } catch (e) {
                 console.error('Error loading data:', e);
-                // Fallback to localStorage if GitHub fails
-                const localLeads = localStorage.getItem('livealth_leads_local');
-                if (localLeads) {
-                    allData = JSON.parse(localLeads);
-                    updateStats();
-                    renderTable();
-                }
+                alert('Failed to load data from server. Please refresh the page.');
             }
         }
 
@@ -1236,11 +1216,11 @@
                     }
                 })
                 .catch(error => {
-                    // Save to localStorage as fallback so delete persists locally
-                    localStorage.setItem('livealth_leads_local', JSON.stringify(allData));
+                    // Revert local change (no localStorage fallback)
+                    allData.splice(index, 0, removedLead);
                     updateStats();
                     renderTable();
-                    alert('Lead deleted locally! GitHub sync failed: ' + error.message + '\n\nLocal change saved. To sync to GitHub, set GITHUB_TOKEN in Pages environment variables.');
+                    alert('Error updating GitHub: ' + error.message + '\n\nPlease check your connection and try again.');
                 });
             }
         }
