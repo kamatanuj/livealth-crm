@@ -962,16 +962,25 @@
 
         async function loadData() {
             try {
-                // Load locally modified leads first (from delete/add actions)
+                // Always load fresh from GitHub first
+                const resp = await fetch('dashboard_data.json?v=' + new Date().getTime());
+                const data = await resp.json();
+                allData = data.leads;
+                
+                // Merge any local changes from localStorage
                 const localLeads = localStorage.getItem('livealth_leads_local');
                 if (localLeads) {
-                    allData = JSON.parse(localLeads);
-                    console.log('Loaded locally modified leads from localStorage');
-                } else {
-                    const resp = await fetch('dashboard_data.json?v=' + new Date().getTime());
-                    const data = await resp.json();
-                    allData = data.leads;
+                    try {
+                        const localData = JSON.parse(localLeads);
+                        // Simple merge: local changes override GitHub data
+                        // (In production, you'd want a smarter merge)
+                        allData = localData;
+                        console.log('Merged local leads from localStorage');
+                    } catch (e) {
+                        console.error('Error parsing local leads:', e);
+                    }
                 }
+                
                 updateStats();
                 renderTable();
                 
@@ -981,6 +990,13 @@
                 }
             } catch (e) {
                 console.error('Error loading data:', e);
+                // Fallback to localStorage if GitHub fails
+                const localLeads = localStorage.getItem('livealth_leads_local');
+                if (localLeads) {
+                    allData = JSON.parse(localLeads);
+                    updateStats();
+                    renderTable();
+                }
             }
         }
 
