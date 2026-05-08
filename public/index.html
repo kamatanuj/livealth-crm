@@ -962,9 +962,16 @@
 
         async function loadData() {
             try {
-                const resp = await fetch('dashboard_data.json?v=' + new Date().getTime());
-                const data = await resp.json();
-                allData = data.leads;
+                // Load locally modified leads first (from delete/add actions)
+                const localLeads = localStorage.getItem('livealth_leads_local');
+                if (localLeads) {
+                    allData = JSON.parse(localLeads);
+                    console.log('Loaded locally modified leads from localStorage');
+                } else {
+                    const resp = await fetch('dashboard_data.json?v=' + new Date().getTime());
+                    const data = await resp.json();
+                    allData = data.leads;
+                }
                 updateStats();
                 renderTable();
                 
@@ -1176,11 +1183,11 @@
                     }
                 })
                 .catch(error => {
-                    // Revert local change
-                    allData.splice(index, 0, removedLead);
+                    // Save to localStorage as fallback so delete persists locally
+                    localStorage.setItem('livealth_leads_local', JSON.stringify(allData));
                     updateStats();
                     renderTable();
-                    alert('Error updating GitHub: ' + error.message + '\n\nPlease ensure GITHUB_TOKEN is set correctly in Pages environment.');
+                    alert('Lead deleted locally! GitHub sync failed: ' + error.message + '\n\nLocal change saved. To sync to GitHub, set GITHUB_TOKEN in Pages environment variables.');
                 });
             }
         }
