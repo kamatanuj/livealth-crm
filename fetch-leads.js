@@ -9,6 +9,26 @@
 const fs = require('fs');
 const path = require('path');
 
+// Load .env file if it exists
+const envPath = path.join(__dirname, '.env');
+if (fs.existsSync(envPath)) {
+  const envContent = fs.readFileSync(envPath, 'utf8');
+  envContent.split('\n').forEach(line => {
+    // Skip empty lines and comments
+    if (!line || line.startsWith('#')) return;
+    
+    const match = line.match(/^([^=]+)=(.*)$/);
+    if (match) {
+      const key = match[1].trim();
+      const value = match[2].trim();
+      if (key && value) {
+        process.env[key] = value;
+      }
+    }
+  });
+  console.log('✅ Loaded .env file');
+}
+
 // Configuration
 const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY || 'eb2ad9409c505c87ba41ab90c20ffc942d752a19b9df671f10cce8ac1a496590';
 const AGENT_ID = process.env.ELEVENLABS_AGENT_ID || 'agent_7601k8ms1yhqf19tk684c03bfbst';
@@ -72,19 +92,39 @@ async function fetchCurrentLeads() {
       }
     });
     
+    console.log(`GitHub response status: ${response.status}`);
+    
     if (response.status === 404) {
       console.log('📝 No existing dashboard_data.json found, starting fresh');
       return { leads: [], sha: null };
     }
     
     if (!response.ok) {
-      throw new Error(`GitHub API error: ${response.status}`);
+      console.log(`⚠️ GitHub API error: ${response.status} - using local file`);
+      // Fallback: try to read local file
+      try {
+        const localData = fs.readFileSync(path.join(__dirname, FILE_PATH), 'utf8');
+        const content = JSON.parse(localData);
+        console.log(`✅ Loaded ${content.leads?.length || 0} leads from local file`);
+        return { leads: content.leads || [], sha: null };
+      } catch (e) {
+        return { leads: [], sha: null };
+      }
     }
     
     const data = await response.json();
-    const content = JSON.parse(Buffer.from(data.content, 'base64').toString('utf8'));
-    console.log(`✅ Loaded ${content.leads?.length || 0} existing leads`);
-    return { leads: content.leads || [], sha: data.sha };
+    const decoded = Buffer.from(data.content, 'base64').toString('utf8');
+    const content = JSON.parse(decoded);
+    
+    // Handle case where leads is an object instead of array
+    let leads = content.leads || [];
+    if (typeof leads === 'object' && !Array.isArray(leads)) {
+      console.log('⚠️ Leads is object, converting to array');
+      leads = Object.values(leads);
+    }
+    
+    console.log(`✅ Loaded ${leads.length} existing leads from GitHub`);
+    return { leads: leads, sha: data.sha };
   } catch (error) {
     console.error('❌ Error fetching current leads:', error.message);
     return { leads: [], sha: null };
@@ -101,11 +141,11 @@ const ORIGINAL_LEADS = [
 // Fetch original leads from git history (initial commit)
 async function getOriginalLeads() {
   try {
-    const { exec } = require('child_process');
-    const originalData = exec('git show 37725d7:public/dashboard_data.json', 
-      { cwd: '/root/.openclaw/workspace/livealth' },
+    const { execSync } = require('child_process');
+    const originalData = execSync('git show 37725d7:public/dashboard_data.json', {
+      cwd: '/root/.openclaw/workspace/livealth',
       encoding: 'utf8'
-    );
+    });
     const data = JSON.parse(originalData);
     console.log(`📋 Loaded ${data.leads?.length || 0} original leads`);
     return data.leads || [];
@@ -149,8 +189,17 @@ function deduplicateLeads(leads) {
 
 // Merge new leads with existing ones (avoid duplicates, new at top)
 async function mergeLeads(existingLeads, newLeads) {
+  // Ensure arrays
+  existingLeads = existingLeads || [];
+  newLeads = newLeads || [];
+  
   // ALWAYS load original leads (67 leads from initial CRM)
-  const originalLeads = await getOriginalLeads();
+  let originalLeads = [];
+  try {
+    originalLeads = await getOriginalLeads();
+  } catch (e) {
+    console.log('⚠️ Could not load original leads');
+  }
   
   // Combine: original (always preserve) + existing + new
   const combined = [...originalLeads, ...existingLeads, ...newLeads];
@@ -231,7 +280,7 @@ async function runPipeline() {
   const { leads: existingLeads, sha } = await fetchCurrentLeads();
   
   // Step 4: Merge (new at top, preserve existing, sort by date)
-  const mergedLeads = mergeLeads(existingLeads, newLeads);
+  const mergedLeads = await mergeLeads(existingLeads, newLeads);
   
   // Step 5: Update GitHub
   const success = await updateLeadsOnGitHub(mergedLeads, sha);
