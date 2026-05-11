@@ -147,27 +147,6 @@
       }
     },
     {
-      "name": "Anuj",
-      "email": "",
-      "phone": "9820370923",
-      "category": "HOT",
-      "date": "2026-04-28",
-      "title": "Nigeria Pharma Export",
-      "duration": 137,
-      "language": "en",
-      "messages": 13,
-      "id": "lead_1778067471771_p1hw5rm9a",
-      "sentiment": {
-        "score": 1,
-        "label": "positive",
-        "emoji": "😊",
-        "interest": "High 🔥",
-        "positive_count": 1,
-        "negative_count": 0,
-        "total_keywords": 1
-      }
-    },
-    {
       "name": "",
       "email": "",
       "phone": "9818118322",
@@ -1428,5 +1407,5 @@
       }
     }
   ],
-  "lastUpdated": "2026-05-11T10:01:04.155Z"
+  "lastUpdated": "2026-05-11T10:01:11.044Z"
 }
