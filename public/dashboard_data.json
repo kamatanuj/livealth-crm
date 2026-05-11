@@ -30,27 +30,16 @@
           "url": "https://raw.githubusercontent.com/kamatanuj/livealth-crm/main/docs/test-lead-123/test-upload.txt",
           "uploadedAt": "2026-05-08T10:21:13.935Z"
         }
-      ]
-    },
-    {
-      "name": "Anuj",
-      "email": "kamatanuj@gmail.com",
-      "phone": "9020370923",
-      "category": "HOT",
-      "date": "2026-04-29",
-      "title": "Bengali Language Support",
-      "duration": 187,
-      "language": "en",
-      "messages": 7,
-      "id": "lead_1778067471771_98dskyw86",
-      "documents": [
-        {
-          "id": "doc_1778235261484",
-          "name": "Quote.pdf",
-          "url": "https://raw.githubusercontent.com/kamatanuj/livealth-crm/main/docs/2026-04-297201818793Language Support Inquiry/Quote.pdf",
-          "uploadedAt": "2026-05-08T10:14:21.484Z"
-        }
-      ]
+      ],
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "Surat",
@@ -62,7 +51,16 @@
       "duration": 19,
       "language": "en",
       "messages": 3,
-      "id": "lead_1778067471771_rz1oqjxqc"
+      "id": "lead_1778067471771_rz1oqjxqc",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "Surat",
@@ -74,7 +72,16 @@
       "duration": 7,
       "language": "en",
       "messages": 3,
-      "id": "lead_1778067471771_5prviulvr"
+      "id": "lead_1778067471771_5prviulvr",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "Umang",
@@ -86,7 +93,16 @@
       "duration": 149,
       "language": "en",
       "messages": 13,
-      "id": "lead_1778067471771_ghht1s11h"
+      "id": "lead_1778067471771_ghht1s11h",
+      "sentiment": {
+        "score": 1,
+        "label": "positive",
+        "emoji": "😊",
+        "interest": "High 🔥",
+        "positive_count": 2,
+        "negative_count": 0,
+        "total_keywords": 2
+      }
     },
     {
       "name": "Vaibhav",
@@ -98,7 +114,16 @@
       "duration": 125,
       "language": "en",
       "messages": 19,
-      "id": "lead_1778067471771_gynp1msg7"
+      "id": "lead_1778067471771_gynp1msg7",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "Vaibhav",
@@ -110,7 +135,16 @@
       "duration": 52,
       "language": "en",
       "messages": 3,
-      "id": "lead_1778067471771_va6yr5st0"
+      "id": "lead_1778067471771_va6yr5st0",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "Anuj",
@@ -122,7 +156,16 @@
       "duration": 137,
       "language": "en",
       "messages": 13,
-      "id": "lead_1778067471771_p1hw5rm9a"
+      "id": "lead_1778067471771_p1hw5rm9a",
+      "sentiment": {
+        "score": 1,
+        "label": "positive",
+        "emoji": "😊",
+        "interest": "High 🔥",
+        "positive_count": 1,
+        "negative_count": 0,
+        "total_keywords": 1
+      }
     },
     {
       "name": "",
@@ -134,7 +177,16 @@
       "duration": 118,
       "language": "en",
       "messages": 5,
-      "id": "lead_1778067471771_se4gea143"
+      "id": "lead_1778067471771_se4gea143",
+      "sentiment": {
+        "score": 1,
+        "label": "positive",
+        "emoji": "😊",
+        "interest": "High 🔥",
+        "positive_count": 1,
+        "negative_count": 0,
+        "total_keywords": 1
+      }
     },
     {
       "name": "",
@@ -146,7 +198,16 @@
       "duration": 104,
       "language": "en",
       "messages": 5,
-      "id": "lead_1778067471771_4q67ezpq3"
+      "id": "lead_1778067471771_4q67ezpq3",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -158,7 +219,16 @@
       "duration": 406,
       "language": "en",
       "messages": 19,
-      "id": "lead_1778067471771_1nhm4v42k"
+      "id": "lead_1778067471771_1nhm4v42k",
+      "sentiment": {
+        "score": 1,
+        "label": "positive",
+        "emoji": "😊",
+        "interest": "High 🔥",
+        "positive_count": 1,
+        "negative_count": 0,
+        "total_keywords": 1
+      }
     },
     {
       "name": "",
@@ -170,7 +240,16 @@
       "duration": 124,
       "language": "en",
       "messages": 13,
-      "id": "lead_1778067471771_1q9wgisaz"
+      "id": "lead_1778067471771_1q9wgisaz",
+      "sentiment": {
+        "score": 1,
+        "label": "positive",
+        "emoji": "😊",
+        "interest": "High 🔥",
+        "positive_count": 1,
+        "negative_count": 0,
+        "total_keywords": 1
+      }
     },
     {
       "name": "",
@@ -182,7 +261,16 @@
       "duration": 156,
       "language": "en",
       "messages": 9,
-      "id": "lead_1778067471771_2j0yvgx2v"
+      "id": "lead_1778067471771_2j0yvgx2v",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -194,7 +282,16 @@
       "duration": 65,
       "language": "en",
       "messages": 3,
-      "id": "lead_1778067471771_6ppxkgvvo"
+      "id": "lead_1778067471771_6ppxkgvvo",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -206,7 +303,16 @@
       "duration": 241,
       "language": "en",
       "messages": 13,
-      "id": "lead_1778067471771_bqrjgbkxd"
+      "id": "lead_1778067471771_bqrjgbkxd",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -218,7 +324,16 @@
       "duration": 138,
       "language": "en",
       "messages": 16,
-      "id": "lead_1778067471771_9uqkkqrmm"
+      "id": "lead_1778067471771_9uqkkqrmm",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "Surat",
@@ -230,7 +345,16 @@
       "duration": 20,
       "language": "en",
       "messages": 3,
-      "id": "lead_1778067471771_mbhvehddo"
+      "id": "lead_1778067471771_mbhvehddo",
+      "sentiment": {
+        "score": 1,
+        "label": "positive",
+        "emoji": "😊",
+        "interest": "High 🔥",
+        "positive_count": 1,
+        "negative_count": 0,
+        "total_keywords": 1
+      }
     },
     {
       "name": "",
@@ -242,7 +366,16 @@
       "duration": 183,
       "language": "en",
       "messages": 15,
-      "id": "lead_1778067471771_gc7hc21ab"
+      "id": "lead_1778067471771_gc7hc21ab",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "Doctor",
@@ -254,7 +387,16 @@
       "duration": 24,
       "language": "en",
       "messages": 3,
-      "id": "lead_1778067471771_8rblhc3y8"
+      "id": "lead_1778067471771_8rblhc3y8",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -266,7 +408,16 @@
       "duration": 7,
       "language": "en",
       "messages": 3,
-      "id": "lead_1778067471771_h0jsf5bks"
+      "id": "lead_1778067471771_h0jsf5bks",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -278,7 +429,16 @@
       "duration": 7,
       "language": "en",
       "messages": 1,
-      "id": "lead_1778067471771_3x8gpxif0"
+      "id": "lead_1778067471771_3x8gpxif0",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "Jayashri",
@@ -290,7 +450,16 @@
       "duration": 95,
       "language": "en",
       "messages": 18,
-      "id": "lead_1778067471771_x6qkw1bm5"
+      "id": "lead_1778067471771_x6qkw1bm5",
+      "sentiment": {
+        "score": 1,
+        "label": "positive",
+        "emoji": "😊",
+        "interest": "High 🔥",
+        "positive_count": 1,
+        "negative_count": 0,
+        "total_keywords": 1
+      }
     },
     {
       "name": "",
@@ -302,7 +471,16 @@
       "duration": 30,
       "language": "en",
       "messages": 5,
-      "id": "lead_1778067471771_151x7anr8"
+      "id": "lead_1778067471771_151x7anr8",
+      "sentiment": {
+        "score": 1,
+        "label": "positive",
+        "emoji": "😊",
+        "interest": "High 🔥",
+        "positive_count": 1,
+        "negative_count": 0,
+        "total_keywords": 1
+      }
     },
     {
       "name": "",
@@ -314,7 +492,16 @@
       "duration": 39,
       "language": "en",
       "messages": 5,
-      "id": "lead_1778067471771_ysrj7uil2"
+      "id": "lead_1778067471771_ysrj7uil2",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -326,7 +513,16 @@
       "duration": 46,
       "language": "en",
       "messages": 5,
-      "id": "lead_1778067471771_0e5mho06s"
+      "id": "lead_1778067471771_0e5mho06s",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -338,7 +534,16 @@
       "duration": 28,
       "language": "en",
       "messages": 3,
-      "id": "lead_1778067471771_4bjz5urux"
+      "id": "lead_1778067471771_4bjz5urux",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -350,7 +555,16 @@
       "duration": 21,
       "language": "en",
       "messages": 3,
-      "id": "lead_1778067471771_orrw9mgjz"
+      "id": "lead_1778067471771_orrw9mgjz",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "Umang",
@@ -362,7 +576,16 @@
       "duration": 230,
       "language": "en",
       "messages": 17,
-      "id": "lead_1778067471771_whbq3coz1"
+      "id": "lead_1778067471771_whbq3coz1",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -374,7 +597,16 @@
       "duration": 237,
       "language": "en",
       "messages": 11,
-      "id": "lead_1778067471771_e8kkhax02"
+      "id": "lead_1778067471771_e8kkhax02",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -386,7 +618,16 @@
       "duration": 602,
       "language": "en",
       "messages": 7,
-      "id": "lead_1778067471771_hufkungqw"
+      "id": "lead_1778067471771_hufkungqw",
+      "sentiment": {
+        "score": 1,
+        "label": "positive",
+        "emoji": "😊",
+        "interest": "High 🔥",
+        "positive_count": 1,
+        "negative_count": 0,
+        "total_keywords": 1
+      }
     },
     {
       "name": "Vaibhav",
@@ -398,7 +639,16 @@
       "duration": 156,
       "language": "en",
       "messages": 25,
-      "id": "lead_1778067471771_whrx7v5dt"
+      "id": "lead_1778067471771_whrx7v5dt",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -410,7 +660,16 @@
       "duration": 240,
       "language": "en",
       "messages": 5,
-      "id": "lead_1778067471771_4s2i9goh2"
+      "id": "lead_1778067471771_4s2i9goh2",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -422,7 +681,16 @@
       "duration": 398,
       "language": "en",
       "messages": 15,
-      "id": "lead_1778067471771_w48rxvzhi"
+      "id": "lead_1778067471771_w48rxvzhi",
+      "sentiment": {
+        "score": 1,
+        "label": "positive",
+        "emoji": "😊",
+        "interest": "High 🔥",
+        "positive_count": 1,
+        "negative_count": 0,
+        "total_keywords": 1
+      }
     },
     {
       "name": "",
@@ -434,7 +702,16 @@
       "duration": 21,
       "language": "en",
       "messages": 3,
-      "id": "lead_1778067471771_2wkq83dxl"
+      "id": "lead_1778067471771_2wkq83dxl",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "Anuj",
@@ -446,7 +723,16 @@
       "duration": 601,
       "language": "en",
       "messages": 9,
-      "id": "lead_1778067471771_vjy0977xu"
+      "id": "lead_1778067471771_vjy0977xu",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "Salahuddin",
@@ -458,7 +744,16 @@
       "duration": 61,
       "language": "en",
       "messages": 5,
-      "id": "lead_1778067471771_dcb5m5qti"
+      "id": "lead_1778067471771_dcb5m5qti",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -470,7 +765,16 @@
       "duration": 602,
       "language": "en",
       "messages": 5,
-      "id": "lead_1778067471771_hvbvq3ltf"
+      "id": "lead_1778067471771_hvbvq3ltf",
+      "sentiment": {
+        "score": 1,
+        "label": "positive",
+        "emoji": "😊",
+        "interest": "High 🔥",
+        "positive_count": 2,
+        "negative_count": 0,
+        "total_keywords": 2
+      }
     },
     {
       "name": "",
@@ -482,7 +786,16 @@
       "duration": 601,
       "language": "en",
       "messages": 13,
-      "id": "lead_1778067471771_3rrrpgdf4"
+      "id": "lead_1778067471771_3rrrpgdf4",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -494,7 +807,16 @@
       "duration": 27,
       "language": "en",
       "messages": 3,
-      "id": "lead_1778067471771_iunarxiqw"
+      "id": "lead_1778067471771_iunarxiqw",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -506,7 +828,16 @@
       "duration": 129,
       "language": "en",
       "messages": 13,
-      "id": "lead_1778067471771_vgjbwwp0d"
+      "id": "lead_1778067471771_vgjbwwp0d",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -518,7 +849,16 @@
       "duration": 10,
       "language": "en",
       "messages": 3,
-      "id": "lead_1778067471771_h00l0zq66"
+      "id": "lead_1778067471771_h00l0zq66",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -530,7 +870,16 @@
       "duration": 181,
       "language": "en",
       "messages": 15,
-      "id": "lead_1778067471771_8chdqv219"
+      "id": "lead_1778067471771_8chdqv219",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -542,7 +891,16 @@
       "duration": 238,
       "language": "en",
       "messages": 7,
-      "id": "lead_1778067471771_78ln7sdod"
+      "id": "lead_1778067471771_78ln7sdod",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -554,7 +912,16 @@
       "duration": 100,
       "language": "en",
       "messages": 13,
-      "id": "lead_1778067471771_mlgm6w9fw"
+      "id": "lead_1778067471771_mlgm6w9fw",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -566,7 +933,16 @@
       "duration": 27,
       "language": "en",
       "messages": 5,
-      "id": "lead_1778067471771_7aopi1mg6"
+      "id": "lead_1778067471771_7aopi1mg6",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -578,7 +954,16 @@
       "duration": 97,
       "language": "en",
       "messages": 19,
-      "id": "lead_1778067471771_3t6kfh8el"
+      "id": "lead_1778067471771_3t6kfh8el",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "Anuj",
@@ -590,7 +975,16 @@
       "duration": 8,
       "language": "en",
       "messages": 3,
-      "id": "lead_1778067471771_wcipdfgq8"
+      "id": "lead_1778067471771_wcipdfgq8",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -602,7 +996,16 @@
       "duration": 43,
       "language": "en",
       "messages": 5,
-      "id": "lead_1778067471771_xjgfdzi8t"
+      "id": "lead_1778067471771_xjgfdzi8t",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "Kavita",
@@ -614,7 +1017,16 @@
       "duration": 181,
       "language": "en",
       "messages": 15,
-      "id": "lead_1778067471771_t0xcycu8f"
+      "id": "lead_1778067471771_t0xcycu8f",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -626,7 +1038,16 @@
       "duration": 427,
       "language": "en",
       "messages": 9,
-      "id": "lead_1778067471771_h7rbl8mq3"
+      "id": "lead_1778067471771_h7rbl8mq3",
+      "sentiment": {
+        "score": 1,
+        "label": "positive",
+        "emoji": "😊",
+        "interest": "High 🔥",
+        "positive_count": 1,
+        "negative_count": 0,
+        "total_keywords": 1
+      }
     },
     {
       "name": "",
@@ -638,7 +1059,16 @@
       "duration": 37,
       "language": "en",
       "messages": 5,
-      "id": "lead_1778067471771_6omygv4tr"
+      "id": "lead_1778067471771_6omygv4tr",
+      "sentiment": {
+        "score": 1,
+        "label": "positive",
+        "emoji": "😊",
+        "interest": "High 🔥",
+        "positive_count": 1,
+        "negative_count": 0,
+        "total_keywords": 1
+      }
     },
     {
       "name": "",
@@ -650,7 +1080,16 @@
       "duration": 54,
       "language": "en",
       "messages": 8,
-      "id": "lead_1778067471771_yc1p3apqd"
+      "id": "lead_1778067471771_yc1p3apqd",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "Moses",
@@ -662,7 +1101,16 @@
       "duration": 276,
       "language": "en",
       "messages": 15,
-      "id": "lead_1778067471771_sty2m33xc"
+      "id": "lead_1778067471771_sty2m33xc",
+      "sentiment": {
+        "score": 1,
+        "label": "positive",
+        "emoji": "😊",
+        "interest": "High 🔥",
+        "positive_count": 1,
+        "negative_count": 0,
+        "total_keywords": 1
+      }
     },
     {
       "name": "Alfred",
@@ -674,7 +1122,16 @@
       "duration": 603,
       "language": "en",
       "messages": 11,
-      "id": "lead_1778067471771_4xbm7ulso"
+      "id": "lead_1778067471771_4xbm7ulso",
+      "sentiment": {
+        "score": 1,
+        "label": "positive",
+        "emoji": "😊",
+        "interest": "High 🔥",
+        "positive_count": 1,
+        "negative_count": 0,
+        "total_keywords": 1
+      }
     },
     {
       "name": "",
@@ -686,7 +1143,16 @@
       "duration": 602,
       "language": "en",
       "messages": 3,
-      "id": "lead_1778067471771_4579vsilu"
+      "id": "lead_1778067471771_4579vsilu",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "Naveen",
@@ -698,7 +1164,16 @@
       "duration": 241,
       "language": "en",
       "messages": 21,
-      "id": "lead_1778067471771_t6u30wu4s"
+      "id": "lead_1778067471771_t6u30wu4s",
+      "sentiment": {
+        "score": 1,
+        "label": "positive",
+        "emoji": "😊",
+        "interest": "High 🔥",
+        "positive_count": 1,
+        "negative_count": 0,
+        "total_keywords": 1
+      }
     },
     {
       "name": "",
@@ -710,7 +1185,16 @@
       "duration": 15,
       "language": "en",
       "messages": 3,
-      "id": "lead_1778067471771_5pygndaf8"
+      "id": "lead_1778067471771_5pygndaf8",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -722,7 +1206,16 @@
       "duration": 369,
       "language": "en",
       "messages": 17,
-      "id": "lead_1778067471771_o35w0mj3p"
+      "id": "lead_1778067471771_o35w0mj3p",
+      "sentiment": {
+        "score": 1,
+        "label": "positive",
+        "emoji": "😊",
+        "interest": "High 🔥",
+        "positive_count": 1,
+        "negative_count": 0,
+        "total_keywords": 1
+      }
     },
     {
       "name": "",
@@ -734,7 +1227,16 @@
       "duration": 206,
       "language": "en",
       "messages": 19,
-      "id": "lead_1778067471771_tt25s967x"
+      "id": "lead_1778067471771_tt25s967x",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -746,7 +1248,16 @@
       "duration": 68,
       "language": "en",
       "messages": 7,
-      "id": "lead_1778067471771_u07lb6rlc"
+      "id": "lead_1778067471771_u07lb6rlc",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -758,7 +1269,16 @@
       "duration": 129,
       "language": "en",
       "messages": 9,
-      "id": "lead_1778067471771_hxnoo5t9f"
+      "id": "lead_1778067471771_hxnoo5t9f",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -770,7 +1290,16 @@
       "duration": 116,
       "language": "en",
       "messages": 9,
-      "id": "lead_1778067471771_twvs7ivt7"
+      "id": "lead_1778067471771_twvs7ivt7",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -782,7 +1311,16 @@
       "duration": 3,
       "language": "en",
       "messages": 3,
-      "id": "lead_1778067471771_i3rqcfcu6"
+      "id": "lead_1778067471771_i3rqcfcu6",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -794,7 +1332,16 @@
       "duration": 102,
       "language": "en",
       "messages": 13,
-      "id": "lead_1778067471771_kemls3h2d"
+      "id": "lead_1778067471771_kemls3h2d",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -806,7 +1353,16 @@
       "duration": 75,
       "language": "en",
       "messages": 9,
-      "id": "lead_1778067471771_j7hdvodyy"
+      "id": "lead_1778067471771_j7hdvodyy",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -818,7 +1374,16 @@
       "duration": 187,
       "language": "en",
       "messages": 21,
-      "id": "lead_1778067471771_4uxlcmp39"
+      "id": "lead_1778067471771_4uxlcmp39",
+      "sentiment": {
+        "score": 0.5,
+        "label": "neutral",
+        "emoji": "😐",
+        "interest": "Medium 👍",
+        "positive_count": 0,
+        "negative_count": 0,
+        "total_keywords": 0
+      }
     },
     {
       "name": "",
@@ -830,7 +1395,16 @@
       "duration": 16,
       "language": "en",
       "messages": 3,
-      "id": "lead_1778067471771_ioyfikzck"
+      "id": "lead_1778067471771_ioyfikzck",
+      "sentiment": {
+        "score": 1,
+        "label": "positive",
+        "emoji": "😊",
+        "interest": "High 🔥",
+        "positive_count": 1,
+        "negative_count": 0,
+        "total_keywords": 1
+      }
     },
     {
       "name": "",
@@ -842,8 +1416,17 @@
       "duration": 59,
       "language": "en",
       "messages": 7,
-      "id": "lead_1778067471771_nbn3qbj9m"
+      "id": "lead_1778067471771_nbn3qbj9m",
+      "sentiment": {
+        "score": 1,
+        "label": "positive",
+        "emoji": "😊",
+        "interest": "High 🔥",
+        "positive_count": 1,
+        "negative_count": 0,
+        "total_keywords": 1
+      }
     }
   ],
-  "lastUpdated": "2026-05-08T08:20:17.794Z"
+  "lastUpdated": "2026-05-11T10:01:04.155Z"
 }
