@@ -345,6 +345,88 @@
         .badge-cold { background: #DBEAFE; color: #3B82F6; border: 1px solid #BFDBFE; }
         .badge-email { background: #D1FAE5; color: #059669; border: 1px solid #A7F3D0; }
 
+        .sentiment-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
+        .sentiment-positive { background: rgba(16, 185, 129, 0.15); color: #10B981; }
+        .sentiment-neutral { background: rgba(245, 158, 11, 0.15); color: #F59E0B; }
+        .sentiment-negative { background: rgba(239, 68, 68, 0.15); color: #EF4444; }
+
+        .sentiment-bar {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+
+        .sentiment-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .sentiment-fill.sentiment-positive { background: linear-gradient(90deg, #10B981, #059669); }
+        .sentiment-fill.sentiment-neutral { background: linear-gradient(90deg, #F59E0B, #D97706); }
+        .sentiment-fill.sentiment-negative { background: linear-gradient(90deg, #EF4444, #DC2626); }
+
+        .sentiment-details {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        .sentiment-emoji { font-size: 20px; }
+
+        .sentiment-label {
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .sentiment-interest {
+            color: #94A3B8;
+            font-size: 13px;
+        }
+
+        .sentiment-keywords {
+            display: flex;
+            gap: 15px;
+            font-size: 12px;
+            color: #64748B;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .sentiment-section {
+            background: rgba(30, 30, 60, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .sentiment-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #94A3B8;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         .btn-row {
             display: flex;
             gap: 8px;
@@ -938,6 +1020,14 @@
                 <div class="stat-value" id="stat-email">0</div>
                 <div class="stat-label">📧 EMAIL</div>
             </div>
+            <div class="stat">
+                <div class="stat-value" id="stat-positive">0</div>
+                <div class="stat-label">😊 Positive</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="stat-negative">0</div>
+                <div class="stat-label">😠 Negative</div>
+            </div>
         </div>
 
         <div class="filter-btns">
@@ -946,6 +1036,8 @@
             <button class="filter-btn" onclick="setCategory('COLD')">❄️ COLD (<span id="filter-cold">0</span>)</button>
             <button class="filter-btn" onclick="setCategory('EMAIL_ONLY')">📧 EMAIL (<span id="filter-email">0</span>)</button>
             <button class="filter-btn" onclick="setCategory('DUE')">📅 DUE (<span id="filter-due">0</span>)</button>
+            <button class="filter-btn" onclick="setCategory('POSITIVE')">😊 POSITIVE (<span id="filter-positive">0</span>)</button>
+            <button class="filter-btn" onclick="setCategory('NEGATIVE')">😠 NEGATIVE (<span id="filter-negative">0</span>)</button>
         </div>
 
         <input type="text" class="search-box" placeholder="Search by name, email, phone, or topic..." oninput="handleSearch(this.value)">
@@ -1101,6 +1193,11 @@
                 const data = await resp.json();
                 allData = data.leads;
 
+                // Analyze sentiment for each lead
+                allData.forEach(lead => {
+                    lead.sentiment = analyzeSentiment(lead);
+                });
+
                 updateStats();
                 renderTable();
 
@@ -1171,6 +1268,16 @@
             document.getElementById('filter-email').textContent = email;
             const filterDueEl = document.getElementById('filter-due');
             if (filterDueEl) filterDueEl.textContent = dueCount;
+
+            // Count sentiment
+            const positive = allData.filter(r => r.sentiment && r.sentiment.label === 'positive').length;
+            const negative = allData.filter(r => r.sentiment && r.sentiment.label === 'negative').length;
+            document.getElementById('stat-positive').textContent = positive;
+            document.getElementById('stat-negative').textContent = negative;
+            const filterPositiveEl = document.getElementById('filter-positive');
+            if (filterPositiveEl) filterPositiveEl.textContent = positive;
+            const filterNegativeEl = document.getElementById('filter-negative');
+            if (filterNegativeEl) filterNegativeEl.textContent = negative;
         }
 
         // Load all follow-ups for filtering (from API)
@@ -1207,8 +1314,93 @@
                     );
                 }
 
+                // Handle sentiment filters
+                if (currentCategory === 'POSITIVE') {
+                    return row.sentiment && row.sentiment.label === 'positive';
+                }
+                if (currentCategory === 'NEGATIVE') {
+                    return row.sentiment && row.sentiment.label === 'negative';
+                }
+
                 return matchCat && matchSearch;
             });
+        }
+
+        // Sentiment Analysis Function
+        function analyzeSentiment(lead) {
+            const transcript = (lead.transcript || '').toLowerCase();
+            const summary = (lead.summary || '').toLowerCase();
+            const title = (lead.title || '').toLowerCase();
+            
+            // Positive keywords for pharmaceutical/healthcare context
+            const positiveWords = [
+                'interested', 'order', 'buy', 'purchase', 'distribute', 'distributor', 'export', 'bulk',
+                'requirement', 'need', 'want', 'looking for', 'serious', 'confirmed', 'proceed',
+                'quote', 'pricing', 'catalog', 'send', 'email', 'contact', 'follow up',
+                'immune booster', 'vitamin', 'cardiovascular', 'pharmaceutical', 'generic',
+                'medicine', 'tablet', 'injection', 'capsule', 'approved', 'registered',
+                'good', 'great', 'excellent', 'happy', 'satisfied', 'perfect', 'ideal',
+                'yes', 'okay', 'sure', 'absolutely', 'definitely', 'confirmed', 'agreed'
+            ];
+            
+            // Negative keywords
+            const negativeWords = [
+                'not interested', 'no need', 'not looking', 'too expensive', 'costly', 'high price',
+                'not available', 'out of stock', 'rejected', 'declined', 'cancelled', 'not now',
+                'later', 'maybe', 'uncertain', 'doubt', 'unsure', 'hesitant', 'problem',
+                'issue', 'complaint', 'bad', 'poor', 'disappointed', 'frustrated', 'angry',
+                'not working', 'ineffective', 'side effects', 'recall', 'fraud', 'scam'
+            ];
+            
+            let positiveCount = 0;
+            let negativeCount = 0;
+            
+            // Count positive words
+            positiveWords.forEach(word => {
+                if (transcript.includes(word) || summary.includes(word) || title.includes(word)) {
+                    positiveCount++;
+                }
+            });
+            
+            // Count negative words
+            negativeWords.forEach(word => {
+                if (transcript.includes(word) || summary.includes(word) || title.includes(word)) {
+                    negativeCount++;
+                }
+            });
+            
+            // Calculate score (-1 to 1 range, normalized to 0-1)
+            const totalKeywords = positiveCount + negativeCount;
+            let score = 0.5; // neutral default
+            
+            if (totalKeywords > 0) {
+                score = positiveCount / totalKeywords;
+            }
+            
+            // Determine label based on score
+            let label = 'neutral';
+            let emoji = '😐';
+            let interest = 'Medium 👍';
+            
+            if (score >= 0.6) {
+                label = 'positive';
+                emoji = '😊';
+                interest = 'High 🔥';
+            } else if (score <= 0.4) {
+                label = 'negative';
+                emoji = '😠';
+                interest = 'Low 😕';
+            }
+            
+            return {
+                score: parseFloat(score.toFixed(2)),
+                label: label,
+                emoji: emoji,
+                interest: interest,
+                positive_count: positiveCount,
+                negative_count: negativeCount,
+                total_keywords: totalKeywords
+            };
         }
 
         function generateSummary(lead) {
@@ -1472,6 +1664,7 @@ Livealth BioPharma`;
                                         <div class="convo-title">📞 ${lead.title || 'General Inquiry'}</div>
                                     </div>
                                     <span class="badge badge-${lead.category.toLowerCase()}">${lead.category === 'HOT' ? '🔥 HOT' : lead.category === 'COLD' ? '❄️ COLD' : '📧 EMAIL'}</span>
+                                    ${lead.sentiment ? `<span class="sentiment-badge sentiment-${lead.sentiment.label}">${lead.sentiment.emoji} ${row.sentiment.interest}</span>` : ''}
                                 </div>
                                 <div class="section summary show">
                                     <div class="section-header">📋 Call Summary</div>
@@ -1500,6 +1693,22 @@ Livealth BioPharma`;
                                     <div class="section-header">📝 Conversation Transcript</div>
                                     <div class="section-content">${transcript}</div>
                                 </div>
+                                <div class="sentiment-section">
+                                    <div class="sentiment-title">😊 Sentiment Analysis</div>
+                                    <div class="sentiment-bar">
+                                        <div class="sentiment-fill sentiment-${lead.sentiment.label}" style="width: ${Math.abs(lead.sentiment.score * 100)}%;"></div>
+                                    </div>
+                                    <div class="sentiment-details">
+                                        <span class="sentiment-emoji">${lead.sentiment.emoji}</span>
+                                        <span class="sentiment-label">${lead.sentiment.label.toUpperCase()} (${lead.sentiment.score})</span>
+                                        <span class="sentiment-interest">Interest: ${lead.sentiment.interest}</span>
+                                    </div>
+                                    <div class="sentiment-keywords">
+                                        <span>✅ Positive: ${lead.sentiment.positive_count}</span>
+                                        <span>❌ Negative: ${lead.sentiment.negative_count}</span>
+                                        <span>📊 Total: ${lead.sentiment.total_keywords}</span>
+                                    </div>
+                                </div>
                                 <div class="transcript-actions">
                                     <button class="back-btn show" onclick="goBack()">← Back to Leads List</button>
                                     <button class="email-btn" onclick="generateEmailFromTranscript('${leadId}')">📧 Generate Email Reply</button>
@@ -1520,6 +1729,7 @@ Livealth BioPharma`;
                                         <div class="convo-title">📞 ${lead.title || 'General Inquiry'}</div>
                                     </div>
                                     <span class="badge badge-${lead.category.toLowerCase()}">${lead.category === 'HOT' ? '🔥 HOT' : lead.category === 'COLD' ? '❄️ COLD' : '📧 EMAIL'}</span>
+                                    ${lead.sentiment ? `<span class="sentiment-badge sentiment-${lead.sentiment.label}">${lead.sentiment.emoji} ${lead.sentiment.interest}</span>` : ''}
                                 </div>
                                 <div class="section followups show">
                                     <div class="section-header">📅 Follow-Ups Timeline</div>
@@ -1568,6 +1778,7 @@ Livealth BioPharma`;
                                 <div class="convo-title">📞 ${shortTitle}</div>
                             </div>
                             <span class="badge badge-${row.category.toLowerCase()}">${row.category === 'HOT' ? '🔥 HOT' : row.category === 'COLD' ? '❄️ COLD' : '📧 EMAIL'}</span>
+                            ${row.sentiment ? `<span class="sentiment-badge sentiment-${row.sentiment.label}">${row.sentiment.emoji} ${row.sentiment.interest}</span>` : ''}
                         </div>
                         <div class="btn-row">
                             <button class="btn-expand summary" onclick="toggleSection('${leadId}', 'summary')">
