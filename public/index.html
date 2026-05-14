@@ -1411,30 +1411,32 @@
         }
 
         function generateSummary(lead) {
-            const topic = lead.title || 'Livealth products';
+            const topic = lead.title || 'General Inquiry';
             const lang = lead.language || 'en';
             const duration = Math.floor((lead.duration || 60) / 60);
             const name = lead.name || 'Customer';
-
-            const summaries = {
-                'Bengali Language Support': `Customer ${name} called seeking product information in Bengali language. Agent provided assistance in Bengali covering Livealth Biopharma's pharmaceutical product range including generic medicines and specialty drugs. Customer requested product catalog via email. Duration: ${duration} min.`,
-
-                'Language Support Inquiry': `Inquiry about language support options for placing orders. Customer interested in regional language assistance for future communication. Agent explained multi-language support availability. Next step: Email product catalog. Duration: ${duration} min.`,
-
-                'Biopharma Products Services': `${name} requested detailed information about Livealth Biopharma's product range and services. Agent explained product categories including tablets, injections, capsules across cardiovascular, anti-infectives, and specialty therapeutics. Customer requested catalog for distribution purposes. Duration: ${duration} min.`,
-
-                'Order Immune Boosters': `${name} called to place bulk order for immune booster products. Customer identified as distributor seeking products for Middle East market. Required Vitamin C, Zinc, and immunity booster combinations. Agent noted requirements for sales team follow-up. Duration: ${duration} min.`,
-
-                'Yemen Distribution Inquiry': `Distribution inquiry from ${name} in Yemen. Interest in becoming Livealth Biopharma distributor. Agent explained export requirements, minimum order quantities ($10,000 USD), and documentation needed for Yemen market registration. Duration: ${duration} min.`,
-
-                'Nigeria Pharma Export': `Export inquiry for Nigeria market from ${name}. Interest in generic pharmaceutical products for distribution. Agent discussed product availability, pricing, and shipping logistics. Customer provided email for catalog distribution. Duration: ${duration} min.`,
-            };
-
-            if (summaries[topic]) {
-                return summaries[topic];
+            
+            // Build summary from available data
+            let summary = `${name} called regarding "${topic}". `;
+            summary += `Language: ${lang}. Duration: ${duration} min. `;
+            
+            if (lead.phone) {
+                summary += `Phone: ${lead.phone}. `;
             }
-
-            return `${name} called regarding "${topic}". Language: ${lang}. Duration: ${duration} min. Customer requested product information and catalog. Contact: ${lead.phone || 'N/A'}. ${lead.email ? 'Email: ' + lead.email + '.' : ''} Sales team to follow up within 24 hours.`;
+            if (lead.email) {
+                summary += `Email: ${lead.email}. `;
+            }
+            
+            // Add category-specific context
+            if (lead.category === 'HOT') {
+                summary += `🔥 HOT LEAD: High interest in Livealth Biopharma products. `;
+            } else if (lead.category === 'COLD') {
+                summary += `❄️ General inquiry about products/services. `;
+            }
+            
+            summary += `Sales team to follow up within 24 hours. Call Topic: ${topic}.`;
+            
+            return summary;
         }
 
         function generateTranscript(lead) {
