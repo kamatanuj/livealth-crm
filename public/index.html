@@ -1651,9 +1651,12 @@ Livealth BioPharma`;
 
             if (expandedLead !== null && expandedLead.includes('_')) {
                 const [leadId, section] = expandedLead.split('_');
-                const lead = filtered.find(r => (r.date + r.phone + r.title) === leadId);
-
-                if (lead) {
+                const lead = filtered.find(r => (r.date + (r.phone || '') + (r.title || '')) === leadId);
+                
+                if (!lead) {
+                    console.error('Lead not found for expanded view:', leadId);
+                    expandedLead = null;
+                } else {
                     const summary = generateSummary(lead);
                     const transcript = generateTranscript(lead);
 
@@ -1769,6 +1772,8 @@ Livealth BioPharma`;
                     return;
                 }
             }
+
+            // Normal list view - fallback if lead not found
 
             container.innerHTML = pageData.map((row) => {
                 const leadId = row.date + (row.phone || '') + (row.title || '');
