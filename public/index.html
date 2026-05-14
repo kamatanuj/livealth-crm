@@ -1462,6 +1462,7 @@
         }
 
         function toggleSection(leadId, section) {
+            console.log('Toggle section called:', leadId, section);
             if (expandedLead === leadId + '_' + section) {
                 expandedLead = null;
             } else {
