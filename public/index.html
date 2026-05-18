@@ -3,6 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <script>
+        // Force cache refresh on new deployments - version: 2026-05-18-v1
+        (function() {
+            const BUILD_VERSION = '2026-05-18-v1';
+            const storedVersion = localStorage.getItem('livealth_app_version');
+            if (storedVersion !== BUILD_VERSION) {
+                localStorage.setItem('livealth_app_version', BUILD_VERSION);
+                if (storedVersion) {
+                    location.reload(true);
+                }
+            }
+        })();
+    </script>
     <title>Livealth CRM - Lead Management</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -1677,7 +1693,7 @@ Livealth BioPharma`;
                                         <div class="convo-title">📞 ${lead.title || 'General Inquiry'}</div>
                                     </div>
                                     <span class="badge badge-${lead.category.toLowerCase()}">${lead.category === 'HOT' ? '🔥 HOT' : lead.category === 'COLD' ? '❄️ COLD' : '📧 EMAIL'}</span>
-                                    ${lead.sentiment ? `<span class="sentiment-badge sentiment-${lead.sentiment.label}">${lead.sentiment.emoji} ${row.sentiment.interest}</span>` : ''}
+                                    ${lead.sentiment ? `<span class="sentiment-badge sentiment-${lead.sentiment.label}">${lead.sentiment.emoji} ${lead.sentiment.interest}</span>` : ''}
                                 </div>
                                 <div class="section summary show">
                                     <div class="section-header">📋 Call Summary</div>
@@ -1706,6 +1722,7 @@ Livealth BioPharma`;
                                     <div class="section-header">📝 Conversation Transcript</div>
                                     <div class="section-content">${transcript}</div>
                                 </div>
+                                ${lead.sentiment ? `
                                 <div class="sentiment-section">
                                     <div class="sentiment-title">😊 Sentiment Analysis</div>
                                     <div class="sentiment-bar">
@@ -1722,6 +1739,7 @@ Livealth BioPharma`;
                                         <span>📊 Total: ${lead.sentiment.total_keywords}</span>
                                     </div>
                                 </div>
+                                ` : ''}
                                 <div class="transcript-actions">
                                     <button class="back-btn show" onclick="goBack()">← Back to Leads List</button>
                                     <button class="email-btn" onclick="generateEmailFromTranscript('${leadId}')">📧 Generate Email Reply</button>
