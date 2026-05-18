@@ -1552,7 +1552,7 @@
             const phone = lead.phone || '';
 
             // Generate transcript
-            const transcript = generateTranscript(lead);
+            const transcript = lead.transcript || generateTranscript(lead);
 
             // Create personalized email based on the specific inquiry
             let emailReply = '';
@@ -1658,8 +1658,8 @@ Livealth BioPharma`;
                     console.error('Lead not found for expanded view:', leadId);
                     expandedLead = null;
                 } else {
-                    const summary = generateSummary(lead);
-                    const transcript = generateTranscript(lead);
+                    const summary = lead.summary || generateSummary(lead);
+                    const transcript = lead.transcript || generateTranscript(lead);
 
                     let content = '';
 
