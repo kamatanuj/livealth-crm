@@ -1479,13 +1479,13 @@
 
         function toggleSection(leadId, section) {
             console.log('Toggle section called:', leadId, section);
-            if (expandedLead === leadId + '_' + section) {
+            if (expandedLead === leadId + '|' + section) {
                 expandedLead = null;
             } else {
                 // Save scroll position and lead ID
                 savedScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
                 savedLeadId = leadId;
-                expandedLead = leadId + '_' + section;
+                expandedLead = leadId + '|' + section;
             }
             renderTable();
         }
@@ -1666,8 +1666,10 @@ Livealth BioPharma`;
 
             const container = document.getElementById('leads-container');
 
-            if (expandedLead !== null && expandedLead.includes('_')) {
-                const [leadId, section] = expandedLead.split('_');
+            if (expandedLead !== null && expandedLead.includes('|')) {
+                const lastPipeIndex = expandedLead.lastIndexOf('|');
+                const leadId = expandedLead.substring(0, lastPipeIndex);
+                const section = expandedLead.substring(lastPipeIndex + 1);
                 const lead = filtered.find(r => (r.date + (r.phone || '') + (r.title || '')) === leadId);
                 
                 if (!lead) {
