@@ -1,6 +1,18 @@
 {
-  "lastUpdated": "2026-05-18T02:56:30.468141",
+  "lastUpdated": "2026-05-18T03:00:03.971Z",
   "leads": [
+    {
+      "name": "Unknown",
+      "phone": "",
+      "email": "",
+      "date": "2026-05-18",
+      "title": "General Inquiry",
+      "duration": 60,
+      "language": "en",
+      "category": "COLD",
+      "conversation_id": "conv_4501krt4a33yfg6rgpps1wkmvz63",
+      "id": "lead_1779073203968_15237efb"
+    },
     {
       "id": "lead_1778993400000_conv_450",
       "name": "Unknown",
@@ -240,20 +252,6 @@
       "transcript": "[AGENT] \"Namaste! Welcome to Livealth Biopharma. I'm here to help you with information about our pharmaceutical products and services. How can I assist you today?\"\n[USER] Any job opportunity in Quality Assurance department\n[AGENT] I appreciate your interest in joining our team. While I specialize in corporate relations and product information, I recommend sending your resume to our HR department at sales@livealthbiopharma.in. May I have your name and phone number so I can note your interest for our team?\n[USER] Rahul Thombare\n[AGENT] Thank you, Rahul. May I also have your best contact number and email address? This will help our team reach out to you regarding any suitable openings in Quality Assurance.\n[USER] 9930989820\n[AGENT] Thank you, Rahul. I have noted your contact number. Could you also share your email address so I can ensure you receive any relevant updates?"
     },
     {
-      "id": "lead_1778144712000_conv_510",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-05-07",
-      "title": "General Inquiry",
-      "duration": 82,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_5101kr0ty5syf54855986tfsdg3m",
-      "summary": "The agent welcomed the user to Livealth Biopharma and offered assistance with products and services. Despite repeated attempts by the agent to engage and re-offer help with pharmaceutical manufacturing or partnership opportunities, the user remained unresponsive throughout the conversation.",
-      "transcript": "[AGENT] \"Namaste! Welcome to Livealth Biopharma. I'm here to help you with information about our pharmaceutical products and services. How can I assist you today?\"\n[USER] ...\n[AGENT] [slow] Hello? I'm sorry, I [fast] didn't hear you. Are you still there? Please let me know how I can help you with our pharmaceutical products or services.\n[USER] ...\n[AGENT] [slow] It seems I'm having trouble hearing you. Are you still there? Please let me know if you have any questions about our [fast] pharmaceutical manufacturing or partnership opportunities..."
-    },
-    {
       "id": "lead_1778144695000_conv_250",
       "name": "Unknown",
       "phone": "2615893250",
@@ -408,6 +406,66 @@
       "transcript": "[AGENT] \"Namaste! Welcome to Livealth Biopharma. I'm here to help you with information about our...\n[USER] Hello.\n[AGENT] [happy] Namaste! Welcome to Livealth Biopharma. I'm [warm] Dr. Anjali, and I'm here to help you with information about our pharmaceutical products ...\n[USER] Hello.\n[AGENT] [happy] Namaste! Welcome to Livealth Biopharma. I'm [warm] Dr. Anjali, and I'm here to help you with information about our pharmaceutical products and services. How can I assist you today?\n[USER] Hello, mother. How are you doing today?\n[AGENT] [happy] I am doing very well, thank you for asking! [warm] As the Senior Corporate Relations Executive at Livealth Biopharma, I am here to assist you with any pharmaceutical inquiries. How can I help you with our products or services today?\n[USER] ...\n[AGENT] [warm] I'm sorry, I didn't quite catch that. [happy] Are you still there, or is there something specific about our pharmaceutical products you'd like to..."
     },
     {
+      "name": "Anuj",
+      "email": "kamatanuj@gmail.com",
+      "phone": "9020370923",
+      "category": "HOT",
+      "date": "2026-04-29",
+      "title": "Bengali Language Support",
+      "duration": 187,
+      "language": "en",
+      "messages": 7,
+      "id": "lead_1779073203965_44a2b7cc"
+    },
+    {
+      "name": "Surat",
+      "email": "truvalisjealthacre@gmail.com",
+      "phone": "7201818793",
+      "category": "HOT",
+      "date": "2026-04-29",
+      "title": "Language Support Inquiry",
+      "duration": 19,
+      "language": "en",
+      "messages": 3,
+      "id": "lead_1779073203965_e817f1a2"
+    },
+    {
+      "name": "Surat",
+      "email": "truvalishealthcare@gmail.com",
+      "phone": "7201818793",
+      "category": "HOT",
+      "date": "2026-04-29",
+      "title": "Biopharma Products Services",
+      "duration": 7,
+      "language": "en",
+      "messages": 3,
+      "id": "lead_1779073203965_78732e2c"
+    },
+    {
+      "name": "Umang",
+      "email": "vintapandey032345@gamil.com",
+      "phone": "9554067071",
+      "category": "HOT",
+      "date": "2026-04-29",
+      "title": "Order Immune Boosters",
+      "duration": 149,
+      "language": "en",
+      "messages": 13,
+      "id": "lead_1779073203965_6dec0a46"
+    },
+    {
+      "name": "Vaibhav",
+      "email": "sales@livealthbiopharma.in",
+      "phone": "9405062501",
+      "category": "HOT",
+      "date": "2026-04-29",
+      "title": "Livealth Product Inquiry",
+      "duration": 125,
+      "language": "en",
+      "messages": 19,
+      "id": "lead_1779073203965_6a086c7f"
+    },
+    {
       "id": "lead_1777453824000_conv_480",
       "name": "Unknown",
       "phone": "",
@@ -478,6 +536,30 @@
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] ...\n[AGENT] [slow] Namaste! [happy] Welcome to...\n[USER] Well, hi.\n[AGENT] [happy] Namaste!...\n[USER] Yeah. Uh, can you tell me something about Livealth Biopharma?\n[AGENT] [happy] Namaste! Welcome to Livealth Biopharma. We are a global pharmaceutical company providing high-quality solutions like APIs, finished...\n[USER] Yeah, tell me something about your products and some services.\n[AGENT] [happy] We offer a wide range of products including generic medicines, APIs, veterinary, herbal, and...\n[USER] I can't hear you.\n[AGENT] [sad] I am so sorry that you are having trouble hearing me. [happy] I am Dr. Anjali from Livealth Biopharma, and we provide pharmaceutical products like generic medicines, APIs, and herbal supplements across sixty-five countries. [excited] Would you like me to email you our full product list and service brochure so you can review them easily?\n[USER] Yes, please do that.\n[AGENT] [happy] I would be happy to send that over to you! [excited] May I have your name and the best email address to reach you? Also, are you interested in any specific...\n[USER] Yeah.\n[AGENT] [happy] Thank you! Could you please provide your name...\n[USER] My name is Anuj and the email address is...My name is Anuj and my email address is kamatanuj@gmail. That is K-A-M-A-T-A-N-U-J@gmail.com. And my telephone number is 9820370923.\n[AGENT] [happy] Thank you, Mister Anuj! I have noted your email as K A M A T A N U J at gmail dot com and your phone number. [excited] I will send the product specifications and our partnership brochure to you right away. You should receive our response within two hours. Thank you for calling Livealth Biopharma..."
     },
     {
+      "name": "Vaibhav",
+      "email": "sales.mediocon@gmail.com",
+      "phone": "9405062501",
+      "category": "HOT",
+      "date": "2026-04-28",
+      "title": "Yemen Distribution Inquiry",
+      "duration": 52,
+      "language": "en",
+      "messages": 3,
+      "id": "lead_1779073203966_1806467b"
+    },
+    {
+      "name": "Anuj",
+      "email": "",
+      "phone": "9820370923",
+      "category": "HOT",
+      "date": "2026-04-28",
+      "title": "Nigeria Pharma Export",
+      "duration": 137,
+      "language": "en",
+      "messages": 13,
+      "id": "lead_1779073203966_9c57dfcc"
+    },
+    {
       "id": "lead_1777415233000_conv_610",
       "name": "Unknown",
       "phone": "7774022794",
@@ -504,6 +586,54 @@
       "conversation_id": "conv_2001kqavtqfzfctvxq6sgta1kqrq",
       "summary": "The user, Justus Nwachukwu from Mentan, contacted Livealth Biopharma regarding international exports of Finished Formulations to Nigeria, specifically Daptomycin and Ceftriaxone. He provided his WhatsApp number (+2348142107830). The agent confirmed that an export manager for the African region would contact him via WhatsApp with a product list and specific quotes for the requested products.",
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] International Exports.\n[AGENT] [happy] That is wonderful to hear! To connect you with the right country manager, which country are you looking to import to? Also, are you interested in [excited] Finished Formulations or APIs?\n[USER] I'm importing to Nigeria.\n[AGENT] [happy] Thank you for that information! To send you our latest Product List and pricing for Nigeria, could I please get your [excited] name, company name, and WhatsApp number? Also, are you interested in Finished Formulations or APIs?\n[USER] Yeah, I'm interested in Finished Formulation, and I'm, um, from Nigeria. My name is Justus Jua-- uh, Justus Nwachukwu. My company name is Mentan.\n[AGENT] [happy] Thank you, Mr. Nwachukwu! I have noted that Mentan is interested in Finished Formulations for Nigeria. Could you please provide your [excited] WhatsApp number or email address so our export manager can send you our product list and arrange a callback?\n[USER] My WhatsApp number is, is +2348142107830.\n[AGENT] [happy] Thank you, Mr. Nwachukwu, I have successfully noted your contact details and interest in Finished Formulations for Mentan in Nigeria. Our export manager for the African region will reach out to you on [excited] WhatsApp very soon with our product list. Is there anything else I can assist you with today?\n[USER] No, there won't be any other thing. All, um, I'll be demand-- My demand is for Daptomycin and Ceftriaxone.\n[AGENT] [happy] Thank you for specifying your interest in Daptomycin and Ceftriaxone. I will make sure to include these in your inquiry so our manager can provide the [excited] specific quotes and availability for Nigeria. It was a pleasure speaking with you, and we look forward to a potential partnership..."
+    },
+    {
+      "name": "",
+      "email": "",
+      "phone": "9818118322",
+      "category": "COLD",
+      "date": "2026-04-27",
+      "title": "Candesartan Direct Purchase",
+      "duration": 118,
+      "language": "en",
+      "messages": 5,
+      "id": "lead_1779073203966_1ad33722"
+    },
+    {
+      "name": "",
+      "email": "",
+      "phone": "7907939767",
+      "category": "COLD",
+      "date": "2026-04-27",
+      "title": "Medical Advice Request",
+      "duration": 104,
+      "language": "en",
+      "messages": 5,
+      "id": "lead_1779073203966_dea7744a"
+    },
+    {
+      "name": "",
+      "email": "",
+      "phone": "9650754564",
+      "category": "COLD",
+      "date": "2026-04-27",
+      "title": "Cephalexin Export Iraq",
+      "duration": 406,
+      "language": "en",
+      "messages": 19,
+      "id": "lead_1779073203966_e80c2887"
+    },
+    {
+      "name": "",
+      "email": "",
+      "phone": "9444904048",
+      "category": "COLD",
+      "date": "2026-04-27",
+      "title": "Vardenafil Uganda Export",
+      "duration": 124,
+      "language": "en",
+      "messages": 13,
+      "id": "lead_1779073203966_afccd510"
     },
     {
       "id": "lead_1777319602000_conv_900",
@@ -562,6 +692,18 @@
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] Need some tablets of vardenafil 20mg\n[AGENT] We have Verdenaliv (Vardenafil Tablets 20 mg) available in our product range. To assist you better, are you looking for domestic supply within India or international export?\n[USER] Am in uganda\n[AGENT] That is wonderful, we already have a strong presence in the African region. To connect you with the right country manager and send our product list and pricing for Uganda, could I get your company name and WhatsApp number?\n[USER] 0768414412\n[AGENT] Thank you for providing your contact number. Could you also share your company name so I can arrange for our export manager to send you the product details and pricing for Uganda?\n[USER] Gt pharmacy\n[AGENT] Thank you, I have noted your details for GT Pharmacy. Our export manager will reach out to you on WhatsApp at 0768414412 shortly with our product list and pricing for Uganda. \n\nIs there anything else you would like to know about our manufacturing capabilities or other products?\n[USER] No thank you\n[AGENT] Glad I could help you today! Our team will be in touch with GT Pharmacy shortly. Have a wonderful day!\n"
     },
     {
+      "name": "",
+      "email": "",
+      "phone": "9820633715",
+      "category": "COLD",
+      "date": "2026-04-26",
+      "title": "Personal Use Strips",
+      "duration": 156,
+      "language": "en",
+      "messages": 9,
+      "id": "lead_1779073203966_38c86001"
+    },
+    {
       "id": "lead_1777179425000_conv_640",
       "name": "Unknown",
       "phone": "",
@@ -574,6 +716,30 @@
       "conversation_id": "conv_6401kq42bymmf70bjqy27j3cxs64",
       "summary": "The conversation begins with the agent, a pharmaceutical manufacturer, asking the user to specify if their inquiry is for Domestic Sales or International Exports. The user requests \"5 strips\" for \"personal use\" in \"Bangalore, India.\" The agent clarifies that as a manufacturer, they do not sell directly to patients or provide medical advice, attempting to ascertain if the user is a distributor or healthcare professional for partnership.",
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] Required 5 strips\n[AGENT] I can certainly help you with that. Are you looking for these for domestic use within India or for international export?\n[USER] In india bangalore\n[AGENT] Ji, bilkul. Are you looking for Third-Party Manufacturing or franchise distribution for your requirement in Bangalore?\n\nAlso, to provide you with the correct pricing and availability, may I have your name and company name, please?\n[USER] I want  strip\n[AGENT] I understand you are looking for a small quantity. We are a pharmaceutical manufacturer, so are you a distributor or a healthcare professional looking for a supply?\n[USER] Personal use\n[AGENT] We are a manufacturer and do not provide medical advice or sell directly to patients for personal use. Are you a distributor or a healthcare professional looking to partner with us?"
+    },
+    {
+      "name": "",
+      "email": "",
+      "phone": "9474673840",
+      "category": "COLD",
+      "date": "2026-04-25",
+      "title": "Lidocaine Fiji Supply",
+      "duration": 65,
+      "language": "en",
+      "messages": 3,
+      "id": "lead_1779073203966_ad28794b"
+    },
+    {
+      "name": "",
+      "email": "",
+      "phone": "9970739585",
+      "category": "COLD",
+      "date": "2026-04-25",
+      "title": "Contrast Media Sales Lead",
+      "duration": 241,
+      "language": "en",
+      "messages": 13,
+      "id": "lead_1779073203966_2fda9c34"
     },
     {
       "id": "lead_1777159996000_conv_560",
@@ -602,6 +768,42 @@
       "conversation_id": "conv_1001kq1r59wrefe9hemc7pxgky52",
       "summary": "The conversation was initiated by Dr. Anjali from Livealth Biopharma with Mr. Sanjay Arya from S S Healthcare, Delhi. Mr. Arya expressed interest in domestic sales, specifically for Contrast Media in the Delhi NCR region. The agent confirmed Livealth Biopharma's relevant portfolio and captured Mr. Arya's contact number (9818118322) for the domestic sales team to follow up. The call concluded positively with an anticipated association.",
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] Hello sir\n[AGENT] Hello, I am Dr. Anjali from Livealth Biopharma. Are you calling for Domestic Sales or International Exports?\n[USER] Sanjay Arya From S S Healthcare Delhi\n[AGENT] It is a pleasure to speak with you, Mr. Sanjay Arya from S S Healthcare. Since you are based in Delhi, are you looking for Third-Party Manufacturing or franchise distribution for the domestic market?\n[USER] Yes mam\n[AGENT] I understand. To better assist you, could you please clarify if your primary interest is in Third-Party Manufacturing or franchise distribution? \n\nAlso, may I have your WhatsApp number so I can send you our product list and relevant details for the domestic market?\n[USER] We deals in contrast media in delhi NCR please call me aur text on 9818118322\n[AGENT] Thank you for the details, Mr. Arya; we have a strong portfolio in Contrast Media and would be happy to discuss this further. I have noted your contact number, 9818118322, and will have our domestic sales team reach out to you shortly to discuss your requirements for the Delhi NCR region.\n[USER] Thank you mam\n[AGENT] You're very welcome, Mr. Arya! It was a pleasure speaking with you, and we look forward to a potential association with S S Healthcare.\n"
+    },
+    {
+      "name": "",
+      "email": "",
+      "phone": "9988687138",
+      "category": "COLD",
+      "date": "2026-04-24",
+      "title": "Personal Pharma Inquiry",
+      "duration": 138,
+      "language": "en",
+      "messages": 16,
+      "id": "lead_1779073203966_62a530c4"
+    },
+    {
+      "name": "Surat",
+      "email": "",
+      "phone": "7201818793",
+      "category": "HOT",
+      "date": "2026-04-24",
+      "title": "Faropenem Tablets Inquiry",
+      "duration": 20,
+      "language": "en",
+      "messages": 3,
+      "id": "lead_1779073203966_c920f004"
+    },
+    {
+      "name": "",
+      "email": "",
+      "phone": "7087696916",
+      "category": "COLD",
+      "date": "2026-04-24",
+      "title": "Job Application Inquiry",
+      "duration": 183,
+      "language": "en",
+      "messages": 15,
+      "id": "lead_1779073203966_949ba05a"
     },
     {
       "id": "lead_1777064512000_conv_550",
@@ -646,6 +848,54 @@
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] any job oppurtunities\n[AGENT] While I primarily handle corporate relations and business inquiries, I can certainly note your interest. Could you please share your name and the department you are looking to apply for so I can pass your details to our HR team?\n[USER] linson varghese i completed doctor of pharmacy\n[AGENT] Thank you, Mr. Varghese. To help our HR team review your profile for any suitable openings in our clinical or production departments, could you please provide your contact number and email address?\n[USER] i wish to work i clinical side\n[AGENT] I understand you are interested in the clinical side. To ensure your profile reaches the right department, could you please provide your contact number and email address?\n[USER] mobile number 7907939767\n[AGENT] Thank you, Mr. Varghese. I have noted your contact number and your interest in clinical roles; could you also share your email address so our team can reach out to you with any relevant opportunities?\n[USER] gmail id linsonvarghesethomas@gmail.com\n[AGENT] Thank you, Mr. Varghese. I have noted your details and will share them with our HR department for review regarding clinical opportunities. \n\nIs there anything else related to Livealth Biopharma's products or services I can assist you with today?\n[USER] no thanks\n[AGENT] It was a pleasure speaking with you, Mr. Varghese. I have shared your details with our HR team, and they will reach out if there is a suitable opening for your profile. Have a wonderful day!\n"
     },
     {
+      "name": "Doctor",
+      "email": "",
+      "phone": "8395049046",
+      "category": "HOT",
+      "date": "2026-04-23",
+      "title": "Clonidine Cyprus Availability",
+      "duration": 24,
+      "language": "en",
+      "messages": 3,
+      "id": "lead_1779073203966_b770a11f"
+    },
+    {
+      "name": "",
+      "email": "",
+      "phone": "9313134420",
+      "category": "COLD",
+      "date": "2026-04-23",
+      "title": "Livealth Biopharma Greeting",
+      "duration": 7,
+      "language": "en",
+      "messages": 3,
+      "id": "lead_1779073203966_e9cd86c3"
+    },
+    {
+      "name": "",
+      "email": "",
+      "phone": "9890978402",
+      "category": "COLD",
+      "date": "2026-04-23",
+      "title": "Sales Inquiry",
+      "duration": 7,
+      "language": "en",
+      "messages": 1,
+      "id": "lead_1779073203966_108010b1"
+    },
+    {
+      "name": "Jayashri",
+      "email": "",
+      "phone": "8939153667",
+      "category": "HOT",
+      "date": "2026-04-23",
+      "title": "Export Inquiry Mozambique",
+      "duration": 95,
+      "language": "en",
+      "messages": 18,
+      "id": "lead_1779073203966_aff44712"
+    },
+    {
       "id": "lead_1776959093000_conv_720",
       "name": "Unknown",
       "phone": "",
@@ -674,20 +924,6 @@
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] مرحبا\n[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?"
     },
     {
-      "id": "lead_1776951216000_conv_100",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-04-23",
-      "title": "General Inquiry",
-      "duration": 7,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_1001kpx8qjmne3brf5gqbdk45zq9",
-      "summary": "The agent initiated the call by greeting the user, identifying the company as Livealth Biopharma, and inquiring whether the call was for Domestic or International Sales.",
-      "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International..."
-    },
-    {
       "id": "lead_1776911615000_conv_530",
       "name": "Unknown",
       "phone": "",
@@ -700,6 +936,30 @@
       "conversation_id": "conv_5301kpw2z1rdfgs9by0cvrcspr96",
       "summary": "The user contacted Livealth Biopharma regarding international exports to Mozambique, specifically inquiring about \"Contrast\" (likely Contrast Media agents). The agent requested the user's name, company name, email/WhatsApp, and full office address to provide product lists, pricing, and prepare a formal proposal. The user provided an email address (Sinodia@gmail.com) but the conversation ended with the agent still awaiting the user's name and company address.",
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for...\n[USER] Hi.\n[AGENT] [happy] Hello! Thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for [excited] Domestic Sales or International Exports?\n[USER] International\n[AGENT] [happy] That is wonderful to hear! To connect you with the right country manager, which country are you looking to import to? Also, are you interested in [excited] Finished Formulations or APIs...\n[USER] Mozambique\n[AGENT] [happy] Thank you for that information! To send you our latest product list and pricing for Mozambique, could I get your [excited] name, company name, and an email or WhatsApp number?\n[USER] ...\n[AGENT] [slow] Hello? Are you still there? I would be [happy] happy to assist you with your inquiry for Mozambique, but I just need your name and company ...\n[USER] Sinodia@gmail.com\n[USER] Hello? I'm here.\n[AGENT] [happy] Thank you for staying with me! I have noted your email address. Could I also get your [excited] name and company name to share our product list for Mozambique with you?\n[USER] Contrast\n[AGENT] [happy] We have a strong range of Contrast Media agents available for export. To provide the specific [excited] product...\n[USER] ... and address.\n[AGENT] [happy] Thank you! Could you please provide your [excited] company name and your full office address in Mozambique? This will help our export manager prepare a [happy] formal proposal for you.\n[USER] ...\n[AGENT] [slow] Hello? Are you still there? [happy] I'm ready to note down your company name and address so we can proceed with your inquiry for Mozambique..."
+    },
+    {
+      "name": "",
+      "email": "",
+      "phone": "8725567355",
+      "category": "COLD",
+      "date": "2026-04-22",
+      "title": "Pharmaceutical Sales Policy",
+      "duration": 30,
+      "language": "en",
+      "messages": 5,
+      "id": "lead_1779073203966_f3f14736"
+    },
+    {
+      "name": "",
+      "email": "",
+      "phone": "9867511088",
+      "category": "COLD",
+      "date": "2026-04-22",
+      "title": "Sales Inquiry Clarification",
+      "duration": 39,
+      "language": "en",
+      "messages": 5,
+      "id": "lead_1779073203966_deda16d5"
     },
     {
       "id": "lead_1776886884000_conv_320",
@@ -730,6 +990,30 @@
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] Yes.\n[AGENT] [happy] I understand! To better assist you, could you please clarify if you are looking for [slow] domestic distribution within India or [fast] international exports? Also, are you interested in finished formulations or APIs?\n[USER] ...\n[AGENT] [slow] Hello? Are you still there? [happy] I would be happy to assist you with your inquiry, but I just need to know if you are calling for domestic..."
     },
     {
+      "name": "",
+      "email": "",
+      "phone": "9978445804",
+      "category": "COLD",
+      "date": "2026-04-21",
+      "title": "International Sales Inquiry",
+      "duration": 46,
+      "language": "en",
+      "messages": 5,
+      "id": "lead_1779073203966_1d4758a3"
+    },
+    {
+      "name": "",
+      "email": "",
+      "phone": "7200264323",
+      "category": "COLD",
+      "date": "2026-04-21",
+      "title": "Mefloquine Quotation Request",
+      "duration": 28,
+      "language": "en",
+      "messages": 3,
+      "id": "lead_1779073203966_1cba11ee"
+    },
+    {
       "id": "lead_1776756510000_conv_760",
       "name": "Unknown",
       "phone": "",
@@ -758,6 +1042,30 @@
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] Quotation for mefloquine 250mg tablet for 50000 strips\n[AGENT] I can certainly help you with a quotation for Mefloquine Hydrochloride Tablets USP. To connect you with the right country manager and provide accurate pricing, which country are you looking to import to?"
     },
     {
+      "name": "",
+      "email": "",
+      "phone": "9934104855",
+      "category": "COLD",
+      "date": "2026-04-20",
+      "title": "Sales Type Clarification",
+      "duration": 21,
+      "language": "en",
+      "messages": 3,
+      "id": "lead_1779073203966_dd441fe9"
+    },
+    {
+      "name": "Umang",
+      "email": "",
+      "phone": "9554067071",
+      "category": "HOT",
+      "date": "2026-04-20",
+      "title": "Pharma Partnership Inquiry",
+      "duration": 230,
+      "language": "en",
+      "messages": 17,
+      "id": "lead_1779073203966_7a53bfc6"
+    },
+    {
       "id": "lead_1776677017000_conv_480",
       "name": "Unknown",
       "phone": "",
@@ -784,6 +1092,42 @@
       "conversation_id": "conv_8201kpn1zbtmfa5shs17xjb8kb8s",
       "summary": "The user, Pankaj Srivastava from T&G Medicare, contacted Livealth Biopharma regarding International Exports. Initially requesting to speak with a Purchase Manager, the conversation evolved to exploring a strategic partnership. Mr. Srivastava expressed interest in therapeutic segments including Antibiotics, Antifungal, Gastrointestinal, Anti-Allergic, Analgesics & Anti-inflammatory, and General Range. The agent confirmed Livealth Biopharma's strong portfolio in these areas and committed to forwarding the user's profile and interests to the Corporate Relations team for a formal discussion.",
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] hi\n[AGENT] Hello! To assist you better, are you calling regarding Domestic Sales within India or International Exports?\n[USER] International Exports\n[AGENT] To connect you with the right country manager, which country are you looking to import to? Also, are you interested in Finished Formulations or APIs?\n[USER] Pls connect me with Purchase manger\n[AGENT] I can certainly help arrange that for you. To ensure I connect you with the correct manager for your region, could you please share your name, company name, and the country you are importing to?\n[USER] Pankaj Srivastava \nSr. BDM (Export, Domestic and Institutional) \n\nT&G Medicare \n📍 Corporate Office: L-76, First Floor, Lajpat Nagar-2, New Delhi - 110024 \n🏢 Manufacturing Plant: Village Kunjahal, Baddi, Distt. Solan (H.P.) - 173205 \n📞 Phone: +91 92209 91279, 9650754564 \n✉ Email: sales@tandgmedicare.co.in \n🌐 Website: www.tandgmedicare.co.in \n🆔 GSTIN: 02AAEFT1096K2Z5 \n📜 DL No.: MNB/05/282 & MB/05/283\n[AGENT] Thank you for providing those details, Mr. Srivastava. Since you are with T&G Medicare, are you looking to discuss a strategic partnership, or are you interested in our contract manufacturing services for specific formulations?\n[USER] strategic partnership\n[AGENT] That sounds like a valuable opportunity for collaboration. I will share your profile with our senior management team to discuss a strategic partnership; could you please specify which therapeutic segments or product lines you are most interested in exploring together?\n[USER] General and Anti• Antibiotics\n• Anti-Allergic\n• Antifungal\n• Gastrointestinal\n• Analgesics & Anti-inflammatory\n•General Range\nbiotics and\n[AGENT] We have a very strong portfolio in those segments, including WHO-GMP certified Antibiotics, Antifungals, and Gastrointestinal formulations. I will pass your company profile and interest in these therapeutic ranges to our Corporate Relations team to arrange a formal discussion.\n[USER] Pls thank you\n[AGENT] It was a pleasure speaking with you, Mr. Srivastava. I have noted your interest in our Antibiotic, Antifungal, and Gastrointestinal ranges for a strategic partnership, and our team will be in touch with T&G Medicare soon. Have a productive day!"
+    },
+    {
+      "name": "",
+      "email": "",
+      "phone": "9049354111",
+      "category": "COLD",
+      "date": "2026-04-18",
+      "title": "BFDA Product Registration",
+      "duration": 237,
+      "language": "en",
+      "messages": 11,
+      "id": "lead_1779073203966_dfed5297"
+    },
+    {
+      "name": "",
+      "email": "",
+      "phone": "9701704000",
+      "category": "COLD",
+      "date": "2026-04-18",
+      "title": "Bhutan Export Inquiry",
+      "duration": 602,
+      "language": "en",
+      "messages": 7,
+      "id": "lead_1779073203966_d6819ff9"
+    },
+    {
+      "name": "Vaibhav",
+      "email": "",
+      "phone": "9405062501",
+      "category": "HOT",
+      "date": "2026-04-18",
+      "title": "Ora DMSA Inquiry",
+      "duration": 156,
+      "language": "en",
+      "messages": 25,
+      "id": "lead_1779073203966_70009bd9"
     },
     {
       "id": "lead_1776520229000_conv_460",
@@ -828,6 +1172,42 @@
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] Domestic Sales.\n[AGENT] [happy] That is great to hear. Are you looking for Third-Party Manufacturing or franchise distribution?\n[USER] I need Ora DMSE.\n[AGENT] [happy] I can certainly help you with that. To provide you with the latest pricing and availability for our domestic range, may I please have your name, company name, and contact number?\n[USER] ...\n[AGENT] [slow] Hello?...\n[USER] My name... Hello. My name is Joshua Kumar.\n[AGENT] [happy] Thank you, Mr. Kumar. Could you also share your company name and a contact number so our domestic sales team can reach out to you?\n[USER] My contact number is 0558-53-7272.\n[AGENT] [happy] Thank you for sharing your contact number, Mr. Kumar. Could you also provide your [excited] company name so I can have our domestic sales team contact you with the details for Ora DMSE?\n[USER] It's not Ora DMSE, it's Ora DMSA.\n[AGENT] [happy] Thank you for the correction, Mr. Kumar; I have noted that you are interested in Ora DMSA. Could you please share your [excited] company name so I can finalize this request for our domestic sales team?\n[USER] AG Hospital.\n[AGENT] [happy] Thank you, Mr. Kumar, I have noted all your details for AG Hospital. Our domestic sales team will contact you shortly at 0558-53-7272 with the information for Ora DMSA. Is there anything else I can assist you with today?\n[USER] Please, I said AGA Hospital, not AG.\n[AGENT] [happy] My apologies, Mr. Kumar, I have corrected that to [excited] AGA Hospital in our records. Our domestic sales team will reach out to you shortly with the details for Ora DMSA. Is there anything else I can help you with today?\n[USER] ...\n[AGENT] [slow] Mr. Kumar, are you still there? [happy] Please let me know...\n[USER] Yes.\n[AGENT] [happy] Thank you for...\n[USER] Yes, I'm there.\n[AGENT] [happy] Thank you for confirming, Mr. Kumar. Since I have all your details for [excited] AGA Hospital, I will have our team contact you shortly regarding Ora DMSA. Have a wonderful day..."
     },
     {
+      "name": "",
+      "email": "",
+      "phone": "9000311787",
+      "category": "COLD",
+      "date": "2026-04-17",
+      "title": "Patient Inquiry Clarification",
+      "duration": 240,
+      "language": "en",
+      "messages": 5,
+      "id": "lead_1779073203966_78cfb9a7"
+    },
+    {
+      "name": "",
+      "email": "",
+      "phone": "9434020087",
+      "category": "COLD",
+      "date": "2026-04-17",
+      "title": "Praziquantel Pricing Pakistan",
+      "duration": 398,
+      "language": "en",
+      "messages": 15,
+      "id": "lead_1779073203966_5156ed9a"
+    },
+    {
+      "name": "",
+      "email": "",
+      "phone": "9867511077",
+      "category": "COLD",
+      "date": "2026-04-17",
+      "title": "Agent Greeting No Response",
+      "duration": 21,
+      "language": "en",
+      "messages": 3,
+      "id": "lead_1779073203966_552a79ee"
+    },
+    {
       "id": "lead_1776442779000_conv_790",
       "name": "Unknown",
       "phone": "",
@@ -870,6 +1250,30 @@
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] ...\n[AGENT] [slow] Hello? I'm sorry, I [happy] didn't quite catch that. Are you still there, or is there [excited] anything I can help you..."
     },
     {
+      "name": "Anuj",
+      "email": "",
+      "phone": "9020370923",
+      "category": "HOT",
+      "date": "2026-04-16",
+      "title": "Betamethasone Import Inquiry",
+      "duration": 601,
+      "language": "en",
+      "messages": 9,
+      "id": "lead_1779073203966_25bccd24"
+    },
+    {
+      "name": "Salahuddin",
+      "email": "arshadjan-enterprises@hotmail.com",
+      "phone": "",
+      "category": "COLD",
+      "date": "2026-04-16",
+      "title": "Livealth Biopharma Details",
+      "duration": 61,
+      "language": "en",
+      "messages": 5,
+      "id": "lead_1779073203966_b42b2c47"
+    },
+    {
       "id": "lead_1776368765000_conv_150",
       "name": "Unknown",
       "phone": "",
@@ -896,6 +1300,54 @@
       "conversation_id": "conv_5001kpawghscfhctx96zm2ahn8xn",
       "summary": "The conversation began with Livealth Biopharma's agent greeting the user. The user requested company information, leading the agent to describe it as a leading Indian pharmaceutical manufacturer with a global presence, specializing in generics and APIs, and compliant with WHO-GMP and FDA standards. The user then inquired about awards and accreditations, which the agent detailed as Star Export House status, WHO-GMP, ISO 9001:2015, and ISO 13485:2016 certifications.",
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] Right. I... Tell me something about the Livealth Biopharma.\n[AGENT] [excited] Livealth Biopharma is a leading Indian pharmaceutical manufacturer with a strong presence in over 45 countries, specializing in high-quality generic medicines and APIs. We are proud to be a [happy] WHO-GMP and FDA compliant company dedicated to the mission that \"Health is Wealth.\" Are you interested in our international export services or domestic manufacturing opportunities?\n[USER] Uh, what are the awards and accreditation that you have got?\n[AGENT] [excited] We are proud to be a Star Export House with WHO-GMP, ISO 9001:2015, and ISO 13485:2016 certifications, ensuring the highest global quality standards. We have also received the [happy]..."
+    },
+    {
+      "name": "",
+      "email": "bhaktaraj.giri@gmail.com",
+      "phone": "",
+      "category": "COLD",
+      "date": "2026-04-15",
+      "title": "Purchase Contact Info",
+      "duration": 602,
+      "language": "en",
+      "messages": 5,
+      "id": "lead_1779073203966_615f78a0"
+    },
+    {
+      "name": "",
+      "email": "contact.pyranegoces@gmail.com",
+      "phone": "",
+      "category": "COLD",
+      "date": "2026-04-15",
+      "title": "Domestic Pharma Tender",
+      "duration": 601,
+      "language": "en",
+      "messages": 13,
+      "id": "lead_1779073203966_fd042884"
+    },
+    {
+      "name": "",
+      "email": "csconlinebth@gmail.com",
+      "phone": "9934104855",
+      "category": "COLD",
+      "date": "2026-04-15",
+      "title": "Sales Interest Clarification",
+      "duration": 27,
+      "language": "en",
+      "messages": 3,
+      "id": "lead_1779073203966_f59466a9"
+    },
+    {
+      "name": "",
+      "email": "dkjawad5678@gmail.com",
+      "phone": "9701704000",
+      "category": "COLD",
+      "date": "2026-04-15",
+      "title": "Urgent LIVSUCCIMER Inquiry",
+      "duration": 129,
+      "language": "en",
+      "messages": 13,
+      "id": "lead_1779073203966_659e4ed5"
     },
     {
       "id": "lead_1776247217000_conv_290",
@@ -954,6 +1406,30 @@
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] I urgently need LIVSUCCIMER 100mg bottle big since I have got lead poisoning\n[AGENT] I am very sorry to hear about your situation, but as a manufacturer, we cannot provide medical advice or sell directly to patients. Are you a distributor or a healthcare professional looking to source this for a facility?\n[USER] My brother is a doctor and I can give his prescription please help\n[AGENT] I understand this is an urgent matter, but we are a manufacturing unit and do not sell directly to individual patients, even with a prescription. To assist you, are you looking for a local distributor in India or are you calling from another country?\n[USER] Yes local distributor in Mumbai please\n[AGENT] I can certainly help you with that. To connect you with our Mumbai distribution team and check the current availability of Livsuccimer, could I please get your name and a contact number?\n[USER] KETAN SHAH 9820633715\n[AGENT] Thank you, Mr. Shah. I have noted your contact details and will have our Mumbai distribution team reach out to you immediately regarding the availability of Livsuccimer. Is there anything else I can assist you with at the moment?\n[USER] No please help me fast\n[AGENT] I will prioritize your request and ensure our team contacts you as soon as possible. Thank you for reaching out to Livealth Biopharma, and I hope you feel better soon.\n"
     },
     {
+      "name": "",
+      "email": "export@pharnvide.com",
+      "phone": "",
+      "category": "COLD",
+      "date": "2026-04-14",
+      "title": "Sales Inquiry Clarification",
+      "duration": 10,
+      "language": "en",
+      "messages": 3,
+      "id": "lead_1779073203966_eba713bb"
+    },
+    {
+      "name": "",
+      "email": "gabinsenga785@gmail.com",
+      "phone": "",
+      "category": "COLD",
+      "date": "2026-04-14",
+      "title": "Tetrabenazine 25mg Inquiry",
+      "duration": 181,
+      "language": "en",
+      "messages": 15,
+      "id": "lead_1779073203966_fed771df"
+    },
+    {
       "id": "lead_1776161661000_conv_800",
       "name": "Unknown",
       "phone": "9943940903",
@@ -980,6 +1456,42 @@
       "conversation_id": "conv_4301kp5ft5j2e03bnp9w6tszpjka",
       "summary": "The user, Andrian Martinez from Mission of OAD in the Philippines, initially inquired about domestic sales for Livealth Biopharma, specifically regarding Third-Party Manufacturing or franchise distribution. He then asked about the availability of Tetrabenazine 25 mg. The agent confirmed the company manufactures a wide range of formulations and, upon learning the user was from the Philippines, redirected the inquiry to the International Export Manager for the Southeast Asian region. Mr. Martinez provided his contact number and email (oadprovincial@gmail.com) for pricing and product lists. The agent confirmed the export manager would follow up.",
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] Domest- Domestic Sales.\n[AGENT] [happy] That is great to hear! Are you looking for [fast] Third-Party Manufacturing or franchise distribution within India?\n[USER] Yes.\n[AGENT] [happy] I understand! To help you better, could you please clarify if you are interested in [fast] Third-Party Manufacturing for your own brand or taking a franchise for our products? Also, may I have your [slow] name and company name to share our domestic product list with you?\n[USER] Do you have Tetrabenazine 25 mg?\n[AGENT] We do manufacture a wide range of over 2,000 formulations, including specialized psychiatric and neurological drugs. [happy] I will check the current stock and availability for Tetrabenazine 25 mg with our production team immediately. \n\nTo provide you with the [fast] pricing and delivery timelines, could you please share your name, company name, and a contact number? [happy] This will help me have our domestic sales manager get back to you today.\n[USER] My name is Andrian Martinez. The company name is Mission of OAD. And my contact number is 0906-200-4346, all in the Philippines.\n[AGENT] [happy] Thank you for those details, Mr. Martinez. Since you are calling from the Philippines, I will have our [fast] International Export Manager for the Southeast Asian region contact you directly. \n\n[happy] We are proud to be WHO-GMP compliant and can certainly assist with the [slow] Tetrabenazine 25 mg and any other formulations you may need. Is there an [fast] email address where we can send our full product list and pricing for the Philippines?\n[USER] Yes. The email address is oadprovincial@gmail.com.\n[AGENT] [happy] Thank you, Mr. Martinez, I have noted your email address as [slow] oad provincial at gmail dot com. Our [fast] export manager will reach out to you shortly with the pricing for Tetrabenazine 25 mg and our complete product list. [happy] Is there anything else I can assist you with today regarding our pharmaceutical range?\n[USER] Uh, no more. Thank you.\n[AGENT] [happy] You're very welcome, Mr. Martinez! It was a pleasure assisting you, and we look forward to a potential partnership with Mission of OAD. Have a wonderful day..."
+    },
+    {
+      "name": "",
+      "email": "gestionchile@alianzacalifornia.com",
+      "phone": "",
+      "category": "COLD",
+      "date": "2026-04-13",
+      "title": "Livealth Biopharma Domestic Inquiry",
+      "duration": 238,
+      "language": "en",
+      "messages": 7,
+      "id": "lead_1779073203966_ad964409"
+    },
+    {
+      "name": "",
+      "email": "hasanrama064@gmail.com",
+      "phone": "",
+      "category": "COLD",
+      "date": "2026-04-13",
+      "title": "Domestic Franchise Inquiry",
+      "duration": 100,
+      "language": "en",
+      "messages": 13,
+      "id": "lead_1779073203966_a960c248"
+    },
+    {
+      "name": "",
+      "email": "info@topline-ye.com",
+      "phone": "",
+      "category": "COLD",
+      "date": "2026-04-13",
+      "title": "Job Vacancy Inquiry",
+      "duration": 27,
+      "language": "en",
+      "messages": 5,
+      "id": "lead_1779073203966_d616e8bf"
     },
     {
       "id": "lead_1776062485000_conv_330",
@@ -1024,6 +1536,18 @@
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] Job vacancy\n[AGENT] I can certainly note your interest in joining our team. To direct your inquiry to our HR department, could you please share your name, contact number, and the specific role or department you are interested in?\n[USER] Souvik Das\n[AGENT] Thank you, Mr. Das. Could you also provide your contact number and the department or role you are interested in so I can forward your details to our HR team?"
     },
     {
+      "name": "",
+      "email": "k-a-m-a-t-a-n-u-j@gmail.com",
+      "phone": "",
+      "category": "COLD",
+      "date": "2026-04-12",
+      "title": "Call Routing Clarification",
+      "duration": 97,
+      "language": "en",
+      "messages": 19,
+      "id": "lead_1779073203966_e9ec54e7"
+    },
+    {
       "id": "lead_1776003574000_conv_720",
       "name": "Unknown",
       "phone": "",
@@ -1036,6 +1560,30 @@
       "conversation_id": "conv_7201kp10ztydf25rrv14bxpxgrsm",
       "summary": "The conversation began with the agent from Livealth Biopharma attempting to categorize the user's inquiry as either Domestic Sales or International Exports. After initial silences and repeated prompts, the user specified \"Domestic Sales.\" The agent then sought further clarification, asking if the interest was in Third-Party Manufacturing or franchise distribution. The user's responses remained unclear, leading the agent to reiterate the question and request the user's name and company name for the sales team. The call concluded with the agent still awaiting a clear answer regarding the specific service required.",
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] ...\n[AGENT] [slow] Hello? I'm sorry,...\n[USER] Hello?\n[AGENT] [happy] Hello! Thank you for staying on the line. I am Anjali from Livealth Biopharma. Are you calling for [slow] Domestic Sales or International Exports?\n[USER] ...\n[AGENT] [slow] Hello? Are you still there? I want to make sure we connect you with the right department, so please let me know if you are...\n[USER] Yes, yes.\n[AGENT] [happy] Great! To assist you better, are you calling for [slow] Domestic Sales or International Exports? This will help me direct you to the right team.\n[USER] ...\n[AGENT] [slow] I'm sorry, I'm having a...\n[USER] Domestic Sales.\n[AGENT] [happy] Thank you for clarifying! Are you looking for [slow] Third-Party Manufacturing or franchise distribution? This will help me connect you...\n[USER] Domestic sale.\n[AGENT] [happy] Understood, you are interested in domestic sales. Are you looking for [slow] third-party manufacturing or franchise distribution?\n[USER] Yes.\n[AGENT] [happy] To help you get started, could you please tell me if you are interested in [slow] Third-Party Manufacturing or franchise distribution? Also, may I have your [excited] name and company name to share with our sales team?\n[USER] ...\n[AGENT] [slow] Hello? Are you still there? I just need to know if you are interested in [happy] Third-Party Manufacturing or franchise distribution so I..."
+    },
+    {
+      "name": "Anuj",
+      "email": "kamathanuj@gmail.com",
+      "phone": "",
+      "category": "COLD",
+      "date": "2026-04-11",
+      "title": "Nutraceutical Product Offer",
+      "duration": 8,
+      "language": "en",
+      "messages": 3,
+      "id": "lead_1779073203966_d164f572"
+    },
+    {
+      "name": "",
+      "email": "kashifbaig59@yahoo.com",
+      "phone": "",
+      "category": "COLD",
+      "date": "2026-04-11",
+      "title": "Domestic Sales Inquiry",
+      "duration": 43,
+      "language": "en",
+      "messages": 5,
+      "id": "lead_1779073203966_ed481a85"
     },
     {
       "id": "lead_1775914808000_conv_350",
@@ -1066,6 +1614,30 @@
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] Hi\n[AGENT] Hello! To better assist you, are you calling for Domestic Sales within India or International Exports?\n[USER] With india\n[AGENT] Ji, bilkul. Are you looking for Third-Party Manufacturing or franchise distribution within India?"
     },
     {
+      "name": "Kavita",
+      "email": "kavita@gmail.com",
+      "phone": "",
+      "category": "COLD",
+      "date": "2026-04-06",
+      "title": "Levomepromazine Chile Inquiry",
+      "duration": 181,
+      "language": "en",
+      "messages": 15,
+      "id": "lead_1779073203966_6a4b516a"
+    },
+    {
+      "name": "",
+      "email": "kp.ent9@gmail.com",
+      "phone": "",
+      "category": "COLD",
+      "date": "2026-04-06",
+      "title": "Ivermectin Personal Purchase",
+      "duration": 427,
+      "language": "en",
+      "messages": 9,
+      "id": "lead_1779073203966_62d7daaf"
+    },
+    {
       "id": "lead_1775481489000_conv_400",
       "name": "Unknown",
       "phone": "3208493184",
@@ -1094,6 +1666,30 @@
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] Is there any ivermectin 8mg?\n[AGENT] We manufacture Ivermectin in various strengths, including our Iverealth-3 tablets, and can discuss custom formulations for your market. To assist you better, are you looking to import these internationally or for domestic distribution within India?\n[USER] To Mongolia\n[AGENT] To connect you with our country manager for Mongolia, are you interested in Finished Formulations or APIs? Also, could I get your company name and WhatsApp number to send you our product list and pricing?\n[USER] Finished product and I don’t have company I am taking this and use it for myself\n[AGENT] We are a manufacturer and primarily supply to distributors and healthcare professionals, so we cannot provide medical advice or sell directly to individual patients. Are you a distributor or a healthcare professional looking to import for your region?\n[USER] Health professionals you mean like doctor who can give prescription?\n[AGENT] Yes, exactly, or a licensed distributor who handles medical supplies. Since we are a manufacturer, we require a company name and contact details to process any export inquiries for Mongolia."
     },
     {
+      "name": "",
+      "email": "linsonvarghesethomas@gmail.com",
+      "phone": "",
+      "category": "COLD",
+      "date": "2026-04-04",
+      "title": "Metroxite Injection Price",
+      "duration": 37,
+      "language": "en",
+      "messages": 5,
+      "id": "lead_1779073203966_ccaa52da"
+    },
+    {
+      "name": "",
+      "email": "m0000di94@gmail.com",
+      "phone": "",
+      "category": "COLD",
+      "date": "2026-04-04",
+      "title": "Product Inquiry: Sukima",
+      "duration": 54,
+      "language": "en",
+      "messages": 8,
+      "id": "lead_1779073203966_8ce602dc"
+    },
+    {
       "id": "lead_1775327605000_conv_610",
       "name": "Unknown",
       "phone": "",
@@ -1120,6 +1716,54 @@
       "conversation_id": "conv_8701knbqpyz0fk8anpapnj4xz62x",
       "summary": "The conversation began with the agent greeting the user, identifying as Livealth Biopharma, and inquiring about the call's purpose (Domestic Sales or International Exports). After an initial communication difficulty where the agent couldn't hear the user, the connection was established. The user then clearly stated a requirement for \"a leaf Sukima, one hundred NG.\"",
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] ...\n[AGENT] [slow] Hello? I'm sorry, I [happy] can't hear you. Are you [excited] still there?\n[USER] Hello? Yes, please.\n[AGENT] [happy] Hello! Thank you for...\n[USER] Yeah? Hello?\n[AGENT] [happy] Hello! I can hear you clearly now. ...\n[USER] Hello! Hello! I, I require a leaf Sukima, one hundred NG. Can you provide"
+    },
+    {
+      "name": "Moses",
+      "email": "mosestoby@yahoo.com",
+      "phone": "",
+      "category": "COLD",
+      "date": "2026-04-03",
+      "title": "Benin Export Collaboration Inquiry",
+      "duration": 276,
+      "language": "en",
+      "messages": 15,
+      "id": "lead_1779073203966_8fcbe6d4"
+    },
+    {
+      "name": "Alfred",
+      "email": "muthinzialfred274@gmail.com",
+      "phone": "",
+      "category": "COLD",
+      "date": "2026-04-03",
+      "title": "North India Contact",
+      "duration": 603,
+      "language": "en",
+      "messages": 11,
+      "id": "lead_1779073203966_68c242f9"
+    },
+    {
+      "name": "",
+      "email": "nasr@alfa-future.com",
+      "phone": "",
+      "category": "COLD",
+      "date": "2026-04-03",
+      "title": "Domestic/International Sales Inquiry",
+      "duration": 602,
+      "language": "en",
+      "messages": 3,
+      "id": "lead_1779073203966_6fd65bd9"
+    },
+    {
+      "name": "Naveen",
+      "email": "naveensharma.webhopers@gmail.com",
+      "phone": "",
+      "category": "COLD",
+      "date": "2026-04-03",
+      "title": "Heparin Export Inquiry",
+      "duration": 241,
+      "language": "en",
+      "messages": 21,
+      "id": "lead_1779073203966_7e145f49"
     },
     {
       "id": "lead_1775246889000_conv_580",
@@ -1178,6 +1822,18 @@
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] need heaprin injection\n[AGENT] We can certainly assist you with Heparin Sodium Injection, which we manufacture in various strengths like 5000 IU/ml. To provide the correct pricing and details, are you looking for this for the domestic Indian market or for international export?\n[USER] 5000 iu\n[AGENT] We have Heparin Sodium Injection BP 5000 IU/ml available for bulk supply. To connect you with the right manager, are you looking to import this to a specific country or is it for the domestic Indian market?\n[USER] uganda\n[AGENT] I can certainly assist you with our Heparin Sodium Injection for the Ugandan market. To send you our latest product list and pricing for Uganda, could I get your name, company name, and WhatsApp number?\n[USER] 7201818793\nTruvalis healthacare\n[AGENT] Thank you, I have noted your company name as Truvalis Healthcare and your contact number. To ensure our export manager for the African region sends the correct documentation, could I also have your name and email address?\n[USER] truvalisjealthacre@gmail.com\n[AGENT] Thank you, I have noted your email as truvalisjealthacre@gmail.com. Could I also get your name so our export manager knows who to address when sending the Heparin 5000 IU pricing and product list?\n[USER] surat\n[AGENT] Thank you, Surat. I have all your details and will have our export manager for Uganda reach out to you at Truvalis Healthcare shortly. \n\nIs there anything else you would like to know about our manufacturing capabilities or other products?\n[USER] mail id: truvalishealthcare@gmail.com\n[AGENT] Thank you for the correction, I have updated your email to truvalishealthcare@gmail.com. Our export manager will reach out to you shortly with the pricing and product list for Uganda. \n\nIs there anything else I can assist you with today?\n[USER] share maneger conatct no\n[AGENT] Our export manager for the African region will contact you directly on your WhatsApp number to provide the specific quote and product list. May I confirm if you have any other requirements for Uganda before I pass your details to the team?\n[USER] ok\n[AGENT] Glad I could help with your inquiry for Heparin Sodium Injection for Uganda! Our export manager will be in touch with Truvalis Healthcare shortly.\n"
     },
     {
+      "name": "",
+      "email": "neximmune9@gmail.com",
+      "phone": "9000311787",
+      "category": "COLD",
+      "date": "2026-04-02",
+      "title": "Sales Inquiry Routing",
+      "duration": 15,
+      "language": "en",
+      "messages": 3,
+      "id": "lead_1779073203966_e45f0516"
+    },
+    {
       "id": "lead_1775148492000_conv_320",
       "name": "Unknown",
       "phone": "",
@@ -1190,6 +1846,30 @@
       "conversation_id": "conv_3201kn7hgsgfeh6818cf1hm238vh",
       "summary": "The conversation began with the agent from Livealth Biopharma asking the user to specify if their call was for Domestic Sales or International Exports. The user responded with a simple \"Hi,\" leading the agent to rephrase the same question to better assist them.",
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] Hi\n[AGENT] Hello! To better assist you, are you calling regarding Domestic Sales within India or for International Exports?"
+    },
+    {
+      "name": "",
+      "email": "oadprovincial@gmail.com",
+      "phone": "",
+      "category": "COLD",
+      "date": "2026-04-01",
+      "title": "International Distributor Inquiry",
+      "duration": 369,
+      "language": "en",
+      "messages": 17,
+      "id": "lead_1779073203966_bb8808b9"
+    },
+    {
+      "name": "",
+      "email": "plappetventures@hotmail.com",
+      "phone": "",
+      "category": "COLD",
+      "date": "2026-04-01",
+      "title": "Product Sales Inquiry",
+      "duration": 206,
+      "language": "en",
+      "messages": 19,
+      "id": "lead_1779073203966_859fd48d"
     },
     {
       "id": "lead_1775037999000_conv_540",
@@ -1220,6 +1900,30 @@
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] HELLO\n[AGENT] Hello! Thank you for reaching out to Livealth Biopharma. \n\nTo assist you better, are you calling for Domestic Sales within India or for International Exports?\n[USER] I NEED YOUR BRAND \nTHIATTH-B1\n[AGENT] I can certainly help you with that. To connect you with the right manager for THIATTH-B1, are you looking for this for Domestic Sales in India or for International Export?\n[USER] DOMESTIC SALES\n[AGENT] Understood. Are you looking for Third-Party Manufacturing or franchise distribution for THIATTH-B1?\n\nAlso, to have our domestic sales team contact you with the details, may I please have your name, company name, and contact number?\n[USER] THIRD PARTY\n[AGENT] That is great, we specialize in Third-Party Manufacturing with WHO-GMP and FDA compliant facilities. To send you our product list and arrange a callback from our domestic team, could I please get your name, company name, and contact number?\n[USER] NAME -TARUNA\nCOMPANY NAME - ROSNET PHARMA\n[AGENT] Thank you, Taruna. Could you please provide your contact number so our domestic sales team can reach out to you with the details for Rosnet Pharma?\n[USER] MOBILE -7087696916\n[AGENT] Thank you, Taruna. I have noted your contact number and interest in Third-Party Manufacturing for Rosnet Pharma.\n\nOur domestic sales team will reach out to you shortly with the details for THIATTH-B1. Is there anything else I can assist you with today?\n[USER] THIALTH-B1 \nTHIAMINE 50 MG X2 ML\n[AGENT] I have noted that you are specifically interested in THIALTH-B1, which is Thiamine 50 mg/2 ml. Our domestic team will include the pricing and manufacturing details for this formulation in their callback to you. \n\nIs there any other product or information you need at this moment?\n[USER] GIVE RATE\n[AGENT] We produce over 2,000 formulations, and prices can vary based on your specific order quantity for Third-Party Manufacturing. I have noted your requirement for THIALTH-B1, and our sales team will email you the specific quote for Rosnet Pharma today. \n\nIs there anything else you would like to add to your inquiry?\n[USER] MY MAIL ID ROSNETPHARMAMKTG3@GMAIL.COM\n[AGENT] Thank you, Taruna, I have added rosnetpharmamktg3@gmail.com to your inquiry for Rosnet Pharma. Our domestic sales team will send the quote and product details for THIALTH-B1 to this email address shortly.\n\nIs there anything else I can help you with today?"
     },
     {
+      "name": "",
+      "email": "rgupta@nddb.coop",
+      "phone": "9978445804",
+      "category": "COLD",
+      "date": "2026-03-31",
+      "title": "Job Inquiry Algeria",
+      "duration": 68,
+      "language": "en",
+      "messages": 7,
+      "id": "lead_1779073203966_0edf99fa"
+    },
+    {
+      "name": "",
+      "email": "rohit@summithotels.in",
+      "phone": "9434020087",
+      "category": "COLD",
+      "date": "2026-03-31",
+      "title": "Domestic Sales Inquiry",
+      "duration": 129,
+      "language": "en",
+      "messages": 9,
+      "id": "lead_1779073203966_bd91cd0e"
+    },
+    {
       "id": "lead_1774985275000_conv_360",
       "name": "Unknown",
       "phone": "",
@@ -1246,6 +1950,30 @@
       "conversation_id": "conv_0901kn22s4abfanbv4zn5w3vfx90",
       "summary": "The user contacted Livealth Biopharma for domestic sales, initially expressing a personal interest in Praziquantel. The agent clarified that they are a bulk manufacturer and supply Praziquantel 600 mg tablets only to distributors and institutional buyers, not for individual purchase. The agent attempted to qualify the user as a business entity (distributor or for third-party manufacturing).",
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] Hello\n[AGENT] Hello! Thank you for reaching out to Livealth Biopharma. Are you calling for Domestic Sales or International Exports?\n[USER] Domestic one\n[AGENT] Ji, bilkul. Are you looking for Third-Party Manufacturing or franchise distribution?\n[USER] For me\n[AGENT] We are a manufacturer, so we primarily handle bulk business inquiries. Are you a distributor or a healthcare professional looking for our products?\n[USER] I want praziquantel\n[AGENT] We manufacture Praziquantel 600 mg tablets, but we supply them in bulk quantities to distributors and institutional buyers only. Are you looking for Third-Party Manufacturing or are you a wholesale distributor?"
+    },
+    {
+      "name": "",
+      "email": "rosnetpharmamktg3@gamail.com",
+      "phone": "",
+      "category": "COLD",
+      "date": "2026-03-30",
+      "title": "Antimalarial medication request",
+      "duration": 116,
+      "language": "en",
+      "messages": 9,
+      "id": "lead_1779073203966_a045a0fa"
+    },
+    {
+      "name": "",
+      "email": "rosnetpharmamktg3@gmail.com",
+      "phone": "7087696916",
+      "category": "COLD",
+      "date": "2026-03-30",
+      "title": "Livealth Biopharma Inquiry",
+      "duration": 3,
+      "language": "en",
+      "messages": 3,
+      "id": "lead_1779073203966_9fd2ec4a"
     },
     {
       "id": "lead_1774873460000_conv_820",
@@ -1276,6 +2004,18 @@
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] Hello\n[AGENT] Hello! Thank you for reaching out to Livealth Biopharma. To assist you better, are you calling regarding Domestic Sales within India or International Exports?"
     },
     {
+      "name": "",
+      "email": "sales@livealthbiopharma.com",
+      "phone": "9000311787",
+      "category": "COLD",
+      "date": "2026-03-29",
+      "title": "Dexamethasone Sales Inquiry",
+      "duration": 102,
+      "language": "en",
+      "messages": 13,
+      "id": "lead_1779073203966_df3163f8"
+    },
+    {
       "id": "lead_1774782848000_conv_830",
       "name": "Unknown",
       "phone": "3469787238",
@@ -1290,6 +2030,18 @@
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] Hey i need dexamethasone 4 mg tablets in Pakistan\n[AGENT] I can certainly help you with that as we manufacture Dexamethasone Tablets BP 4 mg for international markets. To connect you with the right country manager for Pakistan, may I have your name, company name, and a WhatsApp number to send you our product list and pricing?\n[USER] Fahad khan\n[AGENT] Thank you, Mr. Fahad Khan. Could you also share your company name and a WhatsApp number so I can arrange for our export manager to send you the pricing and details for Dexamethasone 4 mg?\n[USER] +923469787238\n[AGENT] Thank you for providing your contact number, Mr. Khan. Could you please share your company name so I can have our export manager for the Pakistan region send you the latest product list and pricing for Dexamethasone 4 mg?\n[USER] Fahad n Sons\n[AGENT] Thank you, Mr. Khan, I have noted your details for Fahad n Sons. I will have our export manager for Pakistan contact you on WhatsApp with the pricing and product list for Dexamethasone 4 mg shortly. \n\nIs there anything else I can assist you with today?\n[USER] No thanks\n[AGENT] Glad I could help you with your inquiry for Fahad n Sons! We look forward to a potential partnership with you. Have a great day!\n"
     },
     {
+      "name": "",
+      "email": "sales@tandgmedicare.co.in",
+      "phone": "",
+      "category": "COLD",
+      "date": "2026-03-28",
+      "title": "Franchise Distribution Inquiry",
+      "duration": 75,
+      "language": "en",
+      "messages": 9,
+      "id": "lead_1779073203966_e24caf8a"
+    },
+    {
       "id": "lead_1774691309000_conv_570",
       "name": "Unknown",
       "phone": "",
@@ -1302,6 +2054,30 @@
       "conversation_id": "conv_5701kmsxgnyaffjvjqmcban9dpmf",
       "summary": "The user, Amreen Sheikh from Live Health Bio Pharma Company, contacted Livealth Biopharma to inquire about franchise distribution opportunities within India. The agent, maintaining a positive and helpful tone, requested a full contact number and the specific city of interest to connect the user with the domestic team for franchise information. The user provided partial contact details, and the agent reiterated the need for complete information to proceed.",
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] Domestic Sales.\n[AGENT] [happy] That is great to hear! Are you looking for [fast] Third-Party Manufacturing or franchise distribution within India?\n[USER] Franchise distribution within India.\n[AGENT] [happy] That is a wonderful opportunity! To help our domestic team provide you with the right [excited] franchise...\n[USER] One seven, and the other is six four zero three, two eight. My name is Amreen Sheikh, and I'm from Live Health Bio Pharma Company.\n[AGENT] [happy] Thank you for those details, Amreen! To ensure our [excited] domestic team can reach you with the right franchise information, could you please provide your full [slow] contact number and the specific city you are interested in?\n[USER] This, this you see often, you know, check those now. Yes.\n[AGENT] [happy] I understand, Amreen. To help our [excited] domestic team get back to you quickly with the right franchise details, could you please..."
+    },
+    {
+      "name": "",
+      "email": "sinodia@gmail.com",
+      "phone": "",
+      "category": "COLD",
+      "date": "2026-03-27",
+      "title": "Probenecid 500mg Inquiry",
+      "duration": 187,
+      "language": "en",
+      "messages": 21,
+      "id": "lead_1779073203966_ad25336c"
+    },
+    {
+      "name": "",
+      "email": "souvik.bcsl@gmail.com",
+      "phone": "",
+      "category": "COLD",
+      "date": "2026-03-27",
+      "title": "Nitroglycerin Philippines Purchase",
+      "duration": 16,
+      "language": "en",
+      "messages": 3,
+      "id": "lead_1779073203966_035f580c"
     },
     {
       "id": "lead_1774600063000_conv_870",
@@ -1330,6 +2106,18 @@
       "conversation_id": "conv_5701kmpgh6fafjwvy2ht09k5c27n",
       "summary": "The user inquired about purchasing Nitroglycerin sublingual tablets in the Philippines. The agent, representing Livealth Biopharma, asked to clarify if the user was a distributor or a healthcare institution and requested company name and WhatsApp contact to provide product information and pricing.",
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] Where can I buy Nitroglycerin sublingual tablets in Philippines?\n[AGENT] To connect you with the right country manager for the Philippines, are you looking to import these as a distributor or for a healthcare institution? Also, could I get your company name and WhatsApp number to send you our product list and pricing?"
+    },
+    {
+      "name": "",
+      "email": "therenm@unipharmaceuticals.co.za",
+      "phone": "",
+      "category": "COLD",
+      "date": "2026-03-26",
+      "title": "International Exports Inquiry",
+      "duration": 59,
+      "language": "en",
+      "messages": 7,
+      "id": "lead_1779073203966_837c2755"
     },
     {
       "id": "lead_1774544463000_conv_990",
@@ -1542,20 +2330,6 @@
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] HII\n[AGENT] Hello! I am Dr. Anjali, Senior Corporate Relations Executive at Livealth Biopharma. \n\nAre you calling regarding Domestic Sales within India or International Exports?"
     },
     {
-      "id": "lead_1773473025000_conv_470",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-03-14",
-      "title": "General Inquiry",
-      "duration": 5,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_4701kknknk65ez78h8r2n0k0gfek",
-      "summary": "The conversation began with an agent from \"Livealth Biopharma—Empowering Health Worldwide\" greeting the user.",
-      "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide..."
-    },
-    {
       "id": "lead_1773472952000_conv_410",
       "name": "Unknown",
       "phone": "",
@@ -1626,62 +2400,6 @@
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] Hello\n[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] Empagliflozin 10mg\n[AGENT] We manufacture a wide range of anti-diabetic formulations. To assist you better, are you looking for this product for the Indian domestic market or for international export?\n[USER] How I can buy\n[AGENT] To guide you to the right department, are you looking to buy for the Indian domestic market or for international export? Also, could I get your name and company name to share our product list and pricing with you?"
     },
     {
-      "id": "lead_1773255210000_conv_930",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-03-11",
-      "title": "General Inquiry",
-      "duration": 576,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_9301kkf3yddjfaba2zzpf243yf80",
-      "summary": "The conversation began with the agent greeting the user and asking to clarify if their inquiry was for Domestic Sales or International Exports. The user responded with a simple \"hi,\" prompting the agent to rephrase the same question to better assist them.",
-      "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] hi\n[AGENT] Hello! To better assist you, are you calling regarding Domestic Sales within India or International Exports?"
-    },
-    {
-      "id": "lead_1773255200000_conv_790",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-03-11",
-      "title": "General Inquiry",
-      "duration": 21,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_7901kkf3y3xmf3e9yz9mtr3qg1h9",
-      "summary": "The user contacted Livealth Biopharma. The agent greeted the user and immediately asked for clarification on whether their inquiry was for Domestic Sales or International Exports to route the call appropriately.",
-      "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] hi\n[AGENT] Hello! Thank you for reaching out to Livealth Biopharma. \n\nTo better assist you, are you calling regarding Domestic Sales within India or International Exports?"
-    },
-    {
-      "id": "lead_1773255164000_conv_350",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-03-11",
-      "title": "General Inquiry",
-      "duration": 5,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_3501kkf3x05ge1atpbmrb7e90fbx",
-      "summary": "The conversation consists solely of the agent's initial greeting, identifying itself as \"Livealth Biopharma—Empowering Health...\".",
-      "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health..."
-    },
-    {
-      "id": "lead_1773255157000_conv_660",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-03-11",
-      "title": "General Inquiry",
-      "duration": 4,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_6601kkf3wt5pfzwbxf4xhee130jt",
-      "summary": "The conversation began with the agent greeting the user and asking if their inquiry was for Domestic Sales or International Exports. The user responded with a simple \"hi\".",
-      "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] hi"
-    },
-    {
       "id": "lead_1773239311000_conv_450",
       "name": "Unknown",
       "phone": "9313134420",
@@ -1724,34 +2442,6 @@
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] hi\n[AGENT] Hello! I am Dr. Anjali, Senior Corporate Relations Executive at Livealth Biopharma. Are you calling regarding Domestic Sales within India or International Exports?\n[USER] international\n[AGENT] To connect you with the right country manager, which country are you looking to import to? Also, are you interested in Finished Formulations or APIs?\n[USER] West african\n[AGENT] That is wonderful, we have a strong presence in the African region. To send you our latest Product List and Pricing for West Africa, could I get your Name, Company Name, and WhatsApp number?\n[USER] Ashish Jadhav\n[AGENT] Thank you, Mr. Jadhav. Could you also share your Company Name and WhatsApp number so our West African region manager can send you our product list and pricing?\n[USER] alfa biomed India Pune 9890978402\n[AGENT] Thank you, Mr. Jadhav. I have noted your details for Alfa Biomed India, and our export manager for the West African region will contact you on 9890978402 shortly. \n\nAre you specifically looking for Finished Formulations, APIs, or perhaps Third-Party Manufacturing for your requirements?\n[USER] third party mfg.\n[AGENT] We specialize in Third-Party Manufacturing with WHO-GMP and FDA compliance to ensure the highest quality for your brand. To help our team prepare the right proposal, are you looking for specific therapeutic segments like Anti-Malarials, Antibiotics, or perhaps Nutraceuticals?\n[USER] Dipros (Betamethasone Sodium Phosphate 2mg + Betamethasone Dipropionate 5mg injection)\n[AGENT] We produce over 2,000 formulations and can certainly assist with your requirement for Betamethasone injections. I will pass these specific details for Dipros to our manufacturing team to provide you with a quote today. \n\nIs there any other product or specific quantity you would like to discuss for your West African export?"
     },
     {
-      "id": "lead_1773210665000_conv_770",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-03-11",
-      "title": "General Inquiry",
-      "duration": 3,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_7701kkdsf0x8f7g9cgd3p0rgxhf2",
-      "summary": "The conversation began with the agent from Livealth Biopharma greeting the user and asking them to specify if their inquiry was for Domestic Sales or International Exports. The user responded with a simple \"hi,\" and the agent reiterated the need to clarify the purpose of the call (Domestic Sales within India or International Exports) to provide assistance.",
-      "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] hi\n[AGENT] Hello! To better assist you, are you calling regarding Domestic Sales within India or International Exports?"
-    },
-    {
-      "id": "lead_1773210641000_conv_030",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-03-11",
-      "title": "General Inquiry",
-      "duration": 9,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_0301kkdse9ater6sctgbgks01r0t",
-      "summary": "The conversation began with the agent greeting the user and asking if they were calling for Domestic Sales or International Exports. The user responded with a simple \"hi,\" prompting the agent to rephrase the initial question to clarify the purpose of the call.",
-      "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] hi\n[AGENT] Hello! To better assist you, are you calling regarding Domestic Sales within India or International Exports?"
-    },
-    {
       "id": "lead_1773169219000_conv_040",
       "name": "Unknown",
       "phone": "",
@@ -1766,48 +2456,6 @@
       "transcript": "[AGENT] Hello, thank you for calling..."
     },
     {
-      "id": "lead_1773169213000_conv_450",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-03-10",
-      "title": "General Inquiry",
-      "duration": 5,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_4501kkchy0fxffjt0vv79s1g9vn3",
-      "summary": "The conversation began with the agent greeting the user and asking about their inquiry type (Domestic Sales or International Exports). The user responded with \"hu,\" which the agent's language detection tool identified as Hungarian, indicating a preference to communicate in that language. The conversation ended after this detection.",
-      "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] hu\n[AGENT] ..."
-    },
-    {
-      "id": "lead_1773169042000_conv_220",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-03-10",
-      "title": "General Inquiry",
-      "duration": 603,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_2201kkchrs68fw5bam3zdg8p2kt0",
-      "summary": "The user called Livealth Biopharma. The agent attempted to direct the call by asking if it concerned Domestic Sales or International Exports. The user's brief response prompted the agent to rephrase the same question for clarification.",
-      "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] hi\n[AGENT] Hello! To better assist you, are you calling regarding Domestic Sales within India or International Exports?"
-    },
-    {
-      "id": "lead_1773168037000_conv_500",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-03-10",
-      "title": "General Inquiry",
-      "duration": 5,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_5001kkcgt3epe8a9zh222zwk4whm",
-      "summary": "The agent initiated the conversation by greeting the user and identifying itself as Livealth Biopharma, then began to ask a question.",
-      "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you..."
-    },
-    {
       "id": "lead_1773167998000_conv_200",
       "name": "Unknown",
       "phone": "",
@@ -1820,20 +2468,6 @@
       "conversation_id": "conv_2001kkcgrxtff8n8hbqgjn6a9kmv",
       "summary": "The agent, representing Livealth Biopharma, attempted to ascertain if the user was calling for domestic sales (Indian market) or international exports. Despite repeated inquiries and a warm, helpful tone, the user did not provide a verbal response, leading to an unresolved interaction.",
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] Mm-hmm.\n[AGENT] [happy] Hello! I'm [warm] Dr. Anjali. Are you calling to [interested] inquire about our products for the Indian market or for [global] international export?\n[USER] ...\n[AGENT] [warm] Hello? Are you [helpful] still there? Please let me know if you are calling for [business] domestic sales or [global] international exports so I can assist..."
-    },
-    {
-      "id": "lead_1773167894000_conv_600",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-03-10",
-      "title": "General Inquiry",
-      "duration": 95,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_6001kkcgnr01edfra39542m6daf8",
-      "summary": "The conversation began with the agent greeting the user and asking if they were calling for Domestic Sales or International Exports. The user responded with \"hi,\" and the agent reiterated the initial question to clarify the user's interest.",
-      "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] hi\n[AGENT] Hello! To better assist you, are you interested in our products for Domestic Sales within India or for International Exports?"
     },
     {
       "id": "lead_1773167118000_conv_180",
@@ -1906,20 +2540,6 @@
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] Uh, first, do you know about something about, uh, Life Health Bio Pharma? What do they do?\n[AGENT] [excited] Livealth Biopharma is a leading Indian pharmaceutical manufacturer and exporter, serving over 45 countries with a mission that \"Health is Wealth.\" We specialize in a wide range of products, including [happy] generic medicines, APIs, and even rare orphan drugs, all produced in our WHO-GMP approved facilities. Are you interested in our international export services or domestic manufacturing?\n[USER] Okay, tell me something about your international export services.\n[AGENT] [happy] We provide high-quality finished formulations and APIs to over 45 countries, supported by full registration dossiers for our products. To connect you with the right [professional] country manager, which country are you looking to import to?\n[USER] I'm trying to import to Africa.\n[AGENT] [happy] That is wonderful, as we have a very strong presence across the African region! To help our export manager provide you with the [professional] correct product list and pricing, could you please share your company name and which specific country in Africa you are targeting?\n[USER] Yeah, my name is Anuj and my number is nine eight two zero three seven zero nine two three. And, uh, uh, this is a demo call.\n[AGENT] [happy] Thank you for the details, Anuj! Since this is a [laugh] demo call, I will note your information as a test entry for our system. [happy] It was a pleasure demonstrating how Livealth Biopharma connects with global partners!\n[USER] Thank you."
     },
     {
-      "id": "lead_1773128337000_conv_540",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-03-10",
-      "title": "General Inquiry",
-      "duration": 14,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_5401kkbayj5nedttbe6c2mca3yqg",
-      "summary": "The agent initiated the conversation by introducing itself and offering assistance with questions related to Livealth Biopharma. It then asked how it could help the user.",
-      "transcript": "[AGENT] नमस्ते, मैं आपके Livealth Biopharma से संबंधित प्रश्नों में मदद करने के लिए यहाँ हूँ। मैं आज आपकी कैसे सहायता कर सकता हूँ?"
-    },
-    {
       "id": "lead_1773125284000_conv_740",
       "name": "Unknown",
       "phone": "",
@@ -1932,20 +2552,6 @@
       "conversation_id": "conv_7401kkb81ctmeb1s6c2txb7pqhxn",
       "summary": "The user initiated a call to Livealth Biopharma, expressing interest in international exports of finished formulations. They specifically inquired about the availability and price of Succimer (DMSA) 200 mg capsules. The agent confirmed the product's availability but explained that pricing is variable based on export destination and order volume. The user then requested the company's WhatsApp number. The agent offered to have an export manager contact the user directly with product lists, pricing, and dossiers, requesting the user's company name and WhatsApp number for this purpose.",
       "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] I need for export.\n[AGENT] To connect you with the right country manager, which country are you looking to import to? Additionally, are you interested in Finished Formulations or APIs? We offer a wide...\n[USER] Uh, and finish formulation.\n[AGENT] That is noted; we have an extensive range of Finished Formulations...\n[USER] We can have such similar conversations.\n[AGENT] Certainly, I would be happy to continue our discussion regarding your export needs. To ensure I provide the most relevant...\n[USER] We have capture.\n[AGENT] To ensure we provide you with the most accurate product list and pricing for your...\n[USER] Do you have Saximer, uh, product? Do you have Saximer capsules?\n[AGENT] Yes, we do manufacture Succimer (DMSA) Capsules in a 200 mg strength, which...\n[USER] Can you let me know the, the price of this capsule?\n[AGENT] We produce over 2,000 formulations, and pricing can vary based on the order quantity and the specific country of...\n[USER] Yes, yes, yes. Let me know the price of succimer capsule.\n[AGENT] I understand you are looking for the specific pricing for our Succimer (DMSA) 200 mg capsules. As we manufacture over 2,000 formulations, our pricing is tailored based on the export destination and the volume...\n[USER] What is your website number?\n[AGENT] You can visit our of...\n[USER] What is your WhatsApp number?\n[AGENT] You can reach...\n[USER] Your WhatsApp number?\n[AGENT] To provide you with the latest product list and specific pricing for Succimer capsules, I can have our export manager contact you directly. May I please have your company name and your WhatsApp number? This will allow us to send the details and any required dossiers to you immediately..."
-    },
-    {
-      "id": "lead_1773125253000_conv_920",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-03-10",
-      "title": "General Inquiry",
-      "duration": 25,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_9201kkb80ehse9mat3tr4704w9c6",
-      "summary": "The conversation began with the agent from Livealth Biopharma greeting the user and inquiring whether their call pertained to Domestic Sales or International Exports. After a brief, non-specific response from the user, the agent reiterated the question, seeking clarification on whether the user's inquiry was for Domestic Sales within India or International Exports to ensure proper routing.",
-      "transcript": "[AGENT] Hello, thank you for calling Livealth Biopharma—Empowering Health Worldwide. Are you calling for Domestic Sales or International Exports?\n[USER] hello\n[AGENT] Hello! Thank you for reaching out to Livealth Biopharma. \n\nTo better assist you and connect you with the right department, could you please let me know if you are calling regarding Domestic Sales within India or International Exports?"
     },
     {
       "id": "lead_1773124204000_conv_880",
@@ -1974,20 +2580,6 @@
       "conversation_id": "conv_0901kkb6tkn4e8qbpsp84s37kz9y",
       "summary": "The conversation began with the agent greeting the user in Hindi and offering assistance with Livealth Biopharma queries. The user then asked if the agent spoke English, to which the agent confirmed it could and immediately switched to English.",
       "transcript": "[AGENT] नमस्ते, मैं आपके Livealth Biopharma से संबंधित प्रश्नों में मदद करने के लिए यहाँ हूँ। मैं आज आपकी कैसे सहायता कर सकता हूँ?\n[USER] आपको, आपको इंग्लिश आती है?\n[AGENT] हाँ बिल्कुल, मैं English में भी बात कर सकती हूँ। Hello, thank you for calling Livealth Biopharma—Empowering..."
-    },
-    {
-      "id": "lead_1773123969000_conv_260",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-03-10",
-      "title": "General Inquiry",
-      "duration": 1,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_2601kkb6s861enfbn1a7v32b40rh",
-      "summary": "Summary couldn't be generated for this call.",
-      "transcript": ""
     },
     {
       "id": "lead_1773123884000_conv_870",
@@ -2522,48 +3114,6 @@
       "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist you today?"
     },
     {
-      "id": "lead_1772075164000_conv_200",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-02-26",
-      "title": "General Inquiry",
-      "duration": 5,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_2001kjbyj8h5e3a8hedvd8qq3mn8",
-      "summary": "The agent introduces itself, offering assistance with Livealth Biopharma.\n",
-      "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma ..."
-    },
-    {
-      "id": "lead_1772075143000_conv_730",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-02-26",
-      "title": "General Inquiry",
-      "duration": 8,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_7301kjbyhmcpebdt427gfmt80w5s",
-      "summary": "The AI agent introduces itself and offers assistance with Livealth Biopharma questions.\n",
-      "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist you today?"
-    },
-    {
-      "id": "lead_1772075112000_conv_170",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-02-26",
-      "title": "General Inquiry",
-      "duration": 10,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_1701kjbygpbefcbr144xh60gpy4j",
-      "summary": "The AI agent introduced itself and offered assistance with Livealth Biopharma questions.\n",
-      "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist you today?"
-    },
-    {
       "id": "lead_1772074863000_conv_640",
       "name": "Unknown",
       "phone": "",
@@ -2576,20 +3126,6 @@
       "conversation_id": "conv_6401kjby92krf6qsh4r07k3ss8d6",
       "summary": "The agent introduced itself as an assistant for Livealth Biopharma questions. The user inquired about the company, and the agent provided an overview, including its global presence, mission, and product portfolio. The user then asked for information about APIs (Active Pharmaceutical Ingredients), and the agent began to explain what they are.\n",
       "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist you today?\n[USER] Well, tell me something about, uh, [clears throat] Live Health Biopharma.\n[AGENT] [happy] Absolutely! Livealth Biopharma is a leading Indian pharmaceutical manufacturer with a strong global presence, operating in over 45 countries and with product registrations in 28 nations. Our mission is driven by the philosophy that \"Health is Wealth,\" and we are dedicated to providing high-quality, affordable pharmaceutical solutions. We offer a comprehensive portfolio including APIs, Finished Formulations, Veterinary Medicines, Herbal Products, and Nutraceuticals, covering a wide range of therapeutic segments.\n[USER] I'll tell you some-- Let me, uh-- Please tell me something about API.\n[AGENT] Certainly! In the pharmaceutical industry, API stands for Active Pharmaceutical Ingredient. These are the biologically active components in a drug that produce the desired therapeutic effect. ..."
-    },
-    {
-      "id": "lead_1772074605000_conv_080",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-02-26",
-      "title": "General Inquiry",
-      "duration": 10,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_0801kjby16ncfdhtywk2nzkp9x8r",
-      "summary": "The AI agent introduces itself and offers assistance with Livealth Biopharma questions.\n",
-      "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist you today?"
     },
     {
       "id": "lead_1771840472000_conv_210",
@@ -2662,20 +3198,6 @@
       "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist..."
     },
     {
-      "id": "lead_1771763484000_conv_410",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-02-22",
-      "title": "General Inquiry",
-      "duration": 42,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_4101kj2naj7yeqhr3074z1kfrske",
-      "summary": "The AI agent introduced itself and offered assistance with Livealth Biopharma questions. The user responded with \"Hello,\" and the agent asked for clarification regarding the user's affiliation (hospital, distributor, etc.) to better understand their needs.\n",
-      "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist you today?\n[USER] Hello\n[AGENT] Hello! To help me understand your needs better, could you please tell me:\n\nAre you a hospital, distributor, or pharmaceutical company, or something else?"
-    },
-    {
       "id": "lead_1771762661000_conv_590",
       "name": "Unknown",
       "phone": "",
@@ -2690,34 +3212,6 @@
       "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist you today?\n[USER] Meldonium Solution for Injection 100 mg/ml\n\nMA\n\nLIVEALTH BIOPHARMA\n\nLIVEALTH B\n\nEALTH BIOPHARMA\n\nPHARMA\n\nLIVEALTH BIOPHARM\n\nLIVEALTH BIOPHARMA\n\nMELDOATH\n\nSterile For IV Injection\n\n500 mg 5 ml\n\nBIOPHARMA\n\nLIVEAL\n\nLIVEALTH BIOPHA\n\nMA\n\nLIVEALTH BIOPHARMA\n\nI want this product\n[AGENT] Thank you for your interest in Meldonium Solution for Injection 100 mg/ml. I can certainly help you with information about this product.\n\nBefore we proceed, could you please tell me:\n\nAre you a hospital,...\n[USER] Hospital\n[USER] Hi.\n[AGENT] Thank you for letting me know you are a hospital.\n\nWhich product category interests you: Generic medicines, APIs, or Veterinary products?\n[USER] Only this one\n[USER] .\n[AGENT] Thank you for clarifying. You're interested in the Meldonium Solution for Injection.\n\nNow, to better understand your needs, are you looking to buy products or explore partnership opportunities?\n[USER] Yes\n[AGENT] Thank you for your response. To confirm, are you looking to purchase the Meldonium Solution for...\n[USER] um\n[AGENT] I apologize, I just need a little more clarification. Are you looking to buy the Meldonium Solution for Injection, or are you interested in exploring partnership opportunities with Livealth Biopharma?\n[USER] Yes\n[AGENT] I understand you're interested in the Meldonium Solution for Injection. To help you further, could you please tell me if you are looking to buy this product, or are you interested in partnership opportunities with Livealth Biopharma?\n\nAlso, may I please have your name, telephone number, and email address? This information will help us provide you with the latest updates on our services and products.\n[USER] ...\n[AGENT] It seems like you might have gotten disconnected or are busy. Are you still there?\n\nCould you please clarify if you are looking to buy the Meldonium Solution for Injection, or if you are interested in partnership opportunities with Livealth...\n[USER] wow\n[AGENT] I understand your response. To help me assist you further with the Meldonium Solution for Injection, could you please let me know if you are looking to purchase this product, or if you are interested in exploring partnership opportunities with Livealth Biopharma?\n\nAlso, to ensure we can provide you with the most relevant information, could you please share your name, telephone number, and email address?"
     },
     {
-      "id": "lead_1771762620000_conv_900",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-02-22",
-      "title": "General Inquiry",
-      "duration": 16,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_9001kj2mg622fp4bwz8j1ex92rb4",
-      "summary": "The agent introduces itself as an assistant for Livealth Biopharma questions and asks the user to specify their affiliation (hospital, distributor, pharmaceutical company, or other) to better understand their needs.\n",
-      "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist you today?\n[USER] Yes\n[AGENT] Great! To help me understand your needs better, could you please tell me:\n\nAre you a hospital, distributor, or pharmaceutical company, or something else?"
-    },
-    {
-      "id": "lead_1771762584000_conv_980",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-02-22",
-      "title": "General Inquiry",
-      "duration": 30,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_9801kj2mf3aqer8t109ct34xcend",
-      "summary": "The AI agent is assisting a user with Livealth Biopharma questions. The user specified they are neither a hospital, distributor, nor pharmaceutical company (\"Other\"). The agent then inquired about the user's product category interest (Generic medicines, APIs, or Veterinary products).\n",
-      "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist you today?\n[USER] Yes\n[AGENT] Great! To help me understand your needs better, could you please tell me:\n\nAre you a hospital, distributor, or pharmaceutical company, or Other?\n[USER] Other\n[AGENT] Thank you.\n\nWhich product category interests you: Generic medicines, APIs, or Veterinary products?"
-    },
-    {
       "id": "lead_1771762434000_conv_800",
       "name": "Unknown",
       "phone": "",
@@ -2730,20 +3224,6 @@
       "conversation_id": "conv_8001kj2mag5yf8sb96ce6g81swvm",
       "summary": "The user inquired about Meldonium Solution for Injection (Meldoath). The agent gathered information about the user's role (\"Other\") and product interest (Meldoath only). The user expressed satisfaction, prompting the agent to initiate an end call, but the call was not ended due to user input.\n",
       "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist you today?\n[USER] I what this product\n[AGENT] I can certainly help you with information about our products. To better assist you, could you please tell me...\n[USER] Meldonium Solution for Injection 100 mg/ml\n\nMA\n\nLIVEALTH BIOPHARMA\n\nLIVEALTH B\n\nEALTH BIOPHARMA\n\nPHARMA\n\nLIVEALTH BIOPHARM\n\nLIVEALTH BIOPHARMA\n\nMELDOATH\n\nSterile For IV Injection\n\n500 mg 5 ml\n\nBIOPHARMA\n\nLIVEAL\n\nLIVEALTH BIOPHA\n\nMA\n\nLIVEALTH BIOPHARMA\n\nLI\n\nALTH\n[AGENT] Thank you for providing the product details. I see that you are interested in Meldoath, which is Meldonium Solution for Injection 100mg/ml. It is available in 10 ampoules of 5 ml and is classified as a...\n[USER] Other\n[AGENT] ...classified as a Cardiovascular Drug.\n\nBefore we go further, I have a few questions to understand your needs better:\n\n1. Are you a hospital, distributor, pharmaceutical company, or Other?\n[USER] Other\n[USER] Hello\n[AGENT] Thank you for clarifying. You are \"Other\".\n\nMy second question is: Which product category interests you: Generic medicines, APIs, or Veterinary products?\n[USER] Meldonium Solution for Injection 100 mg/ml\n\nMA\n\nLIVEALTH BIOPHARMA\n\nLIVEALTH B\n\nEALTH BIOPHARMA\n\nPHARMA\n\nLIVEALTH BIOPHARM\n\nLIVEALTH BIOPHARMA\n\nMELDOATH\n\nSterile For IV Injection\n\n500 mg 5 ml\n\nBIOPHARMA\n\nLIVEAL\n\nLIVEALTH BIOPHA\n\nMA\n\nLIVEALTH BIOPHARMA\n\nLI\n\nALTH only this one\n[USER] Only this one\n[USER] Thank you very much.\n[AGENT] I understand you are...\n[USER] Thank you.\n[AGENT] You're...\n[USER] Thank you."
-    },
-    {
-      "id": "lead_1771762422000_conv_440",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-02-22",
-      "title": "General Inquiry",
-      "duration": 4,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_4401kj2ma48ffvaaes6tx06dj9xy",
-      "summary": "The agent introduces itself and offers assistance with Livealth Biopharma questions. The user responds affirmatively. The agent then asks the user to specify their affiliation (hospital, distributor, pharmaceutical company, or other) to better understand their needs.\n",
-      "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist you today?\n[USER] Yes\n[AGENT] Great! To help me understand your needs better, could you please tell me:\n\nAre you a hospital, distributor, or pharmaceutical company, or something else?"
     },
     {
       "id": "lead_1771762367000_conv_320",
@@ -3502,20 +3982,6 @@
       "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist you today?\n[USER] Prmoquine mafloquine tablet available\n[AGENT] I understand you're inquiring about Primaquine and Mefloquine tablets. Let me check the availability for you. Could you please confirm if you're a hospital, distributor, pharmaceutical company, or something else?\n[USER] Patient\n[AGENT] I see you're a patient. Let me clarify: are you looking for information about Primaquine or Mefloquine tablets for personal use, or do you need guidance on where to obtain them? Please let me know so I can assist you...\n[USER] Yes\n[AGENT] I understand you're interested in Primaquine or Mefloquine tablets. However, I must clarify that I cannot provide medical advice or recommend specific medications. These are prescription-only medicines, and their use should be guided by a qualified healthcare professional. \n\nFor your safety, I recommend consulting your doctor or pharmacist to discuss your treatment options. If you'd like, I can provide general information about these medications or help you find a nearby pharmacy. Would you like assistance with that?\n[USER] He recommended it\n[AGENT] Thank you for sharing that. Since your doctor has recommended Primaquine or Mefloquine, I can help you find information about these medications. Could you please confirm which one you're specifically interested in? Also, may I have your name, telephone number, and email address so I can send you detailed information about the product and where you...\n[USER] Virg\n[USER] Both\n[USER] आप का खार हैं?\n[AGENT] हाँ, मैं लाइवाल्थ बायोफार्मा के ग्राहक समर्थन एजेंट हूँ। मैं आपकी मदद करने के लिए यहाँ हूँ। क्या आप दोनों दवाओं (प्रीमाक्वीन और मेफ्लोक्वीन) के बारे में जानकारी चाहते हैं? कृपया अपना नाम, फ़ोन नंबर और ईमेल एड्रेस बताएं ताकि मैं आपको उपलब्ध जानकारी भेज सकूँ।\n[USER] Kashif\n[AGENT] Thank you, Kashif. Could you please provide your telephone number and email address so I can send you the...\n[USER] Kashifbaig59\n[AGENT] I see you've shared your username, Kashifbaig59. Could you please provide your telephone number and email address so I can send you the information about Primaquine and Mefloquine tablets? This will help me assist you better.\n[USER] प्रभाव नहीं है।\n[AGENT] I understand you're saying the effect is not working. Could you please clarify what you mean? Are you referring to the medication not working as expected, or is...\n[USER] 092-0315-5037560\n[AGENT] Thank you, Kashif. I've noted your telephone number: 092-0315-5037560. Could you please share your email address so I can send you the information about Primaquine and Mefloquine tablets? This will help me assist you better.\n[USER] चोड़ दें, मैं काम करता हूं।\n[AGENT] ठीक है, कशिफ। मैं आपके लिए जानकारी तैयार कर रहा हूँ। क्या आप चाहेंगे कि मैं आपको प्रीमाक्वीन और मेफ्लोक्वीन दवाओं के बारे में सामान्य जानकारी भेजूँ, या कोई विशेष जानकारी चाहते हैं?\n[USER] Kashifbaig59@yahoo.com\n[AGENT] Thank you,...\n[USER] यह स्किन है।\n[AGENT] I understand you're referring to skin-related concerns. Could you please clarify if you're experiencing any skin issues or if you're asking about the skin effects of Primaquine or Mefloquine? This will help me assist you better.\n[USER] ...\n[AGENT] Hello, Kashif. I'm here to help. I noticed you haven't responded recently. Are you still there? If you have any questions or need assistance with...\n[USER] प्रशान देखते हैं जिसकी समय को मुझे बहुत समय को मिलता\n[AGENT] I understand you're saying that you're seeing something that takes a long time to resolve. Could you please clarify what you're referring to? Are you talking about the medication's effects, a skin issue, or something...\n[USER] Maleria\n[AGENT] Thank you for clarifying, Kashif. You mentioned malaria. Primaquine and Mefloquine are both used to treat or prevent malaria, but they work differently and are used in specific situations. \n\nPrimaquine is often used to treat the liver stage of certain types of malaria (like P. vivax and P. ovale) to prevent relapses. Mefloquine is used for preventing...\n[USER] Yes\n[AGENT] हाँ, कशिफ। मलेरिया के लिए...\n[USER] है।\n[AGENT] हाँ, कशिफ। मलेरिया के लिए प्रीमाक्वीन और मेफ्लोक्वीन दोनों उपयोगी हैं, लेकिन उनके उपयोग के नियम अलग-अलग हैं।\n\nप्रीमाक्वीन का उपयोग आमतौर पर मलेरिया के लिवर चरण (जैसे P. vivax और P. ovale) के इलाज में किया जाता है, ताकि पुनरावर्ती बीमारी को रोका जा सके। इसके लिए आमतौर पर 7 दिन तक लिया जाता है।\n\nमेफ्लोक्वीन का उपयोग मलेरिया के रोकथाम (प्र预防) के लिए किया जाता है, जिसे आमतौर पर हफ्ते में एक बार लिया जाता है। यह आमतौर पर मलेरिया के जोखिम वाले क्षेत्रों में यात्रा करने वालों के लिए दिया जाता है।\n\nक्या आप चाहेंगे कि मैं आपको इन दवाओं के..."
     },
     {
-      "id": "lead_1770716390000_conv_450",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-02-10",
-      "title": "General Inquiry",
-      "duration": 29,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_4501kh3eqrnbe5qrz18jd2612xp6",
-      "summary": "The agent introduces itself as an assistant for Livealth Biopharma questions and asks how it can help.\n",
-      "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist you today?"
-    },
-    {
       "id": "lead_1770572385000_conv_650",
       "name": "Unknown",
       "phone": "",
@@ -3684,34 +4150,6 @@
       "transcript": "[AGENT] Hi, I'm here to help with..."
     },
     {
-      "id": "lead_1769932917000_conv_350",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-02-01",
-      "title": "General Inquiry",
-      "duration": 1,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_3501kgc3j2a9ev4vp98fh4bpcqwe",
-      "summary": "The agent introduces itself and offers assistance.\n",
-      "transcript": "[AGENT] Hi, I'm here to help ..."
-    },
-    {
-      "id": "lead_1769932910000_conv_380",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-02-01",
-      "title": "General Inquiry",
-      "duration": 2,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_3801kgc3hvfhf0zax1mm7kgze26s",
-      "summary": "The agent introduces itself and offers assistance.\n",
-      "transcript": "[AGENT] Hi, I'm here to help ..."
-    },
-    {
       "id": "lead_1769885206000_conv_040",
       "name": "Unknown",
       "phone": "",
@@ -3740,20 +4178,6 @@
       "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist you today?\n[USER] Hello\n[AGENT] Hello! How can I assist you with Livealth Biopharma today?"
     },
     {
-      "id": "lead_1769850235000_conv_820",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-01-31",
-      "title": "General Inquiry",
-      "duration": 3,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_8201kg9mptnqft0vfmfaqqmsf7pv",
-      "summary": "The agent introduces itself, offering assistance with Livealth.\n",
-      "transcript": "[AGENT] Hi, I'm here to help with your Livealth..."
-    },
-    {
       "id": "lead_1769760627000_conv_510",
       "name": "Unknown",
       "phone": "",
@@ -3780,34 +4204,6 @@
       "conversation_id": "conv_7401kg6bb8j0fj7v8exxmtfz37y0",
       "summary": "The user inquired about the uses of a specific medicine. The agent requested clarification on the medicine's name or a description of its use to provide accurate information.\n",
       "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist you today?\n[USER] Yah Jo dawai Hai ek kis chij mein kam aati Hai\n[AGENT] Could you please clarify which medicine you're referring to? If you can provide the name of the medicine or describe its use, I’ll be happy to help explain what it’s used for."
-    },
-    {
-      "id": "lead_1769739738000_conv_760",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-01-30",
-      "title": "General Inquiry",
-      "duration": 1,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_7601kg6baq2vfs8rby492wrk1n2p",
-      "summary": "The conversation is empty.\n",
-      "transcript": "[AGENT] ..."
-    },
-    {
-      "id": "lead_1769739734000_conv_070",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-01-30",
-      "title": "General Inquiry",
-      "duration": 1,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_0701kg6baknef378sjvjs1jmdr28",
-      "summary": "The conversation is empty.\n",
-      "transcript": "[AGENT] ..."
     },
     {
       "id": "lead_1769739710000_conv_740",
@@ -3976,20 +4372,6 @@
       "conversation_id": "conv_9501kffmw8ghexqryw4wwrakzz8w",
       "summary": "The agent introduces itself, offering assistance with Livealth Biopharma.\n",
       "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma..."
-    },
-    {
-      "id": "lead_1768977970000_conv_810",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-01-21",
-      "title": "General Inquiry",
-      "duration": 19,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_8101kffmvdgxft5bvjd7gftgz2yt",
-      "summary": "The AI agent introduced itself and offered assistance with Livealth Biopharma questions. The user's response was an ellipsis. The agent reiterated its offer to help.\n",
-      "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist you today?\n[USER] ...\n[AGENT] Hello, I'm here to assist you with any questions you may have..."
     },
     {
       "id": "lead_1768934626000_conv_180",
@@ -4216,20 +4598,6 @@
       "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist you today?\n[USER] Subject: Exclusive Agency Proposal – Iohexol Injection 350 mg/ml (Iraq)\nDear Sir / Madam,\nI am Ahmed Mohamed Hadi, a pharmaceutical distributor based in Iraq.\nWe are currently evaluating manufacturers of Iohexol Injection USP 350 mg I/ml for exclusive representation in the Iraqi market and your company is shortlisted.\nKindly confirm:\nGMP & ISO certification\nAvailability of CPP / FSC and COA\nConfirmation of no existing agent in Iraq\nBest price, MOQ, and delivery time\nWe are prepared to proceed with registration, market launch, and long-term volumes upon agreement.\nAwaiting your commercial offer.\nBest regards,\nAhmed Mohamed Hadi\nIraq\n📞 WhatsApp:+9647713280713\n[AGENT] Thank you for your inquiry, Mr. Ahmed Mohamed Hadi. I appreciate the opportunity to assist you with your proposal for exclusive representation of Iohexol Injection USP 350 mg/ml in Iraq.\n\nTo proceed efficiently, I kindly request the following information to ensure we provide you with accurate and timely details:\n\n1. Are you a hospital, distributor, or pharmaceutical company, or Other?  \n2. Which product category interests you: Generic medicines, APIs, or Veterinary products?  \n3. Are you looking to buy products or explore partnership opportunities?\n\nAdditionally, could you please share your full name, telephone number, and email address? This will help us send you the latest product information, certifications, and commercial details promptly.\n\nLooking forward to your response."
     },
     {
-      "id": "lead_1768308558000_conv_330",
-      "name": "Unknown",
-      "phone": "7713280713",
-      "email": "",
-      "date": "2026-01-13",
-      "title": "Subject: Exclusive Agency Proposal – Iohexol Injection 350 mg/ml (Iraq)\nDear Sir",
-      "duration": 38,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_3301kevpejqtem1atc6jcdgmx2zp",
-      "summary": "Ahmed Mohamed Hadi from Iraq, a pharmaceutical distributor, is seeking exclusive representation of Iohexol Injection USP 350 mg I/ml in the Iraqi market from Livealth Biopharma. He requests confirmation of certifications, availability of documents, agency status in Iraq, pricing, MOQ, and delivery time. The agent requests more information about the organization type, product category of interest, and whether Ahmed is looking to buy products or explore partnership opportunities. The agent also requests full contact information for follow-up.\n",
-      "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist you today?\n[USER] Subject: Exclusive Agency Proposal – Iohexol Injection 350 mg/ml (Iraq)\nDear Sir / Madam,\nI am Ahmed Mohamed Hadi, a pharmaceutical distributor based in Iraq.\nWe are currently evaluating manufacturers of Iohexol Injection USP 350 mg I/ml for exclusive representation in the Iraqi market and your company is shortlisted.\nKindly confirm:\nGMP & ISO certification\nAvailability of CPP / FSC and COA\nConfirmation of no existing agent in Iraq\nBest price, MOQ, and delivery time\nWe are prepared to proceed with registration, market launch, and long-term volumes upon agreement.\nAwaiting your commercial offer.\nBest regards,\nAhmed Mohamed Hadi\nIraq\n📞 WhatsApp: +9647713280713\n[AGENT] Thank you for your message, Mr. Ahmed Mohamed Hadi. I appreciate the opportunity to discuss a potential partnership with Livealth Biopharma for the exclusive representation of Iohexol Injection USP 350 mg/ml in Iraq.\n\nTo assist you efficiently, I kindly request the following information:\n\n1. Could you please confirm your organization type?  \n   - Hospital  \n   - Distributor  \n   - Pharmaceutical company  \n   - Other  \n\n2. Which product category are you interested in?  \n   - Generic medicines  \n   - APIs  \n   - Veterinary products  \n\n3. Are you looking to buy products or explore partnership opportunities?  \n\nOnce I have your responses, I’ll proceed with the necessary details regarding GMP & ISO certification, CPP/FSC, COA, existing agency status in Iraq, pricing, MOQ, and delivery timelines.\n\nAlso, for follow-up purposes, could you please share your full name, telephone number, and email address? This will help us provide you with accurate and timely information."
-    },
-    {
       "id": "lead_1768308335000_conv_520",
       "name": "Unknown",
       "phone": "",
@@ -4326,20 +4694,6 @@
       "conversation_id": "conv_6701kerw9ykye7htra3r0wkyr696",
       "summary": "The user inquired about pain relief, gastrointestinal issues, and pneumonia. The agent identified the language as English and requested clarification. The user then specified interest in treatments for gastrointestinal issues and pneumonia. The agent provided a list of relevant Livealth Biopharma products and requested more information about the user's role and contact details for follow-up.\n",
       "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist you today?\n[USER] Pain relief, also Cybilies occur and Neumonia\n[AGENT] I understand you're looking for information about pain relief, as well as details about cybilies (possibly referring to gastrointestinal issues) and pneumonia. Could you please clarify your request? For example:\n\n- Are you looking for specific products for pain relief?\n- Do you need information about treatments for gastrointestinal issues or pneumonia?\n- Are you a healthcare professional, distributor, or another type of customer?\n\nAlso, could you please share your name, telephone number, and email address so we can provide you with the latest information about our products and services?\n[USER] Information about treatment for gastrointestinal issue and pneumonia\n[AGENT] Thank you for clarifying. I’ll provide information on treatments for gastrointestinal issues and pneumonia based on Livealth Biopharma’s product range.\n\n Gastrointestinal Issues:\nLivealth Biopharma offers several products for gastrointestinal conditions, including:\n\n- Esomealth (Esomeprazole Sodium for Injection 40 mg): Used for acid-related disorders like gastroesophageal reflux disease (GERD) and peptic ulcers.\n- Livom-20 (Gastro-resistant Omeprazole Capsules BP 20 mg): A proton pump inhibitor for treating acid reflux and ulcers.\n- Panealth-40 (Pantoprazole Sodium Delayed Release Tablets USP 40 mg): Another proton pump inhibitor for acid-related conditions.\n- Livprostol-100 (Misoprostol Tablets 100 mcg): Used to prevent and treat gastric ulcers, especially in patients on NSAIDs.\n- Livacid (Antacid Powder): A combination of aluminum hydroxide, magnesium trisilicate, and simethicone for immediate relief of heartburn and indigestion.\n\n Pneumonia:\nFor pneumonia, Livealth Biopharma provides a range of antibiotics and supportive treatments:\n\n- Amoxialth 250 (Amoxicillin Oral Suspension BP 250 mg/5 ml): A broad-spectrum antibiotic used for bacterial pneumonia.\n- Cefotaxliv (Cefotaxime Sodium for Injection BP 1g): A third-generation cephalosporin used for severe respiratory infections, including pneumonia.\n- Aziealth (Azithromycin for Oral Suspension USP 200 mg/5 ml): A macrolide antibiotic effective against atypical pneumonia (e.g., caused by Mycoplasma or Chlamydia).\n- Clarithromycin Injection BP 500 mg: Used for respiratory tract infections, including pneumonia.\n- Metroealth (Metronidazole Oral Suspension BP 125 mg/5 ml): Useful in cases of mixed infections, particularly in patients with comorbidities.\n\nWould you like more details on any of these products, such as dosages, indications, or availability? Also, could you please confirm your role (hospital, distributor, pharmaceutical company, or other) so I can better assist you?  \n\nAdditionally, I’d appreciate your name, telephone number, and email address to ensure we can follow up with you promptly."
-    },
-    {
-      "id": "lead_1768213686000_conv_320",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2026-01-12",
-      "title": "Alfred muthinzialfred274@gmail.com",
-      "duration": 301,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_3201kervza0yf6erz33sz8pw062k",
-      "summary": "The AI agent is assisting Alfred from Livealth Biopharma. Alfred provided his contact information and stated he's interested in buying products and connecting the agent with more customers. He clarified he's looking for products for personal use for someone who is unwell. The agent is gathering more information about the specific health condition and preferred product type to provide relevant recommendations.\n",
-      "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist you today?\n[USER] Alfred muthinzialfred274@gmail.com\n[AGENT] Thank you, Alfred. Could you please provide your telephone number so I can reach you if needed?\n[USER] 0746344704\n[AGENT] Thank you, Alfred. I have your name, email, and telephone number on file. Let's proceed with a few quick questions to better assist you:\n\n1. Are you a hospital, distributor, pharmaceutical company, or something else?  \n2. Which product category interests you: Generic medicines, APIs, or Veterinary products?  \n3. Are you looking to buy products or explore partnership opportunities?  \n\nPlease let me know!\n[USER] Am looking to buy the product also I can connect you to have more customers to supply the produi\n[AGENT] Thank you for the information, Alfred. I appreciate your interest in purchasing our products and your willingness to help expand our customer base.\n\nTo better assist you, could you please confirm the following:\n\n1. Are you looking to buy products for personal use, your business, or for distribution to others?  \n2. Do you have a specific product or product category in mind from our range?  \n\nThis will help me provide you with the most accurate information and next steps.\n[USER] Am looking the products for personal use who Is suffered\n[AGENT] Thank you for clarifying, Alfred. I understand you're looking for products to support someone who is unwell.\n\nTo assist you better, could you please share:  \n- The specific health condition or symptoms the person is experiencing?  \n- Any particular type of product you're interested in (e.g., pain relief, digestive health, immunity support, etc.)?  \n\nThis will help me recommend suitable products from our range while ensuring we stay within the scope of providing information, not medical advice."
     },
     {
       "id": "lead_1768213349000_conv_370",
@@ -4846,20 +5200,6 @@
       "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist you today?\n[USER] はい\n[AGENT] I see you've responded in Japanese. Would you like me to switch to Japanese...\n[USER] ええ。\n[AGENT] はい、わかりました。...\n[USER] No, I want to speak in English.\n[AGENT] Thank you for confirming. I'm ready to assist you in English. Could you please tell me your name so I can better assist you?\n[USER] Yeah, forget all that. Let me know about the contrast media.\n[AGENT] I understand you're interested in contrast media. Could you please clarify if you're looking for information about a specific type of contrast media, such as for imaging procedures like CT scans or MRIs? This will help me provide the most accurate details.\n[USER] Let me know about all.\n[AGENT] I currently don't have specific information about contrast media products in our product range. However, Livealth Biopharma offers a wide range of pharmaceutical products including generic medicines, APIs, and veterinary products. If you're interested in any of these categories, I can provide more details. Could you please let me know which category you'd like to..."
     },
     {
-      "id": "lead_1763633740000_conv_890",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2025-11-20",
-      "title": "Yeah, hi.",
-      "duration": 229,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_8901kagc6ejyfvfb6g50n1180r1c",
-      "summary": "Anuj contacted Livealth Biopharma to inquire about their products. The agent collected Anuj's contact information and asked qualifying questions. Anuj then inquired about contrast media and the company's office locations. He then asked about the product range. The conversation shifted to Spanish at Anuj's request, with the agent providing product information in Spanish. The agent used a tool to detect the language.\n",
-      "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist you today?\n[USER] Yeah, hi.\n[AGENT] Hello! I'm glad to assist you. Could you please share your name so I can better serve you?\n[USER] My name is Anuj.\n[AGENT] Nice to meet you, Anuj. Could you please provide your telephone number and email address? This will help us share the latest information about our products and services with you.\n[USER] Right, my email is 9820... My telephone number is 9820370923 and email is kamatanuj at gmail.com.\n[AGENT] Thank you, Anuj. I’ve noted your details: telephone number 9820370923 and email kamatanuj at gmail.com.  \n\nTo assist you better, could you please answer the following three questions?  \n1. Are you a hospital, distributor, or pharmaceutical company?  \n2. Which product category interests you: Generic medicines, APIs, or Veterinary products?  \n3. Are you looking to buy products or explore partnership opportunities?\n[USER] Okay, I'll answer those questions later. Tell me something about Contrast Media.\n[AGENT] Certainly, Anuj. Livealth Biopharma is a trusted manufacturer of MRI Contrast Agents, which are essential in medical imaging to enhance the visibility of internal body structures. These contrast agents help improve the accuracy of diagnoses by highlighting specific tissues, blood vessels, or abnormalities in MRI scans. Our products are developed to meet stringent international quality standards, ensuring safety and efficacy for global healthcare needs.  \n\nWould you like more details on a specific type of contrast agent or its...\n[USER] No. Let me know number of offices that you have.\n[AGENT] ...\n[USER] And where are they based?\n[AGENT] Livealth Biopharma has three key offices in India:  \n\n...\n[USER] Hello?\n[AGENT] Hello, Anuj! I'm here. I was just about to share information about our offices.  \n\nLivealth Biopharma has three main offices in India:  \n1. Registered Office – 606, Dev Plaza, S V Road, Opp. Andheri Fire Brigade, Andheri-West, Mumbai – 400058.  \n2. Corporate and Marketing Office – 313, Rupa Solitaire, Plot A-1, Sector 1, Millennium Business Park, MIDC, T. T. C. Industrial Area, Mahape – 400710, Navi Mumbai.  \n3. UK Office – Flat 55, Cosgrove House, Hatton Road, Wembley, HA0 1RQ, United Kingdom.  \n\nThese locations support our global operations, including manufacturing, sales, and regulatory coordination.  \n\nWould you like to proceed with the earlier questions about your...\n[USER] Okay. Can you tell me about the products that you have?\n[AGENT] Certainly, Anuj. Livealth Biopharma offers a wide range of high-quality pharmaceutical products across multiple therapeutic areas. Our portfolio includes:  \n\n- Generic Medicines: Covering anti-allergies, antifungals, antibiotics, cardiovascular care, erectile dysfunction solutions, anti-malarial treatments, and more.  \n- Orphan Products: Specialized medicines for rare and neglected diseases, developed with a focus on patient accessibility and quality.  \n-...\n[USER] Okay. Can you tell me, is this in Spanish?\n[AGENT] Hola, Anuj. ¿En qué puedo ayudarte hoy?\n[USER] Oh, yeah. Hi.\n[AGENT] Hola, Anuj. ¿Cómo te puedo ayudar hoy?\n[USER] Hola.\n[AGENT] Hola, Anuj. ¿En qué puedo ayudarte?\n[USER] Yeah, tell me about the products in Spanish.\n[AGENT] Of course, Anuj. Let me share details about our product range in English.  \n\nLivealth Biopharma offers a...\n[USER] No, I want to listen to the product range in the Spanish language.\n[AGENT] Claro, Anuj. A continuación, te presento una breve descripción de nuestros productos principales en español:\n\nLivealth Biopharma ofrece una amplia gama de productos farmacéuticos de alta..."
-    },
-    {
       "id": "lead_1763533025000_conv_900",
       "name": "Unknown",
       "phone": "",
@@ -4944,20 +5284,6 @@
       "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist you today?\n[USER] Hi.\n[AGENT] Hello! I'm glad to assist you. To better understand how I can help, could you please tell me your name?\n[USER] My name is Anuj.\n[AGENT] Nice to meet you, Anuj. How can I assist you today?\n[USER] Right, tell me something about LiveAlf.\n[AGENT] I believe you meant Livealth Biopharma. Livealth Biopharma is a leading pharmaceutical manufacturer in India and a global supplier of generic medicines. We specialize in producing high-quality generic drugs, APIs,..."
     },
     {
-      "id": "lead_1763451707000_conv_260",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2025-11-18",
-      "title": "General Inquiry",
-      "duration": 9,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_2601kaayk7mvf43tfpa475edf9qv",
-      "summary": "The agent introduces itself as an assistant for Livealth Biopharma questions and asks how it can help.\n",
-      "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist you today?"
-    },
-    {
       "id": "lead_1763016645000_conv_460",
       "name": "Unknown",
       "phone": "",
@@ -5026,20 +5352,6 @@
       "conversation_id": "conv_7801k96vej56fvjsw1mze9ppm9dc",
       "summary": "The AI agent introduced itself and offered assistance with Livealth Biopharma questions. The user's response was not captured, prompting the agent to reiterate its offer of help.\n",
       "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist you today?\n[USER] ...\n[AGENT] Hello, I'm here to help. Could you please let me know how I can assist you..."
-    },
-    {
-      "id": "lead_1762240354000_conv_870",
-      "name": "Unknown",
-      "phone": "",
-      "email": "",
-      "date": "2025-11-04",
-      "title": "General Inquiry",
-      "duration": 82,
-      "language": "en",
-      "category": "COLD",
-      "conversation_id": "conv_8701k96vbpffft8t2pvvnf54y6eh",
-      "summary": "The AI agent introduced itself and offered assistance with Livealth Biopharma questions. The user responded with \"hi,\" and the agent reiterated its offer to help.\n",
-      "transcript": "[AGENT] Hi, I'm here to help with your Livealth Biopharma questions. How can I assist you today?\n[USER] hi\n[AGENT] Hello! How can I assist you with Livealth Biopharma today?"
     },
     {
       "id": "lead_1761811484000_conv_100",
