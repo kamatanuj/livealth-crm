@@ -1,6 +1,18 @@
 {
-  "lastUpdated": "2026-06-02T23:00:03.767Z",
+  "lastUpdated": "2026-06-03T00:00:06.642Z",
   "leads": [
+    {
+      "name": "Unknown",
+      "phone": "",
+      "email": "",
+      "date": "2026-06-03",
+      "title": "General Inquiry",
+      "duration": 60,
+      "language": "en",
+      "category": "COLD",
+      "conversation_id": "conv_1701kt4n6zeveb9t129qravnfd3e",
+      "id": "lead_1780444806640_3f0b854b"
+    },
     {
       "name": "Unknown",
       "phone": "",
@@ -595,7 +607,7 @@
       "duration": 187,
       "language": "en",
       "messages": 7,
-      "id": "lead_1780441203758_6ee0866c"
+      "id": "lead_1780444806636_409495bb"
     },
     {
       "name": "Surat",
@@ -607,7 +619,7 @@
       "duration": 19,
       "language": "en",
       "messages": 3,
-      "id": "lead_1780441203759_e1cbf383"
+      "id": "lead_1780444806636_ea1f1099"
     },
     {
       "name": "Surat",
@@ -619,7 +631,7 @@
       "duration": 7,
       "language": "en",
       "messages": 3,
-      "id": "lead_1780441203759_e17ed519"
+      "id": "lead_1780444806637_cd8ffe4c"
     },
     {
       "name": "Umang",
@@ -631,7 +643,7 @@
       "duration": 149,
       "language": "en",
       "messages": 13,
-      "id": "lead_1780441203759_300c9833"
+      "id": "lead_1780444806637_63ff2837"
     },
     {
       "name": "Vaibhav",
@@ -643,7 +655,7 @@
       "duration": 125,
       "language": "en",
       "messages": 19,
-      "id": "lead_1780441203759_83ea62a3"
+      "id": "lead_1780444806637_656d53e2"
     },
     {
       "id": "lead_1777453824000_conv_480",
@@ -725,7 +737,7 @@
       "duration": 52,
       "language": "en",
       "messages": 3,
-      "id": "lead_1780441203759_886d4fba"
+      "id": "lead_1780444806637_be8dada8"
     },
     {
       "name": "Anuj",
@@ -737,7 +749,7 @@
       "duration": 137,
       "language": "en",
       "messages": 13,
-      "id": "lead_1780441203759_becbb153"
+      "id": "lead_1780444806637_cdf623f1"
     },
     {
       "id": "lead_1777415233000_conv_610",
@@ -777,7 +789,7 @@
       "duration": 118,
       "language": "en",
       "messages": 5,
-      "id": "lead_1780441203759_0b51e3bd"
+      "id": "lead_1780444806637_e5bc494d"
     },
     {
       "name": "",
@@ -789,7 +801,7 @@
       "duration": 104,
       "language": "en",
       "messages": 5,
-      "id": "lead_1780441203759_17ea19c6"
+      "id": "lead_1780444806637_29f2d9cd"
     },
     {
       "name": "",
@@ -801,7 +813,7 @@
       "duration": 406,
       "language": "en",
       "messages": 19,
-      "id": "lead_1780441203759_a5b1ae27"
+      "id": "lead_1780444806637_7779abf0"
     },
     {
       "name": "",
@@ -813,7 +825,7 @@
       "duration": 124,
       "language": "en",
       "messages": 13,
-      "id": "lead_1780441203759_c2b2d92d"
+      "id": "lead_1780444806637_a803f073"
     },
     {
       "id": "lead_1777319602000_conv_900",
@@ -881,7 +893,7 @@
       "duration": 156,
       "language": "en",
       "messages": 9,
-      "id": "lead_1780441203759_db34b678"
+      "id": "lead_1780444806637_47a35e87"
     },
     {
       "id": "lead_1777179425000_conv_640",
@@ -907,7 +919,7 @@
       "duration": 65,
       "language": "en",
       "messages": 3,
-      "id": "lead_1780441203759_2fec5295"
+      "id": "lead_1780444806637_466cc2d2"
     },
     {
       "name": "",
@@ -919,7 +931,7 @@
       "duration": 241,
       "language": "en",
       "messages": 13,
-      "id": "lead_1780441203759_55aebd6c"
+      "id": "lead_1780444806637_994c695c"
     },
     {
       "id": "lead_1777159996000_conv_560",
@@ -959,7 +971,7 @@
       "duration": 138,
       "language": "en",
       "messages": 16,
-      "id": "lead_1780441203759_c3c74c15"
+      "id": "lead_1780444806637_f5bc1fc8"
     },
     {
       "name": "Surat",
@@ -971,7 +983,7 @@
       "duration": 20,
       "language": "en",
       "messages": 3,
-      "id": "lead_1780441203759_ae0ac050"
+      "id": "lead_1780444806637_ea57d7d1"
     },
     {
       "name": "",
@@ -983,7 +995,7 @@
       "duration": 183,
       "language": "en",
       "messages": 15,
-      "id": "lead_1780441203759_9bc93f3b"
+      "id": "lead_1780444806637_a703b94f"
     },
     {
       "id": "lead_1777064512000_conv_550",
@@ -1037,7 +1049,7 @@
       "duration": 24,
       "language": "en",
       "messages": 3,
-      "id": "lead_1780441203759_a9ececfe"
+      "id": "lead_1780444806637_1a2298ee"
     },
     {
       "name": "",
@@ -1049,7 +1061,7 @@
       "duration": 7,
       "language": "en",
       "messages": 3,
-      "id": "lead_1780441203759_b9d63929"
+      "id": "lead_1780444806637_3c6ed0fb"
     },
     {
       "name": "",
@@ -1061,7 +1073,7 @@
       "duration": 7,
       "language": "en",
       "messages": 1,
-      "id": "lead_1780441203759_5fcfbeab"
+      "id": "lead_1780444806637_46826495"
     },
     {
       "name": "Jayashri",
@@ -1073,7 +1085,7 @@
       "duration": 95,
       "language": "en",
       "messages": 18,
-      "id": "lead_1780441203759_5712fb6a"
+      "id": "lead_1780444806637_b4e0695e"
     },
     {
       "id": "lead_1776959093000_conv_720",
@@ -1127,7 +1139,7 @@
       "duration": 30,
       "language": "en",
       "messages": 5,
-      "id": "lead_1780441203759_97bb545d"
+      "id": "lead_1780444806637_af6abe7e"
     },
     {
       "name": "",
@@ -1139,7 +1151,7 @@
       "duration": 39,
       "language": "en",
       "messages": 5,
-      "id": "lead_1780441203759_b784411f"
+      "id": "lead_1780444806637_6e67ca34"
     },
     {
       "id": "lead_1776886884000_conv_320",
@@ -1179,7 +1191,7 @@
       "duration": 46,
       "language": "en",
       "messages": 5,
-      "id": "lead_1780441203759_abed6c34"
+      "id": "lead_1780444806637_d245a1fd"
     },
     {
       "name": "",
@@ -1191,7 +1203,7 @@
       "duration": 28,
       "language": "en",
       "messages": 3,
-      "id": "lead_1780441203759_ea0e672c"
+      "id": "lead_1780444806637_3a736fcd"
     },
     {
       "id": "lead_1776756510000_conv_760",
@@ -1231,7 +1243,7 @@
       "duration": 21,
       "language": "en",
       "messages": 3,
-      "id": "lead_1780441203759_676ff86e"
+      "id": "lead_1780444806637_c28f7a28"
     },
     {
       "name": "Umang",
@@ -1243,7 +1255,7 @@
       "duration": 230,
       "language": "en",
       "messages": 17,
-      "id": "lead_1780441203759_7af6136c"
+      "id": "lead_1780444806637_07a4bda5"
     },
     {
       "id": "lead_1776677017000_conv_480",
@@ -1283,7 +1295,7 @@
       "duration": 237,
       "language": "en",
       "messages": 11,
-      "id": "lead_1780441203759_ef830c83"
+      "id": "lead_1780444806637_23f68379"
     },
     {
       "name": "",
@@ -1295,7 +1307,7 @@
       "duration": 602,
       "language": "en",
       "messages": 7,
-      "id": "lead_1780441203759_8716ee46"
+      "id": "lead_1780444806637_9e664b9a"
     },
     {
       "name": "Vaibhav",
@@ -1307,7 +1319,7 @@
       "duration": 156,
       "language": "en",
       "messages": 25,
-      "id": "lead_1780441203759_2208518b"
+      "id": "lead_1780444806637_dea9dcc0"
     },
     {
       "id": "lead_1776520229000_conv_460",
@@ -1361,7 +1373,7 @@
       "duration": 240,
       "language": "en",
       "messages": 5,
-      "id": "lead_1780441203759_7eb28b66"
+      "id": "lead_1780444806637_e6d85834"
     },
     {
       "name": "",
@@ -1373,7 +1385,7 @@
       "duration": 398,
       "language": "en",
       "messages": 15,
-      "id": "lead_1780441203759_b3203933"
+      "id": "lead_1780444806637_ce7456ee"
     },
     {
       "name": "",
@@ -1385,7 +1397,7 @@
       "duration": 21,
       "language": "en",
       "messages": 3,
-      "id": "lead_1780441203759_eb776451"
+      "id": "lead_1780444806637_66fc9672"
     },
     {
       "id": "lead_1776442779000_conv_790",
@@ -1439,7 +1451,7 @@
       "duration": 601,
       "language": "en",
       "messages": 9,
-      "id": "lead_1780441203759_a41714c7"
+      "id": "lead_1780444806637_4f129f55"
     },
     {
       "name": "Salahuddin",
@@ -1451,7 +1463,7 @@
       "duration": 61,
       "language": "en",
       "messages": 5,
-      "id": "lead_1780441203759_3d6d36ae"
+      "id": "lead_1780444806637_122f6ba0"
     },
     {
       "id": "lead_1776368765000_conv_150",
@@ -1491,7 +1503,7 @@
       "duration": 602,
       "language": "en",
       "messages": 5,
-      "id": "lead_1780441203759_7d6e25db"
+      "id": "lead_1780444806637_01a24680"
     },
     {
       "name": "",
@@ -1503,7 +1515,7 @@
       "duration": 601,
       "language": "en",
       "messages": 13,
-      "id": "lead_1780441203759_1bb82d49"
+      "id": "lead_1780444806637_306b7bcf"
     },
     {
       "name": "",
@@ -1515,7 +1527,7 @@
       "duration": 27,
       "language": "en",
       "messages": 3,
-      "id": "lead_1780441203759_1fc1c62a"
+      "id": "lead_1780444806637_5422b960"
     },
     {
       "name": "",
@@ -1527,7 +1539,7 @@
       "duration": 129,
       "language": "en",
       "messages": 13,
-      "id": "lead_1780441203759_47751d1a"
+      "id": "lead_1780444806637_451ed800"
     },
     {
       "id": "lead_1776247217000_conv_290",
@@ -1595,7 +1607,7 @@
       "duration": 10,
       "language": "en",
       "messages": 3,
-      "id": "lead_1780441203759_510c9906"
+      "id": "lead_1780444806637_9eaa6412"
     },
     {
       "name": "",
@@ -1607,7 +1619,7 @@
       "duration": 181,
       "language": "en",
       "messages": 15,
-      "id": "lead_1780441203759_6d941908"
+      "id": "lead_1780444806637_a52a5a5d"
     },
     {
       "id": "lead_1776161661000_conv_800",
@@ -1647,7 +1659,7 @@
       "duration": 238,
       "language": "en",
       "messages": 7,
-      "id": "lead_1780441203759_aca1a676"
+      "id": "lead_1780444806637_ae71e220"
     },
     {
       "name": "",
@@ -1659,7 +1671,7 @@
       "duration": 100,
       "language": "en",
       "messages": 13,
-      "id": "lead_1780441203759_e0f100be"
+      "id": "lead_1780444806637_9739c30f"
     },
     {
       "name": "",
@@ -1671,7 +1683,7 @@
       "duration": 27,
       "language": "en",
       "messages": 5,
-      "id": "lead_1780441203759_59e63d85"
+      "id": "lead_1780444806637_ebdbdd0c"
     },
     {
       "id": "lead_1776062485000_conv_330",
@@ -1725,7 +1737,7 @@
       "duration": 97,
       "language": "en",
       "messages": 19,
-      "id": "lead_1780441203759_279217ec"
+      "id": "lead_1780444806637_32359e1a"
     },
     {
       "id": "lead_1776003574000_conv_720",
@@ -1751,7 +1763,7 @@
       "duration": 8,
       "language": "en",
       "messages": 3,
-      "id": "lead_1780441203759_64ac2071"
+      "id": "lead_1780444806637_91c5f666"
     },
     {
       "name": "",
@@ -1763,7 +1775,7 @@
       "duration": 43,
       "language": "en",
       "messages": 5,
-      "id": "lead_1780441203759_0e873f7d"
+      "id": "lead_1780444806637_946d88db"
     },
     {
       "id": "lead_1775914808000_conv_350",
@@ -1803,7 +1815,7 @@
       "duration": 181,
       "language": "en",
       "messages": 15,
-      "id": "lead_1780441203759_25e39cb0"
+      "id": "lead_1780444806638_67f17231"
     },
     {
       "name": "",
@@ -1815,7 +1827,7 @@
       "duration": 427,
       "language": "en",
       "messages": 9,
-      "id": "lead_1780441203759_77c0e61c"
+      "id": "lead_1780444806638_e09bf5e2"
     },
     {
       "id": "lead_1775481489000_conv_400",
@@ -1855,7 +1867,7 @@
       "duration": 37,
       "language": "en",
       "messages": 5,
-      "id": "lead_1780441203760_b353b28f"
+      "id": "lead_1780444806638_1a5afa32"
     },
     {
       "name": "",
@@ -1867,7 +1879,7 @@
       "duration": 54,
       "language": "en",
       "messages": 8,
-      "id": "lead_1780441203760_2b70d8cf"
+      "id": "lead_1780444806638_9a87b832"
     },
     {
       "id": "lead_1775327605000_conv_610",
@@ -1907,7 +1919,7 @@
       "duration": 276,
       "language": "en",
       "messages": 15,
-      "id": "lead_1780441203760_cc2b47d8"
+      "id": "lead_1780444806638_7a10b521"
     },
     {
       "name": "Alfred",
@@ -1919,7 +1931,7 @@
       "duration": 603,
       "language": "en",
       "messages": 11,
-      "id": "lead_1780441203760_1b9c4275"
+      "id": "lead_1780444806638_7358b48b"
     },
     {
       "name": "",
@@ -1931,7 +1943,7 @@
       "duration": 602,
       "language": "en",
       "messages": 3,
-      "id": "lead_1780441203760_022a2340"
+      "id": "lead_1780444806638_c79bfce1"
     },
     {
       "name": "Naveen",
@@ -1943,7 +1955,7 @@
       "duration": 241,
       "language": "en",
       "messages": 21,
-      "id": "lead_1780441203760_c6adcd51"
+      "id": "lead_1780444806638_bf94788d"
     },
     {
       "id": "lead_1775246889000_conv_580",
@@ -2011,7 +2023,7 @@
       "duration": 15,
       "language": "en",
       "messages": 3,
-      "id": "lead_1780441203760_c323f1b1"
+      "id": "lead_1780444806638_79c1af4d"
     },
     {
       "id": "lead_1775148492000_conv_320",
@@ -2037,7 +2049,7 @@
       "duration": 369,
       "language": "en",
       "messages": 17,
-      "id": "lead_1780441203760_494849b0"
+      "id": "lead_1780444806638_395c6160"
     },
     {
       "name": "",
@@ -2049,7 +2061,7 @@
       "duration": 206,
       "language": "en",
       "messages": 19,
-      "id": "lead_1780441203760_3926ca04"
+      "id": "lead_1780444806638_14b1428a"
     },
     {
       "id": "lead_1775037999000_conv_540",
@@ -2089,7 +2101,7 @@
       "duration": 68,
       "language": "en",
       "messages": 7,
-      "id": "lead_1780441203760_6bc59daa"
+      "id": "lead_1780444806638_280b5a39"
     },
     {
       "name": "",
@@ -2101,7 +2113,7 @@
       "duration": 129,
       "language": "en",
       "messages": 9,
-      "id": "lead_1780441203760_352f3beb"
+      "id": "lead_1780444806638_a80fffc9"
     },
     {
       "id": "lead_1774985275000_conv_360",
@@ -2141,7 +2153,7 @@
       "duration": 116,
       "language": "en",
       "messages": 9,
-      "id": "lead_1780441203760_ea4aaf07"
+      "id": "lead_1780444806638_327dc963"
     },
     {
       "name": "",
@@ -2153,7 +2165,7 @@
       "duration": 3,
       "language": "en",
       "messages": 3,
-      "id": "lead_1780441203760_52180b2b"
+      "id": "lead_1780444806638_0bd6fe1c"
     },
     {
       "id": "lead_1774873460000_conv_820",
@@ -2193,7 +2205,7 @@
       "duration": 102,
       "language": "en",
       "messages": 13,
-      "id": "lead_1780441203760_c89ca2dd"
+      "id": "lead_1780444806638_51e5b718"
     },
     {
       "id": "lead_1774782848000_conv_830",
@@ -2219,7 +2231,7 @@
       "duration": 75,
       "language": "en",
       "messages": 9,
-      "id": "lead_1780441203760_c21cdeef"
+      "id": "lead_1780444806638_96436fc9"
     },
     {
       "id": "lead_1774691309000_conv_570",
@@ -2245,7 +2257,7 @@
       "duration": 187,
       "language": "en",
       "messages": 21,
-      "id": "lead_1780441203760_d04b4a25"
+      "id": "lead_1780444806638_10ebfd20"
     },
     {
       "name": "",
@@ -2257,7 +2269,7 @@
       "duration": 16,
       "language": "en",
       "messages": 3,
-      "id": "lead_1780441203760_65395dde"
+      "id": "lead_1780444806638_9039540d"
     },
     {
       "id": "lead_1774600063000_conv_870",
@@ -2297,7 +2309,7 @@
       "duration": 59,
       "language": "en",
       "messages": 7,
-      "id": "lead_1780441203760_9bc626b9"
+      "id": "lead_1780444806638_b09caf12"
     },
     {
       "id": "lead_1774544463000_conv_990",
