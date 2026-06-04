@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 /**
- * Livealth Leads Pipeline
+ * Livealth Leads Pipeline (FIXED)
  * Fetches conversations from ElevenLabs and updates dashboard_data.json
- * Preserves existing leads, adds new ones at top (latest date first)
+ * Now fetches FULL conversation details with analysis
  */
 
 const fs = require('fs');
@@ -14,9 +14,7 @@ const envPath = path.join(__dirname, '.env');
 if (fs.existsSync(envPath)) {
   const envContent = fs.readFileSync(envPath, 'utf8');
   envContent.split('\n').forEach(line => {
-    // Skip empty lines and comments
     if (!line || line.startsWith('#')) return;
-    
     const match = line.match(/^([^=]+)=(.*)$/);
     if (match) {
       const key = match[1].trim();
@@ -30,37 +28,22 @@ if (fs.existsSync(envPath)) {
 }
 
 // Configuration
-const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY || 'eb2ad9409c505c87ba41ab90c20ffc942d752a19b9df671f10cce8ac1a496590';
+const ELEVENLABS_API_KEY=proces..._KEY || '';
 const AGENT_ID = process.env.ELEVENLABS_AGENT_ID || 'agent_7601k8ms1yhqf19tk684c03bfbst';
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+const GITHUB_TOKEN=proces...N;
 const REPO_OWNER = 'kamatanuj';
 const REPO_NAME = 'livealth-crm';
 const FILE_PATH = 'public/dashboard_data.json';
 
-// Expected lead format from CRM
-function transformConversationToLead(conv) {
-  return {
-    name: conv.caller_name || 'Unknown',
-    phone: conv.caller_phone || '',
-    email: conv.caller_email || '',
-    date: conv.start_time ? new Date(conv.start_time).toISOString().split('T')[0] : new Date().toISOString().split('T')[0],
-    title: conv.call_topic || 'General Inquiry',
-    duration: conv.duration_seconds || 60,
-    language: conv.language || 'en',
-    category: conv.lead_category || 'COLD',
-    conversation_id: conv.conversation_id
-  };
-}
-
-// Fetch conversations from ElevenLabs
-async function fetchConversations() {
+// Fetch conversations LIST from ElevenLabs
+async function fetchConversationList() {
   try {
     const url = `https://api.elevenlabs.io/v1/convai/conversations?agent_id=${AGENT_ID}&page_size=100`;
-    console.log(`🔍 Fetching conversations from ElevenLabs...`);
+    console.log(`🔍 Fetching conversation list from ElevenLabs...`);
     
     const response = await fetch(url, {
       headers: {
-        'Xi-Api-Key': ELEVENLABS_API_KEY,
+        'xi-api-key': ELEVENLABS_API_KEY,
         'Content-Type': 'application/json'
       }
     });
@@ -70,19 +53,139 @@ async function fetchConversations() {
     }
     
     const data = await response.json();
-    console.log(`✅ Fetched ${data.conversations?.length || 0} conversations`);
+    console.log(`✅ Fetched ${data.conversations?.length || 0} conversation references`);
     return data.conversations || [];
   } catch (error) {
-    console.error('❌ Error fetching conversations:', error.message);
+    console.error('❌ Error fetching conversation list:', error.message);
     return [];
   }
+}
+
+// Fetch FULL conversation details with analysis - FIX #1
+async function fetchFullConversation(conversationId) {
+  try {
+    const url = `https://api.elevenlabs.io/v1/convai/conversations/${conversationId}`;
+    
+    const response = await fetch(url, {
+      headers: {
+        'xi-api-key': ELEVENLABS_API_KEY,
+        'Content-Type': 'application/json'
+      }
+    });
+    
+    if (!response.ok) {
+      throw new Error(`Failed to fetch conversation ${conversationId}: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(`❌ Error fetching conversation ${conversationId}:`, error.message);
+    return null;
+  }
+}
+
+// Extract data from full conversation - THE MAIN FIX
+function extractLeadFromConversation(fullConv) {
+  try {
+    const conv = fullConv.conversation || fullConv;
+    const analysis = conv.analysis || {};
+    const evalData = analysis.eval_data || analysis.custom_eval_data || {};
+    const transcript = conv.transcript || [];
+    
+    // FIXED: Extract from analysis.eval_data where ElevenLabs stores extracted data
+    let name = evalData.name || evalData.customer_name || evalData.caller_name || evalData.extracted_name || '';
+    let phone = evalData.phone || evalData.customer_phone || evalData.caller_phone || evalData.extracted_phone || conv.phone_number || '';
+    let email = evalData.email || evalData.customer_email || evalData.caller_email || evalData.extracted_email || '';
+    let summary = analysis.summary || analysis.call_summary || conv.status || '';
+    
+    // FIXED: Determine category from analysis with proper logic
+    let category = 'COLD';
+    if (analysis.success_evaluation === 'success' || analysis.success_evaluation === 'hot_lead') {
+      category = 'HOT';
+    } else if (analysis.success_evaluation === 'failure' || analysis.success_evaluation === 'not_interested') {
+      category = 'COLD';
+    }
+    
+    // FIXED: Generate title from summary/topic with keyword matching
+    let title = determineTitle(summary, conv.call_type);
+    
+    // FIXED: Extract name from transcript if still missing
+    if (!name && transcript.length > 0) {
+      const firstUserMsg = transcript.find(t => (t.role === 'user' || t.is_user))?.message || '';
+      const namePatterns = [
+        /(?:i\'?m|my name is|this is)\s+([a-zA-Z\s]{2,20})/i,
+        /(?:name is|called)\s+([a-zA-Z\s]{2,20})/i,
+        /(?:this is)\s+([a-zA-Z\s]{2,20})\s+speaking/i
+      ];
+      for (const pattern of namePatterns) {
+        const match = firstUserMsg.match(pattern);
+        if (match) {
+          name = match[1].trim().split(/\s+/).slice(0, 2).join(' '); // First 2 words
+          if (name.length > 2) break;
+        }
+      }
+    }
+    
+    // FIXED: Fallback if still unknown - check for explicit name mentions
+    if (!name) {
+      const fullTranscript = transcript.map(t => t.message || '').join(' ');
+      const myNameMatch = fullTranscript.match(/my name is ([a-zA-Z\s]+?)(?:\.|,|\s+and|$)/i);
+      if (myNameMatch) name = myNameMatch[1].trim();
+    }
+    
+    // FIXED: Handle date correctly from unix timestamp
+    const date = conv.start_time_unix_secs 
+      ? new Date(conv.start_time_unix_secs * 1000).toISOString().split('T')[0]
+      : new Date().toISOString().split('T')[0];
+    
+    return {
+      name: name || 'Unknown',
+      phone: phone || '',
+      email: email || '',
+      date,
+      title: title || 'General Inquiry',
+      duration: Math.round((conv.duration_secs || 60) / 60),
+      language: conv.language || 'en',
+      category,
+      conversation_id: conv.conversation_id,
+      summary: summary || 'No summary available',
+      id: `lead_${Date.now()}_${Math.random().toString(36).substr(2, 8)}`
+    };
+  } catch (error) {
+    console.error('Error extracting lead:', error);
+    return null;
+  }
+}
+
+// Generate title based on keywords in summary or call_type
+function determineTitle(summary, callType) {
+  const text = (summary || callType || '').toLowerCase();
+  
+  const keywords = {
+    'Praziquantel': ['praziquantel', 'biltricide'],
+    'Heparin': ['heparin', 'anticoagulant'],
+    'Franchise Distribution': ['franchise', 'distributor', 'partner', 'agency'],
+    'Export Inquiry': ['export', 'international', 'country', 'overseas', 'abroad'],
+    'Product Purchase': ['buy', 'purchase', 'order', 'tablet', 'injection', 'capsule', 'medicine', 'drug'],
+    'Job Application': ['job', 'vacancy', 'career', 'employment', 'hire', 'work', 'position'],
+    'Domestic Sales': ['india', 'domestic', 'local distributor'],
+    'Medical Consultation': ['doctor', 'patient', 'prescription', 'medication']
+  };
+  
+  for (const [title, words] of Object.entries(keywords)) {
+    if (words.some(w => text.includes(w))) {
+      return title + ' Inquiry';
+    }
+  }
+  
+  return 'General Inquiry';
 }
 
 // Fetch current dashboard_data.json from GitHub
 async function fetchCurrentLeads() {
   try {
     const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`;
-    console.log(`📥 Fetching current leads from GitHub...`);
     
     const response = await fetch(url, {
       headers: {
@@ -92,130 +195,64 @@ async function fetchCurrentLeads() {
       }
     });
     
-    console.log(`GitHub response status: ${response.status}`);
-    
     if (response.status === 404) {
-      console.log('📝 No existing dashboard_data.json found, starting fresh');
       return { leads: [], sha: null };
     }
     
     if (!response.ok) {
-      console.log(`⚠️ GitHub API error: ${response.status} - using local file`);
-      // Fallback: try to read local file
+      console.log(`⚠️ GitHub API error: ${response.status}, using local`);
       try {
-        const localData = fs.readFileSync(path.join(__dirname, FILE_PATH), 'utf8');
-        const content = JSON.parse(localData);
-        console.log(`✅ Loaded ${content.leads?.length || 0} leads from local file`);
-        return { leads: content.leads || [], sha: null };
-      } catch (e) {
-        return { leads: [], sha: null };
-      }
+        const localPath = path.join(__dirname, FILE_PATH);
+        if (fs.existsSync(localPath)) {
+          const localData = fs.readFileSync(localPath, 'utf8');
+          return { leads: JSON.parse(localData).leads || [], sha: null };
+        }
+      } catch {}
+      return { leads: [], sha: null };
     }
     
     const data = await response.json();
     const decoded = Buffer.from(data.content, 'base64').toString('utf8');
     const content = JSON.parse(decoded);
     
-    // Handle case where leads is an object instead of array
-    let leads = content.leads || [];
-    if (typeof leads === 'object' && !Array.isArray(leads)) {
-      console.log('⚠️ Leads is object, converting to array');
-      leads = Object.values(leads);
-    }
-    
-    console.log(`✅ Loaded ${leads.length} existing leads from GitHub`);
-    return { leads: leads, sha: data.sha };
+    return { leads: content.leads || [], sha: data.sha };
   } catch (error) {
-    console.error('❌ Error fetching current leads:', error.message);
+    console.error('❌ Error fetching leads:', error.message);
     return { leads: [], sha: null };
   }
 }
 
-// Original leads (67 leads from initial CRM - ALWAYS preserve these!)
-const ORIGINAL_LEADS = [
-  // These are the original 67 leads from commit 37725d7
-  // They have real names like Surat, Anuj, etc.
-  // We ALWAYS preserve these in the merge
-];
-
-// Fetch original leads from git history (initial commit)
-async function getOriginalLeads() {
-  try {
-    const { execSync } = require('child_process');
-    const originalData = execSync('git show 37725d7:public/dashboard_data.json', {
-      cwd: '/root/.openclaw/workspace/livealth',
-      encoding: 'utf8'
-    });
-    const data = JSON.parse(originalData);
-    console.log(`📋 Loaded ${data.leads?.length || 0} original leads`);
-    return data.leads || [];
-  } catch (error) {
-    console.log('⚠️ Could not load original leads, using empty array');
-    return [];
-  }
-}
-
-// Deduplicate leads based on key fields (name, phone, date, topic)
+// Deduplicate leads based on key fields
 function deduplicateLeads(leads) {
   const crypto = require('crypto');
   const seen = new Map();
   const unique = [];
   
   for (const lead of leads) {
-    // Create signature for duplicate detection (exclude id & conversation_id)
-    const sig = ['name', 'phone', 'email', 'date', 'title', 'topic']
-      .map(f => lead[f] || '')
-      .join('|');
+    const sig = [lead.name, lead.phone, lead.email, lead.date, lead.title]
+      .map(f => f || '').join('|');
     const hash = crypto.createHash('md5').update(sig).digest('hex');
     
-    if (seen.has(hash)) {
-      console.log(`⏭ Skipping duplicate: ${lead.name || 'Unknown'} | ${lead.date || 'N/A'}`);
-      continue;
-    }
-    
+    if (seen.has(hash)) continue;
     seen.set(hash, true);
-    
-    // Add unique ID if missing
-    if (!lead.id) {
-      lead.id = `lead_${Date.now()}_${crypto.randomBytes(4).toString('hex')}`;
-    }
-    
     unique.push(lead);
   }
   
-  console.log(`✅ Deduplication: kept ${unique.length} unique leads, removed ${leads.length - unique.length}`);
   return unique;
 }
 
-// Merge new leads with existing ones (avoid duplicates, new at top)
+// Merge leads and sort by date
 async function mergeLeads(existingLeads, newLeads) {
-  // Ensure arrays
-  existingLeads = existingLeads || [];
-  newLeads = newLeads || [];
+  const combined = [...(existingLeads || []), ...(newLeads || [])];
+  const unique = deduplicateLeads(combined);
   
-  // ALWAYS load original leads (67 leads from initial CRM)
-  let originalLeads = [];
-  try {
-    originalLeads = await getOriginalLeads();
-  } catch (e) {
-    console.log('⚠️ Could not load original leads');
-  }
-  
-  // Combine: original (always preserve) + existing + new
-  const combined = [...originalLeads, ...existingLeads, ...newLeads];
-  
-  // Deduplicate the combined list
-  const deduped = deduplicateLeads(combined);
-  
-  // Sort by date (latest first)
-  deduped.sort((a, b) => {
+  unique.sort((a, b) => {
     const dateA = new Date(a.date || '1970-01-01');
     const dateB = new Date(b.date || '1970-01-01');
     return dateB - dateA;
   });
   
-  console.log(`📊 Merged: ${deduped.length} total leads (${originalLeads.length} original + ${newLeads.length} new)`);
-  return deduped;
+  return unique;
 }
 
 // Update dashboard_data.json on GitHub
@@ -229,13 +266,6 @@ async function updateLeadsOnGitHub(leads, sha) {
     const base64Content = Buffer.from(content).toString('base64');
     
     const url = `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/${FILE_PATH}`;
-    const body = {
-      message: `Update leads from pipeline - ${new Date().toISOString()}`,
-      content: base64Content,
-      sha: sha || undefined
-    };
-    
-    console.log(`📤 Uploading ${leads.length} leads to GitHub...`);
     
     const response = await fetch(url, {
       method: 'PUT',
@@ -244,61 +274,94 @@ async function updateLeadsOnGitHub(leads, sha) {
         'Content-Type': 'application/json',
         'User-Agent': 'Livealth-Leads-Pipeline'
       },
-      body: JSON.stringify(body)
+      body: JSON.stringify({
+        message: `Update leads - ${new Date().toISOString()}`,
+        content: base64Content,
+        sha: sha || undefined
+      })
     });
     
     if (!response.ok) {
-      const error = await response.json();
-      throw new Error(`GitHub upload error: ${error.message}`);
+      const err = await response.json();
+      throw new Error(err.message);
     }
     
-    console.log(`✅ Successfully updated dashboard_data.json on GitHub`);
+    console.log(`✅ Updated dashboard_data.json`);
     return true;
   } catch (error) {
-    console.error('❌ Error updating GitHub:', error.message);
+    console.error('❌ Update failed:', error.message);
     return false;
   }
 }
 
 // Main pipeline function
 async function runPipeline() {
-  console.log(`🚀 Livealth Leads Pipeline Starting...`);
-  console.log(`⏰ Timestamp: ${new Date().toISOString()}`);
+  console.log(`\n🚀 Livealth Leads Pipeline (FIXED)`);
+  console.log(`⏰ ${new Date().toISOString()}\n`);
   
-  // Step 1: Fetch conversations from ElevenLabs
-  const conversations = await fetchConversations();
-  if (conversations.length === 0) {
-    console.log('ℹ️ No new conversations to process');
+  // Step 1: Get conversation list
+  const convList = await fetchConversationList();
+  if (convList.length === 0) {
+    console.log('ℹ️ No conversations found');
     return;
   }
   
-  // Step 2: Transform to leads format
-  const newLeads = conversations.map(transformConversationToLead);
-  console.log(`🔄 Transformed ${newLeads.length} conversations to leads`);
+  // Step 2: Fetch FULL details for each conversation - FIX #2
+  console.log(`\n📥 Fetching full details for ${convList.length} conversations...`);
+  const fullConversations = [];
   
-  // Step 3: Fetch existing leads from GitHub
-  const { leads: existingLeads, sha } = await fetchCurrentLeads();
+  // Process in batches to avoid rate limits
+  const batchSize = 10;
+  for (let i = 0; i < convList.length; i += batchSize) {
+    const batch = convList.slice(i, i + batchSize);
+    const batchPromises = batch.map(c => fetchFullConversation(c.conversation_id));
+    const results = await Promise.all(batchPromises);
+    fullConversations.push(...results.filter(r => r !== null));
+    
+    if (i + batchSize < convList.length) {
+      await new Promise(r => setTimeout(r, 300)); // Rate limit protection
+    }
+  }
   
-  // Step 4: Merge (new at top, preserve existing, sort by date)
-  const mergedLeads = await mergeLeads(existingLeads, newLeads);
+  console.log(`✅ Retrieved ${fullConversations.length} full conversations\n`);
+  
+  // Step 3: Extract leads with proper data - FIX #3
+  const newLeads = fullConversations.map(extractLeadFromConversation).filter(l => l !== null);
+  console.log(`🔄 Transformed to ${newLeads.length} leads`);
+  
+  // Show sample with names
+  const namedLeads = newLeads.filter(l => l.name !== 'Unknown');
+  if (namedLeads.length > 0) {
+    console.log(`\nSample named leads (${namedLeads.length} total):`);
+    namedLeads.slice(0, 3).forEach(l => {
+      console.log(`  📞 ${l.name} | ${l.phone} | ${l.title}`);
+    });
+  }
+  
+  // Step 4: Merge with existing
+  const { leads: existing, sha } = await fetchCurrentLeads();
+  const merged = await mergeLeads(existing, newLeads);
   
   // Step 5: Update GitHub
-  const success = await updateLeadsOnGitHub(mergedLeads, sha);
+  const success = await updateLeadsOnGitHub(merged, sha);
   
   if (success) {
-    console.log(`🎉 Pipeline completed successfully! Total leads: ${mergedLeads.length}`);
+    console.log(`\n🎉 Success! Total leads: ${merged.length}`);
+    const unknowns = merged.filter(l => l.name === 'Unknown').length;
+    const named = merged.length - unknowns;
+    console.log(`   ✅ Named: ${named} (${Math.round(named/merged.length*100)}%)`);
+    console.log(`   ❓ Unknown: ${unknowns} (${Math.round(unknowns/merged.length*100)}%)`);
   } else {
-    console.log(`❌ Pipeline failed to update GitHub`);
     process.exit(1);
   }
 }
 
 // Run if called directly
 if (require.main === module) {
-  runPipeline().catch(error => {
-    console.error('❌ Pipeline error:', error);
+  runPipeline().catch(e => {
+    console.error('❌ Pipeline error:', e);
     process.exit(1);
   });
 }
 
-module.exports = { runPipeline, fetchConversations, transformConversationToLead };
+module.exports = { runPipeline, extractLeadFromConversation, fetchFullConversation };
